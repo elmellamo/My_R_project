@@ -76,22 +76,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     refrigeitem todoItem = mrefrigeitem.get(curPos);//아이템 정보 가져온다
                     Dialog dialog = new Dialog(mContext, android.R.style.Theme_Material_Light_Dialog);
                     dialog.setContentView(R.layout.dialog_edit);//뷰가 연결되었으므로 이 레이아웃에서 find view by id사용 가능
-                    EditText et_title = dialog.findViewById(R.id.et_title);//그냥 find가 아니라 dialog.~해야 한다
-                    EditText et_content = dialog.findViewById(R.id.et_content);
+                    EditText et_cnt = dialog.findViewById(R.id.et_cnt);//그냥 find가 아니라 dialog.~해야 한다
+                    EditText et_unit = dialog.findViewById(R.id.et_unit);
                     Button btn_ok = dialog.findViewById(R.id.btn_ok);
 
-                    et_title.setText(todoItem.getTitle());
-                    et_content.setText(todoItem.getContent());
-                    et_title.setSelection(et_title.getText().length());
-
+                    et_cnt.setText(todoItem.getCnt());
+                    et_unit.setText(todoItem.getUnit());
 
                     btn_ok.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             //수정시나리오
                             //update table
-                            String title = et_title.getText().toString();
-                            String content = et_content.getText().toString();
+                            int cnt = et_cnt.get
+                            String unit = et_unit.getText().toString();
                             String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
                             String beforeTime = todoItem.getWriteDate();//이전에 저장된 시간
 
