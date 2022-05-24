@@ -3,62 +3,62 @@ package com.example.myrproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Tab_MyR#newInstance} factory method to
- * create an instance of this fragment.
- */
+import android.os.Bundle;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Tab_MyR extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public Tab_MyR() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Tab_MyR.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Tab_MyR newInstance(String param1, String param2) {
-        Tab_MyR fragment = new Tab_MyR();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
+
+    private RecyclerView recyclerview;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab__my_r, container, false);
+        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__my_r,container,false);
+
+        recyclerview = (RecyclerView) rootview.findViewById(R.id.recyclerview);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerview.setLayoutManager(mLayoutManager);
+        List<ExpandableListAdapter.Item> data = new ArrayList<>();  // 데이터를 담을 List
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "운동"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "농구"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "배구"));
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과목"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "영어"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "수학"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "과학"));
+
+        recyclerview.setAdapter(new ExpandableListAdapter(data));
+
+
+
+        return rootview;
     }
 }
