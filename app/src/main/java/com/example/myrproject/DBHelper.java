@@ -72,9 +72,9 @@ public class DBHelper extends SQLiteOpenHelper {
         //냉장고안에 넣겠다 //id는 자동 증가이므로 insert안해도 된다 //id는 안넣어도 된다는 말을 첫번째 괄호 안에 //VALUES()뒤에 ;있어야 한다
     }
     //UPDATE (냉장고 물품 개수 변경될때)
-    public void UpdateItem(String _type, String _name, int _cnt, String _unit, int _id){
+    public void UpdateItem(int _cnt, String _unit, int _id){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE refrigerator SET type='"+_type+"',name='"+_name+"',cnt='"+_cnt+"',unit='"+_unit+"',WHERE id='"+_id+"'");
+        db.execSQL("UPDATE refrigerator SET cnt='"+_cnt+"',unit='"+_unit+"',WHERE id='"+_id+"'");
         //where은 그냥 막 업데이트가 아니라 조건문을 걸어주는 것
         //id는 자동 증가되는 key값 을 이용해 업데이트 어디에 있는 값이 조건 일치할때 그 값의 위치에다가 그값을 갱신해줘야 한다
     }

@@ -44,9 +44,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, int position) {
-        holder.tv_title.setText(mrefrigeitem.get(position).getLoc());
-        holder.tv_content.setText(mrefrigeitem.get(position).getType());
-        holder.tv_writeDate.setText(mrefrigeitem.get(position).getName());
+        //holder.tv_title.setText(mrefrigeitem.get(position).getLoc());
+        //holder.tv_content.setText(mrefrigeitem.get(position).getType());
+        //holder.tv_writeDate.setText(mrefrigeitem.get(position).getName());
 
     }
 
@@ -73,48 +73,46 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 @Override
                 public void onClick(View view) {
                     int curPos = getAdapterPosition();// 현재 리스트 클릭한 아이템위치
-                    refrigeitem todoItem = mrefrigeitem.get(curPos);//아이템 정보 가져온다
+                    refrigeitem refrigeitems = mrefrigeitem.get(curPos);//아이템 정보 가져온다
+                    int id = refrigeitems.getId();
                     Dialog dialog = new Dialog(mContext, android.R.style.Theme_Material_Light_Dialog);
                     dialog.setContentView(R.layout.dialog_edit);//뷰가 연결되었으므로 이 레이아웃에서 find view by id사용 가능
                     EditText et_cnt = dialog.findViewById(R.id.et_cnt);//그냥 find가 아니라 dialog.~해야 한다
                     EditText et_unit = dialog.findViewById(R.id.et_unit);
                     Button btn_ok = dialog.findViewById(R.id.btn_ok);
 
-                    et_cnt.setText(todoItem.getCnt());
-                    et_unit.setText(todoItem.getUnit());
+                    et_cnt.setText(refrigeitems.getCnt());
+                    et_unit.setText(refrigeitems.getUnit());
 
                     btn_ok.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             //수정시나리오
                             //update table
-                            int cnt = et_cnt.get
-                            String unit = et_unit.getText().toString();
-                            String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
-                            String beforeTime = todoItem.getWriteDate();//이전에 저장된 시간
 
-                            mDBHelper.UpdateTodo(title, content, currentTime, beforeTime);//입력필드에 적은 값 가져온다
+                            int cnt = Integer.parseInt(et_cnt.getText().toString());//int형은 이렇게 바꾼다
+                            String unit = et_unit.getText().toString();
+
+                            mDBHelper.UpdateItem(cnt, unit, id);//입력필드에 적은 값 가져온다
                             //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
 
                             //update UI
-                            todoItem.setTitle(title);
-                            todoItem.setContent(content);
-                            todoItem.setWriteDate(currentTime);
-                            notifyItemChanged(curPos, todoItem);//클릭한 아이템에 갱신된 아이템을 갱신
+                            refrigeitems.setCnt(cnt);
+                            refrigeitems.setUnit(unit);
+                            notifyItemChanged(curPos, refrigeitems);//클릭한 아이템에 갱신된 아이템을 갱신
                             dialog.dismiss();//dialog 종료
                             Toast.makeText(mContext, "목록 수정이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
 
                         }
                     });
                     dialog.show();//필수
-
                 }
             });
         }
     }
     //액티비티에서 호출되는 함수이며, 현재 어댑터에 새로운 게시글 아이템을 전달받아 추가하는 목적이다.
-    public void addItem(TodoItem _item){
-        mTodoItems.add(0,_item);//역순으로 add된다 최신순으로 위에 들어간다
+    public void addItem(refrigeitem _item){
+        mrefrigeitem.add(0,_item);//역순으로 add된다 최신순으로 위에 들어간다
         notifyItemInserted(0);//notify들어간건 모두 새로고침이라 보면 된다
     }
 }
