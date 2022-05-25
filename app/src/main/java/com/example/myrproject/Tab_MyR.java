@@ -44,23 +44,34 @@ public class Tab_MyR extends Fragment {
         recyclerview.setLayoutManager(mLayoutManager);
         List<ExpandableListAdapter.Item> data = new ArrayList<>();  // 데이터를 담을 List
 
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "운동"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과일"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "농구"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "배구"));
 
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과목"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "채소"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "영어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "수학"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "과학"));
 
-        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "노바");
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "정육/계란"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "수산물"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "유제품"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음료"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "장/소스/드레싱"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "곡류"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+
+
+        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "김치/반찬");
         places.invisibleChildren = new ArrayList<>();
         places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카이저"));
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카인"));
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카데나"));
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "엔젤릭버스터"));
         data.add(places);
 
         recyclerview.setAdapter(new ExpandableListAdapter(data));
