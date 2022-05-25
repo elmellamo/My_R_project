@@ -55,6 +55,14 @@ public class Tab_MyR extends Fragment {
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "수학"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "과학"));
 
+        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "노바");
+        places.invisibleChildren = new ArrayList<>();
+        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카이저"));
+        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카인"));
+        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카데나"));
+        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "엔젤릭버스터"));
+        data.add(places);
+
         recyclerview.setAdapter(new ExpandableListAdapter(data));
 
 
