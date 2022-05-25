@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="70dp"
+    android:weightSum="5">
 
     <TextView
         android:id="@+id/child_title"
@@ -15,28 +15,26 @@
         android:gravity="center_vertical"
         android:textColor="#FF000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="3"/>
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         android:background="#FFEFEF"
         android:text="edit"
-        app:layout_constraintRight_toLeftOf="@+id/btn2"
-        tools:layout_editor_absoluteY="11dp" />
+        android:layout_weight="1"/>
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:text="delete"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:background="#FFEFEF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="delete"
+        android:layout_weight="1"/>
+
+</LinearLayout>
