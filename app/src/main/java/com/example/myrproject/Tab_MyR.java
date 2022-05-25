@@ -54,6 +54,8 @@ public class Tab_MyR extends Fragment {
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "수산물"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "유제품"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음료"));
 
