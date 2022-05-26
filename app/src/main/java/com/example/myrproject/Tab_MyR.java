@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +35,7 @@ public class Tab_MyR extends Fragment {
 
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
+    private FloatingActionButton fab;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,11 +49,8 @@ public class Tab_MyR extends Fragment {
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과일"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "채소"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "정육/계란"));
@@ -59,14 +59,10 @@ public class Tab_MyR extends Fragment {
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "유제품"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음료"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "장/소스/드레싱"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
 
@@ -82,7 +78,14 @@ public class Tab_MyR extends Fragment {
         recyclerview.setAdapter(new ExpandableListAdapter(data));
 
 
+        fab = (FloatingActionButton) rootview.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, containermenu).commit();
 
+            }
+        });
         return rootview;
     }
 }
