@@ -3,25 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/drawable/border.xml" value="0.1495" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/drawable/border_layout.xml" value="0.1" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/drawable/btn_yellow.xml" value="0.2165" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2165" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/activity_main.xml" value="0.152" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/activity_title.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/border_layout.xml" value="0.1" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/ex.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_add_item.xml" value="0.2" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_category.xml" value="0.4" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_first__my_r.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/activity_main.xml" value="0.12310030395136778" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.1" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_tab__recipe.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_tab_which.xml" value="0.1" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/item_list.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/my_r_list_child.xml" value="0.264" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/my_r_list_header.xml" value="0.2" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/recyclertest.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/tab_myr.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1535" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/drawable/border.xml" value="0.152" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/drawable/border_layout.xml" value="0.151" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/activity_main.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/activity_title.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/dialog_edit.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/ex.xml" value="0.19246861924686193" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_add_item.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_category.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab__recipe.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/item_list.xml" value="0.264" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/my_r_list_child.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/my_r_list_header.xml" value="0.23697916666666666" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/recyclertest.xml" value="0.24114583333333334" />
       </map>
     </option>
   </component>

@@ -23,7 +23,6 @@
                 app:iconifiedByDefault="false"
                 app:queryHint="찾으시는 물품을 검색해보세요."
                 >
-
             </SearchView>
 
             <androidx.recyclerview.widget.RecyclerView

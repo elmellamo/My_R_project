@@ -82,7 +82,7 @@ public class Tab_MyR extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, containermenu).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.container, containermenu).commit();
 
             }
         });
