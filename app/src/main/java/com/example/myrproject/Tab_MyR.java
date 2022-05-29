@@ -3,6 +3,7 @@ package com.example.myrproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,8 +83,9 @@ public class Tab_MyR extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //getSupportFragmentManager().beginTransaction().replace(R.id.container, containermenu).commit();
-
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.container, new SubCategory());
+                fr.commit();
             }
         });
         return rootview;

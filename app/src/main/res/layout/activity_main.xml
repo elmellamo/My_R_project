@@ -21,12 +21,13 @@
 
         app:tabTextColor="#000000" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pager"
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_below="@id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@id/tab_layout" />
+        android:layout_height="match_parent" >
 
+    </FrameLayout>
 
 
 </RelativeLayout>
