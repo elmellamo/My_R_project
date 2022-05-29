@@ -224,8 +224,8 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:text="장/소스/드레싱"
+        android:layout_marginStart="4dp"
+        android:text="소스/드레싱"
         app:layout_constraintStart_toEndOf="@+id/drink"
         app:layout_constraintTop_toTopOf="@+id/textView6" />
 
@@ -233,7 +233,7 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
+        android:layout_marginEnd="16dp"
         android:text="곡류"
         app:layout_constraintEnd_toEndOf="@+id/rice"
         app:layout_constraintTop_toBottomOf="@+id/rice" />
