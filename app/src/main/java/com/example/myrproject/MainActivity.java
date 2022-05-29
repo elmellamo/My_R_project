@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setTabTextColors(Color.rgb(0,0,0), Color.rgb(12, 77, 162));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-
+        getSupportFragmentManager().beginTransaction().add(R.id.container, tab_myR).commit();
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

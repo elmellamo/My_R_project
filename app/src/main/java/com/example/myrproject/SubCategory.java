@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 
 
 public class SubCategory extends Fragment {
-
+    private ImageButton fruit;
     public SubCategory() {
         // Required empty public constructor
     }
@@ -27,7 +27,7 @@ public class SubCategory extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {      View view = inflater.inflate(R.layout.fragment_category,container,false);
-        ImageButton fruit =(ImageButton)view.findViewById(R.id.fruit);
+        fruit =(ImageButton)view.findViewById(R.id.fruit);
         fruit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
