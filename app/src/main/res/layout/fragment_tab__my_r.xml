@@ -16,13 +16,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:descendantFocusability="blocksDescendants">
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:iconifiedByDefault="false"
-                app:queryHint="찾으시는 물품을 검색해보세요."
-                >
-            </SearchView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview"

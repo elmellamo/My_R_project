@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ImageView;
-
+import android.content.Intent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -86,9 +86,8 @@ public class Tab_MyR extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.container, new SubCategory());
-                fr.commit();
+                Intent intent = new Intent(getActivity(), SecondActivity.class);
+                startActivity(intent);
             }
         });
         return rootview;
