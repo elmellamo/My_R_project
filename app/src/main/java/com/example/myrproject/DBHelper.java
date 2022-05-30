@@ -68,6 +68,41 @@ public class DBHelper extends SQLiteOpenHelper {
         return rItems;//담아놓은 것을 언제 어디든 호출 가능
     }
 
+
+    // 냉장고 안에 있는지 확인하는 함수
+    public ArrayList<MyRItem> search(String keyword) {
+        ArrayList<MyRItem> contacts = new ArrayList<>();
+        try {
+            SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.rawQuery("select * from Refrigerator where name like ?", new String[] { "%" + keyword + "%" });
+            if (cursor.moveToFirst()) {
+                contacts = new ArrayList<MyRItem>();
+                do {
+                    MyRItem contact = new MyRItem();
+                    contact.setId(cursor.getInt(0));
+                    contact.setType(cursor.getString(1));
+                    contact.setName(cursor.getString(2));
+                    contact.setCnt(cursor.getString(3));
+                    contact.setUnit(cursor.getString(4));
+                    contacts.add(contact);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            contacts = null;
+        }
+        return contacts;
+    }
+
+
+    //대표 재료에 속하는지 확인
+    //Represent java로 만들었다
+
+
+
+
+
+
+
     //INSERT (할일 목록을 db에 넣는다)
     public void InsertTodo(String _type, String _name, String _cnt, String _unit,String _writedate){
         //id는 안넣나? -> 보통 아이디는 생략가능 자동으로 가능 //public은 어디서나 삽입 가능하게
