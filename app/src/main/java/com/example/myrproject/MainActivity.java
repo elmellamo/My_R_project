@@ -19,6 +19,8 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     Tab_MyR tab_myR;
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         tab_which = new Tab_which();
 
         tabLayout = findViewById(R.id.tab_layout);
-
         tabLayout.addTab(tabLayout.newTab().setText("내 냉장고"));
         tabLayout.addTab(tabLayout.newTab().setText("레시피"));
         tabLayout.addTab(tabLayout.newTab().setText("뭐 먹지"));

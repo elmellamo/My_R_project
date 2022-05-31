@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class SecondActivity extends AppCompatActivity {
     TabLayout tabLayout;
@@ -28,6 +29,9 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        getSupportActionBar().setTitle("식품 추가");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
