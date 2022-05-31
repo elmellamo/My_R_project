@@ -28,6 +28,8 @@ public class SecondActivity extends AppCompatActivity {
     Dairy dairy;
     Drink drink;
     Sauce sauce;
+    Rice rice;
+    Kimchi kimchi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class SecondActivity extends AppCompatActivity {
         dairy = new Dairy();
         drink = new Drink();
         sauce = new Sauce();
+        rice = new Rice();
+        kimchi = new Kimchi();
 
         ImageButton fruitbtn =  findViewById(R.id.fruit);
         fruitbtn.setOnClickListener(new View.OnClickListener(){
@@ -98,6 +102,22 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, sauce).commit();
+            }
+        });
+
+        ImageButton ricebtn =  findViewById(R.id.rice);
+        ricebtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, rice).commit();
+            }
+        });
+
+        ImageButton kimchibtn =  findViewById(R.id.kimchi);
+        kimchibtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, kimchi).commit();
             }
         });
 
