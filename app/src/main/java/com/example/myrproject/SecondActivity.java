@@ -15,14 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
 public class SecondActivity extends AppCompatActivity {
-    TabLayout tabLayout;
-    Tab_MyR tab_myR;
-    Tab_Recipe tab_recipe;
-    Tab_which tab_which;
     Fruit fruit;
 
     @Override
@@ -32,6 +30,19 @@ public class SecondActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("식품 추가");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        fruit = new Fruit();
+
+        ImageButton fruitbtn =  findViewById(R.id.fruit);
+        fruitbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fruit).commit();
+            }
+        });
+
+
+
     }
 
     @Override
