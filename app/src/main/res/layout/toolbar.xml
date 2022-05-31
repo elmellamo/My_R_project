@@ -8,6 +8,4 @@
     android:background="@drawable/toolbar_bg"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:title="@string/app_name"
-    app:titleTextColor="@color/title_color"
-    app:titleMarginStart="165dp"/>
+    app:titleTextColor="@color/title_color"/>

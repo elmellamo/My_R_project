@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         androidx.appcompat.widget.Toolbar toolbar =
                 findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("냉장보고");
 
         tab_myR = new Tab_MyR();
         tab_recipe = new Tab_Recipe();

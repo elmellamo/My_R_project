@@ -10,7 +10,7 @@
     tools:context=".SecondActivity"
     android:theme="@style/Theme.MyRProject">
 
-    <include layout="@layout/toolbar_sec"/>
+    <include layout="@layout/toolbar"/>
 
 
     <ScrollView
