@@ -25,6 +25,9 @@ public class SecondActivity extends AppCompatActivity {
     Vegetable vegetable;
     Meat meat;
     Fish fish;
+    Dairy dairy;
+    Drink drink;
+    Sauce sauce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,9 @@ public class SecondActivity extends AppCompatActivity {
         vegetable = new Vegetable();
         meat = new Meat();
         fish = new Fish();
+        dairy = new Dairy();
+        drink = new Drink();
+        sauce = new Sauce();
 
         ImageButton fruitbtn =  findViewById(R.id.fruit);
         fruitbtn.setOnClickListener(new View.OnClickListener(){
@@ -71,8 +77,29 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        //dairy 해야함함
+        ImageButton dairybtn =  findViewById(R.id.dairy);
+        dairybtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, dairy).commit();
+            }
+        });
 
+        ImageButton drinkbtn =  findViewById(R.id.drink);
+        drinkbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, drink).commit();
+            }
+        });
+
+        ImageButton saucebtn =  findViewById(R.id.sauce);
+        saucebtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, sauce).commit();
+            }
+        });
 
 
 
