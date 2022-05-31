@@ -3,6 +3,7 @@ package com.example.myrproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,8 +22,8 @@ public class Vegetable extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    private RecyclerView vegetable_todo;
-    private RecyclerView.LayoutManager FruitLayoutManager;
+    private RecyclerView todo;
+    private RecyclerView.LayoutManager LayoutManager;
 
 
 
@@ -32,18 +33,18 @@ public class Vegetable extends Fragment {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_vegetable,container,false);
 
-        vegetable_todo = (RecyclerView) rootview.findViewById(R.id.vegetable_todo);
-        vegetable_todo.setHasFixedSize(true);
+        todo = (RecyclerView) rootview.findViewById(R.id.vegetable_todo);
+        todo.setHasFixedSize(true);
 
-        FruitLayoutManager = new LinearLayoutManager(getActivity());
-        vegetable_todo.setLayoutManager(FruitLayoutManager);
+        LayoutManager = new GridLayoutManager(getActivity(),5);
+        todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"배", "사과"};
         int[] imgSet = {R.drawable.fruit, R.drawable.dairy};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet);
-        vegetable_todo.setAdapter(mAdapter);
+        todo.setAdapter(mAdapter);
         return rootview;
     }
 

@@ -24,8 +24,8 @@ public class Fruit extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    private RecyclerView fruit_todo;
-    private RecyclerView.LayoutManager FruitLayoutManager;
+    private RecyclerView todo;
+    private RecyclerView.LayoutManager LayoutManager;
 
 
 
@@ -35,18 +35,18 @@ public class Fruit extends Fragment {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_fruit,container,false);
 
-        fruit_todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
-        fruit_todo.setHasFixedSize(true);
+        todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
+        todo.setHasFixedSize(true);
 
-        FruitLayoutManager = new GridLayoutManager(getActivity(), 5);
-        fruit_todo.setLayoutManager(FruitLayoutManager);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
+        todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"사과", "배"};
         int[] imgSet = {R.drawable.fruit, R.drawable.dairy};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet);
-        fruit_todo.setAdapter(mAdapter);
+        todo.setAdapter(mAdapter);
         return rootview;
     }
 
