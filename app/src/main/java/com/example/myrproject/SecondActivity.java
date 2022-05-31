@@ -54,22 +54,22 @@ public class SecondActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, vegetable).commit();
             }
         });
-//
-//        ImageButton meatbtn =  findViewById(R.id.meat);
-//        fruitbtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, meat).commit();
-//            }
-//        });
-//
-//        ImageButton fishbtn =  findViewById(R.id.fish);
-//        fruitbtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fish).commit();
-//            }
-//        });
+
+        ImageButton meatbtn =  findViewById(R.id.meat);
+        fruitbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, meat).commit();
+            }
+        });
+
+        ImageButton fishbtn =  findViewById(R.id.fish);
+        fruitbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fish).commit();
+            }
+        });
 
         //dairy 해야함함
 
