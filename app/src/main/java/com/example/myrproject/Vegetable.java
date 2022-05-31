@@ -32,7 +32,7 @@ public class Vegetable extends Fragment {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_vegetable,container,false);
 
-        vegetable_todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
+        vegetable_todo = (RecyclerView) rootview.findViewById(R.id.vegetable_todo);
         vegetable_todo.setHasFixedSize(true);
 
         FruitLayoutManager = new LinearLayoutManager(getActivity());
