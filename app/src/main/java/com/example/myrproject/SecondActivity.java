@@ -64,7 +64,7 @@ public class SecondActivity extends AppCompatActivity {
         });
 
         ImageButton fishbtn =  findViewById(R.id.fish);
-        fruitbtn.setOnClickListener(new View.OnClickListener(){
+        fishbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fish).commit();
