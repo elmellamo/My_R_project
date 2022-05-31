@@ -4,15 +4,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "data2.db";
-
 
     public DBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -26,9 +23,6 @@ public class DBHelper extends SQLiteOpenHelper {
         //primary key -> 데이터 베이스 안의 값들을 각각 로드할 키값이 있어야 한다 //AUTOINCREMENT 값이 하나하나씩 올라간다 데이터 들어올때마다 알아서 1씩 증가
         //NOT NULL 데이터가 비어있으면 안된다! 안적으면 비어있어도 된다
         //id title content writedate는 column을 말한다
-
-
-
     }
 
     @Override

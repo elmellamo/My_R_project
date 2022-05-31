@@ -39,8 +39,8 @@ public class Meat extends Fragment {
         LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
-        String[] textSet = {"안녕", "호잇"};
-        int[] imgSet = {R.drawable.fruit, R.drawable.dairy};
+        String[] textSet = {"소고기", "돼지고기","닭고기","오리고기","양고기","햄","소시지","베이컨","계란"};
+        int[] imgSet = {R.drawable.beef, R.drawable.pork,R.drawable.chicken,R.drawable.duck,R.drawable.mutton,R.drawable.ham,R.drawable.sausage,R.drawable.bacon,R.drawable.friedegg};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet);
