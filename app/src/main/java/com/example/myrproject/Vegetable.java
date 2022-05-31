@@ -43,7 +43,7 @@ public class Vegetable extends Fragment {
         int[] imgSet = {R.drawable.lettuce, R.drawable.perilla, R.drawable.spinach, R.drawable.cucumber, R.drawable.pumpkin, R.drawable.aubergine, R.drawable.corn, R.drawable.potato, R.drawable.sweetpotato, R.drawable.carrot, R.drawable.lotusroot, R.drawable.onion, R.drawable.garlic, R.drawable.ginger, R.drawable.springonion, R.drawable.mushroom, R.drawable.cabbage, R.drawable.broccoli, R.drawable.herbs, R.drawable.paprika, R.drawable.chillipepper, R.drawable.chinesecabbage, R.drawable.radish, R.drawable.sprouts};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

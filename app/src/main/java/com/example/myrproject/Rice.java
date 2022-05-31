@@ -43,7 +43,7 @@ public class Rice extends Fragment {
         int[] imgSet = {R.drawable.whiterice, R.drawable.brownrice};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

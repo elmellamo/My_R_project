@@ -43,7 +43,7 @@ public class Dairy extends Fragment {
         int[] imgSet = {R.drawable.milk, R.drawable.yogurt,R.drawable.cheese,R.drawable.butter,R.drawable.whippingcream};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

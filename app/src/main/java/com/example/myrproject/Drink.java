@@ -43,7 +43,7 @@ public class Drink extends Fragment {
         int[] imgSet = {R.drawable.coffee, R.drawable.yoghurt, R.drawable.orangejuice, R.drawable.fruits, R.drawable.soybeanmilk, R.drawable.sikhye};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

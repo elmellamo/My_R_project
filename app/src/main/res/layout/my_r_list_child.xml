@@ -8,36 +8,28 @@
 
     <TextView
         android:id="@+id/child_title"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_width="207dp"
+        android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
+        android:text="이름"
         android:textColor="#FF000000"
-        android:textSize="18sp"
-        android:layout_weight="3"/>
+        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn1"
+    <TextView
+        android:id="@+id/child_cnt"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#FFEFEF"
-        android:text="edit"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        android:text="개수"
+        android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn2"
+    <TextView
+        android:id="@+id/child_unit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginRight="20dp"
-        android:background="#FFEFEF"
-        android:text="delete"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        android:text="단위"
+        android:textSize="20sp" />
 
 </LinearLayout>

@@ -43,7 +43,7 @@ public class Sauce extends Fragment {
         int[] imgSet = {R.drawable.chillipepper, R.drawable.soysauce, R.drawable.soybeanpaste, R.drawable.ketchup, R.drawable.mayonnaise, R.drawable.steaksauce, R.drawable.oystersauce, R.drawable.pastasauce, R.drawable.chilisauce, R.drawable.balsamicvinegar, R.drawable.maplesyrup, R.drawable.syrup};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

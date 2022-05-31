@@ -12,7 +12,6 @@ public class MyRItem {
 
     public MyRItem() {
     }
-
     public int getId() {
         return id;
     }

@@ -43,7 +43,7 @@ public class Meat extends Fragment {
         int[] imgSet = {R.drawable.beef, R.drawable.pork,R.drawable.chicken,R.drawable.duck,R.drawable.mutton,R.drawable.ham,R.drawable.sausage,R.drawable.bacon,R.drawable.friedegg};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

@@ -45,7 +45,7 @@ public class Fruit extends Fragment {
         int[] imgSet = {R.drawable.apple, R.drawable.pear,R.drawable.tangerine,R.drawable.persimmon,R.drawable.kiwi,R.drawable.tomato,R.drawable.plum,R.drawable.peach,R.drawable.grape,R.drawable.watermelon,R.drawable.cherry,R.drawable.banana,R.drawable.pineapple,R.drawable.mandarin,R.drawable.grapefruit,R.drawable.lemon,R.drawable.lime,R.drawable.mango,R.drawable.avocado,R.drawable.peanut,R.drawable.walnut};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet, getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

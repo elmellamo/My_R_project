@@ -17,11 +17,11 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public static final int HEADER = 0;
     public static final int CHILD = 1;
 
-    private List<Item> data;
+    private ArrayList<Item> data;
 
-    public ExpandableListAdapter(List<Item> data) {
-        this.data = data;
-    }
+    public ExpandableListAdapter(ArrayList<Item> data) { this.data = data; }
+
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int type) {
@@ -86,6 +86,8 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 final ListChildViewHolder itemController1 = (ListChildViewHolder) holder;
                 itemController1.refferalItem = item;
                 itemController1.child_title.setText(item.text);
+                itemController1.child_cnt.setText(item.itemcnt);
+                itemController1.child_unit.setText(item.itemunit);
 
                 break;
         }
@@ -115,30 +117,56 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
     private static class ListChildViewHolder extends RecyclerView.ViewHolder {
         public TextView child_title;
-        public Button btn1;
-        public Button btn2;
+        public TextView child_cnt;
+        public TextView child_unit;
         public Item refferalItem;
 
         public ListChildViewHolder(View itemView) {
             super(itemView);
             child_title = (TextView) itemView.findViewById(R.id.child_title);
-            btn1 =  itemView.findViewById(R.id.btn1);
-            btn2 =  itemView.findViewById(R.id.btn2);
+            child_cnt = itemView.findViewById(R.id.child_cnt);
+            child_unit = itemView.findViewById(R.id.child_unit);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //dialog....음......
+                }
+            });
         }
     }
 
     public static class Item {
         public int type;
         public String text;
+        public String itemcnt;
+        public String itemunit;
         public List<Item> invisibleChildren;
 
         public Item() {
         }
 
-        public Item(int type, String text) {
+        public Item(int type, String text,String itemcnt, String itemunit) {
             this.type = type;
             this.text = text;
+            this.itemcnt = itemcnt;
+            this.itemunit = itemunit;
         }
+        public int getTtype() { return type; }
+        public void setTtype(int type) { this.type = type; }
+
+        public String getTtext(){return text;}
+        public void setTtext(String text){this.text = text;}
+
+        public String getCcnt(){return itemcnt;}
+        public void setCcnt(String itemcnt){this.itemcnt = itemcnt;}
+
+        public String getUunit(){return itemunit;}
+        public void setUunit(String itemunit){this.itemunit = itemunit;}
+    }
+
+    public void addItem(Item _item){
+        data.add(_item);//역순으로 add된다 최신순으로 위에 들어간다
+        //notifyItemInserted(0);//notify들어간건 모두 새로고침이라 보면 된다
     }
 }
 

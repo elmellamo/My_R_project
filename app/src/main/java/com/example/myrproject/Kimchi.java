@@ -43,7 +43,7 @@ public class Kimchi extends Fragment {
         int[] imgSet = {R.drawable.kimchi2, R.drawable.tofu};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }

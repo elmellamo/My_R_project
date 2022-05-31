@@ -36,51 +36,21 @@ public class Tab_MyR extends Fragment {
 
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<ExpandableListAdapter.Item> mRItems;
+    private DBHelper mDBHelper;
     private FloatingActionButton fab;
+    private ExpandableListAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__my_r,container,false);
 
+        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__my_r,container,false);
         recyclerview = (RecyclerView) rootview.findViewById(R.id.recyclerview);
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mLayoutManager);
-        List<ExpandableListAdapter.Item> data = new ArrayList<>();  // 데이터를 담을 List
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과일"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "채소"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
-
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "정육/계란"));
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "수산물"));
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "유제품"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "음료"));
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "장/소스/드레싱"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "곡류"));
-        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
-
-
-        ExpandableListAdapter.Item places = new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "김치/반찬");
-        places.invisibleChildren = new ArrayList<>();
-        places.invisibleChildren.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "카이저"));
-        data.add(places);
-
-        recyclerview.setAdapter(new ExpandableListAdapter(data));
-
+        mDBHelper = new DBHelper(getActivity());
+        loadRecentDB();
 
         fab = (FloatingActionButton) rootview.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +62,18 @@ public class Tab_MyR extends Fragment {
         });
         return rootview;
     }
+
+    private void loadRecentDB() {
+        // 저장되어있던 DB를 가져온다
+        mRItems = mDBHelper.getItem();
+        if(mAdapter == null){
+            mAdapter = new ExpandableListAdapter(mRItems);//context는 자기자신
+            //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
+            recyclerview.setHasFixedSize(true);//recycler성능 강화라고 한다
+            recyclerview.setAdapter(mAdapter);
+        }
+    }
+
 
 
 }

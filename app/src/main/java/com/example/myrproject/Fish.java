@@ -45,7 +45,7 @@ public class Fish extends Fragment {
         int[] imgSet = {R.drawable.mackerel, R.drawable.salmon,R.drawable.cod,R.drawable.tuna,R.drawable.angler,R.drawable.flounder,R.drawable.shrimp,R.drawable.crab,R.drawable.squid,R.drawable.smalloctopus,R.drawable.octopus,R.drawable.seasnail,R.drawable.clam,R.drawable.oyster,R.drawable.nori,R.drawable.seaweed,R.drawable.anchovy,R.drawable.sashimi};
 
         //어댑터 연결하기
-        Myadapter mAdapter = new Myadapter(imgSet, textSet);
+        Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
     }
