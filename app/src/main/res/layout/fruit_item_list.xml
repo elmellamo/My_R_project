@@ -21,7 +21,6 @@
             android:layout_gravity="center"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:src="@drawable/drink"
             app:layout_constraintRight_toLeftOf="@+id/tv_title" />
 
         <TextView
