@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ImageView;
-
+import android.content.Intent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -50,8 +50,11 @@ public class Tab_MyR extends Fragment {
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과일"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
-
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "채소"));
+        data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "축구"));
+
+
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, "국어"));
 
         data.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "정육/계란"));
@@ -83,9 +86,8 @@ public class Tab_MyR extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.container, new SubCategory());
-                fr.commit();
+                Intent intent = new Intent(getActivity(), SecondActivity.class);
+                startActivity(intent);
             }
         });
         return rootview;

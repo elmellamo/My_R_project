@@ -11,8 +11,6 @@
     <include layout="@layout/toolbar" />
 
 
-
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
@@ -22,10 +20,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 
-        app:tabTextColor="#000000" >
-
-
-    </com.google.android.material.tabs.TabLayout>
+        app:tabTextColor="#000000" />
 
     <FrameLayout
         android:id="@+id/container"

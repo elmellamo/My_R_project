@@ -13,7 +13,10 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
