@@ -3,6 +3,7 @@ package com.example.myrproject;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,7 +38,7 @@ public class Fruit extends Fragment {
         fruit_todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
         fruit_todo.setHasFixedSize(true);
 
-        FruitLayoutManager = new LinearLayoutManager(getActivity());
+        FruitLayoutManager = new GridLayoutManager(getActivity(), 5);
         fruit_todo.setLayoutManager(FruitLayoutManager);
 
         String[] textSet = {"사과", "배"};
