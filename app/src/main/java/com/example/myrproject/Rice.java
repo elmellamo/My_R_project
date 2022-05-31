@@ -39,8 +39,8 @@ public class Rice extends Fragment {
         LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
-        String[] textSet = {"아나나나ㅏ녕","하잉"};
-        int[] imgSet = {R.drawable.beef, R.drawable.pork};
+        String[] textSet = {"백미","현미"};
+        int[] imgSet = {R.drawable.whiterice, R.drawable.brownrice};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet);

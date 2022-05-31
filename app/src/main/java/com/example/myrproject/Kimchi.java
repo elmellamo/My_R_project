@@ -39,8 +39,8 @@ public class Kimchi extends Fragment {
         LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
-        String[] textSet = {"소고기", "내낸"};
-        int[] imgSet = {R.drawable.beef, R.drawable.pork};
+        String[] textSet = {"김치", "두부"};
+        int[] imgSet = {R.drawable.kimchi2, R.drawable.tofu};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet);
