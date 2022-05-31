@@ -50,74 +50,109 @@ public class SecondActivity extends AppCompatActivity {
         kimchi = new Kimchi();
 
         ImageButton fruitbtn =  findViewById(R.id.fruit);
+        ImageButton vegbtn =  findViewById(R.id.vegetable);
+        ImageButton meatbtn =  findViewById(R.id.meat);
+        ImageButton fishbtn =  findViewById(R.id.fish);
+        ImageButton dairybtn =  findViewById(R.id.dairy);
+        ImageButton drinkbtn =  findViewById(R.id.drink);
+        ImageButton saucebtn =  findViewById(R.id.sauce);
+        ImageButton ricebtn =  findViewById(R.id.rice);
+        ImageButton kimchibtn =  findViewById(R.id.kimchi);
         fruitbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fruit).commit();
+                fruitbtn.setBackgroundColor(0x2f000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton vegbtn =  findViewById(R.id.vegetable);
+
         vegbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, vegetable).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x2f000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton meatbtn =  findViewById(R.id.meat);
+
         meatbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, meat).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x2f000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton fishbtn =  findViewById(R.id.fish);
+
         fishbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fish).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x2f000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton dairybtn =  findViewById(R.id.dairy);
+
         dairybtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, dairy).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x2f000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton drinkbtn =  findViewById(R.id.drink);
+
         drinkbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, drink).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x2f000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton saucebtn =  findViewById(R.id.sauce);
+
         saucebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, sauce).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x2f000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton ricebtn =  findViewById(R.id.rice);
+
         ricebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, rice).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x2f000000);  kimchibtn.setBackgroundColor(0x0000000);
             }
         });
 
-        ImageButton kimchibtn =  findViewById(R.id.kimchi);
+
         kimchibtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, kimchi).commit();
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x2f000000);
             }
         });
 
