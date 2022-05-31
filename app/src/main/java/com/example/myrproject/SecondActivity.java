@@ -22,6 +22,9 @@ import android.widget.Toolbar;
 
 public class SecondActivity extends AppCompatActivity {
     Fruit fruit;
+    Vegetable vegetable;
+    Meat meat;
+    Fish fish;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,9 @@ public class SecondActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fruit = new Fruit();
+        vegetable = new Vegetable();
+        meat = new Meat();
+        fish = new Fish();
 
         ImageButton fruitbtn =  findViewById(R.id.fruit);
         fruitbtn.setOnClickListener(new View.OnClickListener(){
@@ -41,9 +47,36 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton vegbtn =  findViewById(R.id.vegetable);
+        vegbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, vegetable).commit();
+            }
+        });
+//
+//        ImageButton meatbtn =  findViewById(R.id.meat);
+//        fruitbtn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, meat).commit();
+//            }
+//        });
+//
+//        ImageButton fishbtn =  findViewById(R.id.fish);
+//        fruitbtn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fish).commit();
+//            }
+//        });
+
+        //dairy 해야함함
 
 
-    }
+
+
+   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

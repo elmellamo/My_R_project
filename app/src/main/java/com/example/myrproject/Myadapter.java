@@ -29,7 +29,7 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
 
-                .inflate(R.layout.fruit_item_list, parent, false);
+                .inflate(R.layout.item_list, parent, false);
 
 
         return new MyViewHolder(v);
