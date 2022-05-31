@@ -39,8 +39,8 @@ public class Dairy extends Fragment {
         LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
-        String[] textSet = {"호잇","테스트"};
-        int[] imgSet = {R.drawable.beef, R.drawable.pork};
+        String[] textSet = {"우유","요거트","치즈","버터","휘핑크림"};
+        int[] imgSet = {R.drawable.milk, R.drawable.yogurt,R.drawable.cheese,R.drawable.butter,R.drawable.whippingcream};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet);
