@@ -24,7 +24,6 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
         this.textSet = textSet;
     }
 
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,8 +52,8 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
 
         public MyViewHolder(View view) {
             super(view);
-            mImage = (ImageView) view.findViewById(R.id.tv_image);
-            mTitle = (TextView) view.findViewById(R.id.tv_title);
+            this.mImage = (ImageView) view.findViewById(R.id.tv_image);
+            this.mTitle = (TextView) view.findViewById(R.id.tv_title);
         }
 
     }

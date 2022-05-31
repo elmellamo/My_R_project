@@ -269,7 +269,7 @@
             <FrameLayout
                 android:id="@+id/listcontainer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="541dp"
                 android:layout_below="@id/category"
                 android:layout_weight="1">
 

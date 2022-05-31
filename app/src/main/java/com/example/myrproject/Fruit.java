@@ -33,7 +33,10 @@ public class Fruit extends Fragment {
                              Bundle savedInstanceState) {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_fruit,container,false);
+
         fruit_todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
+        fruit_todo.setHasFixedSize(true);
+
         FruitLayoutManager = new LinearLayoutManager(getActivity());
         fruit_todo.setLayoutManager(FruitLayoutManager);
 
