@@ -269,7 +269,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <FrameLayout
-                android:paddingTop="20dp"
+                android:paddingTop="10dp"
                 android:paddingLeft="20dp"
                 android:id="@+id/listcontainer"
                 android:layout_width="match_parent"
