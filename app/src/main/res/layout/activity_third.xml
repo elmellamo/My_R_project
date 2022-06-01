@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_third"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".ThirdActivity"
+    android:theme="@style/Theme.MyRProject">
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:background="@drawable/underline"
+            tools:context=".category">
+
+            <ImageButton
+                android:id="@+id/vegetable"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="7dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/vegetable"
+                app:layout_constraintEnd_toStartOf="@+id/meat"
+                app:layout_constraintStart_toEndOf="@+id/fruit"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="14dp"
+                android:text="과일"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/drink"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageButton
+                android:id="@+id/fruit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/fruit"
+                android:background="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/vegetable"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/vegetable" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text="채소"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/vegetable" />
+
+            <ImageButton
+                android:id="@+id/meat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="18dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/meat"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/fish"
+                app:layout_constraintStart_toEndOf="@+id/vegetable"
+                app:layout_constraintTop_toTopOf="@+id/vegetable" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="정육"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/vegetable" />
+
+            <ImageButton
+                android:id="@+id/fish"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/fish"
+                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                app:layout_constraintEnd_toStartOf="@+id/dairy"
+                app:layout_constraintStart_toEndOf="@+id/meat"
+                app:layout_constraintTop_toTopOf="@+id/dairy" />
+
+            <ImageButton
+                android:id="@+id/dairy"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="34dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/dairy"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/fish"
+                app:layout_constraintTop_toTopOf="@+id/meat" />
+
+            <ImageButton
+                android:id="@+id/drink"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/drink"
+                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                app:layout_constraintEnd_toStartOf="@+id/sauce"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sauce" />
+
+            <ImageButton
+                android:id="@+id/sauce"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="7dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/sauce"
+                app:layout_constraintBottom_toTopOf="@+id/textView7"
+                app:layout_constraintEnd_toStartOf="@+id/rice"
+                app:layout_constraintStart_toEndOf="@+id/drink"
+                app:layout_constraintTop_toTopOf="@+id/rice" />
+
+            <ImageButton
+                android:id="@+id/rice"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="19dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/rice2"
+                app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                app:layout_constraintEnd_toStartOf="@+id/kimchi"
+                app:layout_constraintStart_toEndOf="@+id/sauce"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <ImageButton
+                android:id="@+id/kimchi"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="106dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:src="@drawable/kimchi"
+                app:layout_constraintBottom_toTopOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rice"
+                app:layout_constraintTop_toTopOf="@+id/rice" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:text="수산물"
+                app:layout_constraintBottom_toTopOf="@+id/kimchi"
+                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="14dp"
+                android:text="유제품"
+                app:layout_constraintBottom_toTopOf="@+id/kimchi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="177dp"
+                android:layout_marginEnd="16dp"
+                android:text="음료"
+                app:layout_constraintEnd_toEndOf="@+id/drink"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="소스/드레싱"
+                app:layout_constraintStart_toEndOf="@+id/drink"
+                app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="곡류"
+                app:layout_constraintEnd_toEndOf="@+id/rice"
+                app:layout_constraintTop_toBottomOf="@+id/rice" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="김치/반찬"
+                app:layout_constraintStart_toStartOf="@+id/kimchi"
+                app:layout_constraintTop_toBottomOf="@+id/rice" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:paddingTop="10dp"
+            android:paddingLeft="16dp"
+            android:id="@+id/listcontainer"
+            android:layout_width="match_parent"
+            android:layout_height="541dp"
+            android:layout_below="@id/category"
+            android:layout_weight="1">
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
