@@ -42,7 +42,6 @@ public class SecondActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("식품 추가");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         fruit = new Fruit();
         vegetable = new Vegetable();
         meat = new Meat();
