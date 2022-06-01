@@ -50,9 +50,9 @@ public class Tab_Recipe extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__recipe,container,false);
 
-        recyclerview = (RecyclerView) rootview.findViewById(R.id.recyclerview);
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        recyclerview.setLayoutManager(mLayoutManager);
+        //recyclerview = (RecyclerView) rootview.findViewById(R.id.recyclerview);
+        //mLayoutManager = new LinearLayoutManager(getActivity());
+        //recyclerview.setLayoutManager(mLayoutManager);
 
 //        try {
 //            dbHelper= new DBHelper(this);
