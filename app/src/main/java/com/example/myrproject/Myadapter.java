@@ -23,6 +23,7 @@ import java.util.List;
 
 
 public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
+
     private String[] textSet;
     private int[] imgSet;
     private Context mContext;
