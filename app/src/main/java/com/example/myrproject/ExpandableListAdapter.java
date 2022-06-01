@@ -25,7 +25,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public static final int CHILD = 1;
 
     private ArrayList<Item> data;
-    private Context mContext;
+    public static Context mContext;
     private DBHelper mDBHelper;
 
     public ExpandableListAdapter(ArrayList<Item> data, Context mContext) {

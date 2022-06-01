@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         DBHelper databaseHelper = new DBHelper(getApplicationContext());
         ArrayList<ExpandableListAdapter.Item> contacts = databaseHelper.search(keyword);
         if (contacts != null) {
-            recyclerview.setAdapter(new ExpandableListAdapter(contacts, getApplicationContext()));
+            recyclerview.setAdapter(new ExpandableListAdapter(contacts, ExpandableListAdapter.mContext));
         }
     }
 }
