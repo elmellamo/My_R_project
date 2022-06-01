@@ -25,7 +25,6 @@ public class AddRecipe extends AppCompatActivity {
 
         foodfab = findViewById(R.id.foodfab);
         foodfab.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddRecipe.this, ThirdActivity.class);
