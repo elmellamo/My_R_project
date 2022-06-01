@@ -39,8 +39,14 @@ public class Drink extends Fragment {
         LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
-        String[] textSet = {"커피","요구르트","오렌지주스","과일 주스","두유","식혜"};
-        int[] imgSet = {R.drawable.coffee, R.drawable.yoghurt, R.drawable.orangejuice, R.drawable.fruits, R.drawable.soybeanmilk, R.drawable.sikhye};
+        String[] textSet = {"커피","콜라","요구르트","오렌지주스","과일 주스","두유","식혜"
+                ,"콜드브루","라떼","프라푸치노","바나나주스","딸기주스","수박주스","물"
+                ,"탄산수","칵테일","위스키","소주","맥주","보드카","와인"};
+        int[] imgSet = {R.drawable.coffee,R.drawable.cola, R.drawable.yoghurt, R.drawable.orangejuice
+                , R.drawable.fruits, R.drawable.soybeanmilk, R.drawable.sikhye,R.drawable.coldbrew
+                ,R.drawable.latte,R.drawable.frappuccino,R.drawable.bananajuice,R.drawable.strawberryjuice
+                ,R.drawable.watermelonjuice,R.drawable.water,R.drawable.sparklingwater,R.drawable.cocktail
+                ,R.drawable.whisky,R.drawable.soju,R.drawable.beer, R.drawable.vodka,R.drawable.wine};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
