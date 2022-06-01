@@ -212,6 +212,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     public static class Item {
+        public int id;
         public int type;
         public String text;
         public String itemtype;
@@ -231,6 +232,10 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             this.itemunit = itemunit;
             this.writedate = writedate;
         }
+
+        public int getId() { return id; }
+        public void setId(int id) { this.id = id; }
+
         public int getTtype() { return type; }
         public void setTtype(int type) { this.type = type; }
 
@@ -252,12 +257,6 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         public void setWritedate(String writedate) {
             this.writedate = writedate;
         }
-    }
-
-
-    public void addItem(Item _item){
-        data.add(_item);//역순으로 add된다 최신순으로 위에 들어간다
-        //notifyItemInserted(0);//notify들어간건 모두 새로고침이라 보면 된다
     }
 }
 

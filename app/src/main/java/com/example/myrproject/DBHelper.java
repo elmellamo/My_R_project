@@ -35,7 +35,9 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
     // SELECT 문(할일 목록들을 조회)
-    public ArrayList<MyRItem> getRefrigerator(){//메소드로 만든다
+
+
+    /*public ArrayList<MyRItem> getRefrigerator(){//메소드로 만든다
         ArrayList<MyRItem> rItems = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
         Cursor cursor = db.rawQuery("SELECT * FROM Refrigerator ORDER BY writeDate DESC",null);
@@ -67,8 +69,10 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         return rItems;//담아놓은 것을 언제 어디든 호출 가능
     }
+    */
 
     public ArrayList<ExpandableListAdapter.Item> getItem(){//메소드로 만든다
+
         ArrayList<ExpandableListAdapter.Item> entire = new ArrayList<>();
         ArrayList<ExpandableListAdapter.Item> fruit = new ArrayList<>();
         ArrayList<ExpandableListAdapter.Item> veg = new ArrayList<>();
@@ -79,8 +83,6 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<ExpandableListAdapter.Item> sauce = new ArrayList<>();
         ArrayList<ExpandableListAdapter.Item> rice = new ArrayList<>();
         ArrayList<ExpandableListAdapter.Item> kimchi = new ArrayList<>();
-
-
 
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
         Cursor cursor = db.rawQuery("SELECT * FROM Refrigerator ORDER BY writeDate DESC",null);
@@ -151,20 +153,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
     // 냉장고 안에 있는지 확인하는 함수
-    public ArrayList<MyRItem> search(String keyword) {
-        ArrayList<MyRItem> contacts = new ArrayList<>();
+    public ArrayList<ExpandableListAdapter.Item> search(String keyword) {
+        ArrayList<ExpandableListAdapter.Item> contacts = new ArrayList<>();
         try {
             SQLiteDatabase sqLiteDatabase = getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("select * from Refrigerator where name like ?", new String[] { "%" + keyword + "%" });
             if (cursor.moveToFirst()) {
-                contacts = new ArrayList<MyRItem>();
+                //contacts = new ArrayList<ExpandableListAdapter.Item>();
                 do {
-                    MyRItem contact = new MyRItem();
+                    ExpandableListAdapter.Item contact = new ExpandableListAdapter.Item();
                     contact.setId(cursor.getInt(0));
-                    contact.setType(cursor.getString(1));
-                    contact.setName(cursor.getString(2));
-                    contact.setCnt(cursor.getString(3));
-                    contact.setUnit(cursor.getString(4));
+                    contact.setTtype(cursor.getInt(1));
+                    contact.setTtext(cursor.getString(2));
+                    contact.setCcnt(cursor.getString(3));
+                    contact.setUunit(cursor.getString(4));
+                    contact.setWritedate(cursor.getString(5));
                     contacts.add(contact);
                 } while (cursor.moveToNext());
             }

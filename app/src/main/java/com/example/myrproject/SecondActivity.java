@@ -58,6 +58,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fruit).commit();
+                itemtype = "과일";
             }
         });
 
@@ -66,6 +67,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, vegetable).commit();
+                itemtype = "채소";
             }
         });
 
@@ -74,6 +76,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, meat).commit();
+                itemtype = "정육/계란";
             }
         });
 
@@ -82,6 +85,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, fish).commit();
+                itemtype = "수산물";
             }
         });
 
@@ -90,6 +94,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, dairy).commit();
+                itemtype = "유제품";
             }
         });
 
@@ -98,6 +103,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, drink).commit();
+                itemtype = "음료";
             }
         });
 
@@ -106,6 +112,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, sauce).commit();
+                itemtype = "장/소스/드레싱";
             }
         });
 
@@ -114,6 +121,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, rice).commit();
+                itemtype = "곡류";
             }
         });
 
@@ -122,6 +130,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, kimchi).commit();
+                itemtype = "김치/반찬";
             }
         });
 
