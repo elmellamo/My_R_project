@@ -100,49 +100,49 @@ public class DBHelper extends SQLiteOpenHelper {
                 Log.v("type","typedfsdfsd:");
 
                 if(type.equalsIgnoreCase("과일")) {
-                    fruit.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    fruit.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("채소")){
-                    veg.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    veg.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("정육/계란")){
-                    meat.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    meat.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("수산물")){
-                    fish.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    fish.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("유제품")){
-                    dairy.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    dairy.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("음료")){
-                    drink.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    drink.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("장/소스/드레싱")){
-                    sauce.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    sauce.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("곡류")){
-                    rice.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    rice.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("김치/반찬")){
-                    kimchi.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
+                    kimchi.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
             }
         }
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"과일","과일","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"과일","과일","수량","단위","시간"));
         entire.addAll(fruit);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"채소", "채소","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"채소", "채소","수량","단위","시간"));
         entire.addAll(veg);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"정육/계란", "정육/계란","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"정육/계란", "정육/계란","수량","단위","시간"));
         entire.addAll(meat);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"수산물", "수산물","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"수산물", "수산물","수량","단위","시간"));
         entire.addAll(fish);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"유제품", "유제품","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"유제품", "유제품","수량","단위","시간"));
         entire.addAll(dairy);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스/드레싱", "장/소스/드레싱","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스/드레싱", "장/소스/드레싱","수량","단위","시간"));
         entire.addAll(sauce);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"곡류", "곡류","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"곡류", "곡류","수량","단위","시간"));
         entire.addAll(rice);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"김치/반찬", "김치/반찬","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"김치/반찬", "김치/반찬","수량","단위","시간"));
         entire.addAll(kimchi);
         cursor.close();
         return entire;//담아놓은 것을 언제 어디든 호출 가능
@@ -187,9 +187,9 @@ public class DBHelper extends SQLiteOpenHelper {
         //Refrigerator안에 넣겠다 //id는 자동 증가이므로 insert안해도 된다 //id는 안넣어도 된다는 말을 첫번째 괄호 안에 //VALUES()뒤에 ;있어야 한다
     }
     //UPDATE (할일 목록을 수정한다)
-    public void UpdateTodo(String _type, String _name, String _cnt,String _unit,String _writedate, String _beforeDate){
+    public void UpdateTodo(String _cnt,String _unit,String _writedate, String _beforeDate){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE Refrigerator SET type='"+_type+"',name='"+_name+"',cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
+        db.execSQL("UPDATE Refrigerator SET cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
         //where은 그냥 막 업데이트가 아니라 조건문을 걸어주는 것
         //id는 자동 증가되는 key값 을 이용해 업데이트 어디에 있는 값이 조건 일치할때 그 값의 위치에다가 그값을 갱신해줘야 한다
     }
