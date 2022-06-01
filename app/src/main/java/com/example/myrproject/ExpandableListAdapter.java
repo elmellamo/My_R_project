@@ -114,7 +114,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
     @Override
     public int getItemCount() {
-        return data.size();
+            return data.size();
     }
 
     private class ListHeaderViewHolder extends RecyclerView.ViewHolder {
