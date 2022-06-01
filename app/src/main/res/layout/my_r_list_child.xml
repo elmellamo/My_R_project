@@ -10,12 +10,12 @@
         android:id="@+id/child_title"
         android:layout_width="212dp"
         android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:text="이름"
-        android:layout_alignParentLeft="true"
         android:textColor="#FF000000"
         android:textSize="18sp" />
 
