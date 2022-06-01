@@ -1,0 +1,31 @@
+package com.example.myrproject;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AddRecipe extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.add_recipe);
+
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("레시피 추가");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+    public void register(View v){
+        EditText et_name =(EditText)findViewById(R.id.name);
+        String st_name = et_name.getText().toString();
+        EditText explain_recipe =(EditText) findViewById(R.id.edit_explanation);
+        String explain = explain_recipe.getText().toString();
+        //여기 데이터베이스에 넣는거 코드 추가
+        finish();
+    }
+}

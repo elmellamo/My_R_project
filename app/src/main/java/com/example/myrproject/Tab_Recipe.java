@@ -1,6 +1,7 @@
 package com.example.myrproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -50,17 +51,14 @@ public class Tab_Recipe extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__recipe,container,false);
 
-        //recyclerview = (RecyclerView) rootview.findViewById(R.id.recyclerview);
-        //mLayoutManager = new LinearLayoutManager(getActivity());
-        //recyclerview.setLayoutManager(mLayoutManager);
-
-//        try {
-//            dbHelper= new DBHelper(this);
-//            sqlitedb =dbHelper.getReadableDatabase();
-//            Cursor cursor =sqlitedb.query("Refrigerator", null, null, null, null, null, null);
-//
-//            int i=0;
-//        } catch ()
+        fab = (FloatingActionButton) rootview.findViewById(R.id.fab2);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddRecipe.class);
+                startActivity(intent);
+            }
+        });
         return rootview;
     }
 }
