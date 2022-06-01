@@ -79,11 +79,13 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
                     int curPos = getAdapterPosition();
                     String itemname = textSet[curPos];
                     String itemimg = SecondActivity.itemtype;
+
                     //R.drawable.vegetable  //  imgSet[curPos] (상추 등등이라 채소이미지랑 다르다..)
 
                     String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
                     //앱이나 프로그램에서 시간을 가져올 수 있는 함수
-                    mDBHelper.InsertTodo(itemimg, itemname, "1", "개", currentTime);//입력필드에 적은 값 가져온다
+
+                    mDBHelper.InsertItem(itemimg, itemname, "1", "개", currentTime);//입력필드에 적은 값 가져온다
                     //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
                     Toast.makeText(mContext, itemname+"이 추가됐습니다", Toast.LENGTH_SHORT).show();
                 }

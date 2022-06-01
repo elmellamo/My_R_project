@@ -30,11 +30,11 @@
 
     <TextView
         android:id="@+id/child_unit"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:paddingRight="30dp"
+        android:layout_alignParentRight="true"
         android:gravity="center_vertical"
+        android:paddingRight="30dp"
         android:text="단위"
         android:textSize="20sp" />
 

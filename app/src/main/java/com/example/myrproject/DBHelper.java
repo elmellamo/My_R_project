@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -141,6 +142,8 @@ public class DBHelper extends SQLiteOpenHelper {
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"유제품", "유제품","수량","단위","시간"));
         entire.addAll(dairy);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스/드레싱", "장/소스/드레싱","수량","단위","시간"));
+        entire.addAll(drink);
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"음료", "음료","수량","단위","시간"));
         entire.addAll(sauce);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"곡류", "곡류","수량","단위","시간"));
         entire.addAll(rice);
@@ -196,6 +199,23 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("UPDATE Refrigerator SET cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
         //where은 그냥 막 업데이트가 아니라 조건문을 걸어주는 것
         //id는 자동 증가되는 key값 을 이용해 업데이트 어디에 있는 값이 조건 일치할때 그 값의 위치에다가 그값을 갱신해줘야 한다
+    }
+
+    public void InsertItem(String _type, String _name, String _cnt, String _unit,String _writedate){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Refrigerator WHERE name = '"+ _name +"'",null);
+        if(cursor.getCount()<=0){
+            InsertTodo(_type,_name,_cnt,_unit,_writedate);
+        }
+        else{
+            if(cursor.moveToFirst()){
+                String itemcnt = cursor.getString(3);
+                String itemunit = cursor.getString(4);
+                String _beforedate = cursor.getString(5);
+                UpdateTodo(Integer.toString(Integer.parseInt(itemcnt)+1),itemunit,_writedate,_beforedate);
+            }
+        }
+        cursor.close();
     }
 
     //DELETE (할일 목록을 제거한다)
