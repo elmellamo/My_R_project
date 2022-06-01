@@ -41,12 +41,15 @@ public class Drink extends Fragment {
 
         String[] textSet = {"커피","콜라","요구르트","오렌지주스","과일 주스","두유","식혜"
                 ,"콜드브루","라떼","프라푸치노","바나나주스","딸기주스","수박주스","물"
-                ,"탄산수","칵테일","위스키","소주","맥주","보드카","와인"};
+                ,"탄산수","칵테일","위스키","소주","맥주","보드카","와인","막걸리"
+                ,"사케","데킬라","럼","샴페인","진","에너지드링크"};
         int[] imgSet = {R.drawable.coffee,R.drawable.cola, R.drawable.yoghurt, R.drawable.orangejuice
                 , R.drawable.fruits, R.drawable.soybeanmilk, R.drawable.sikhye,R.drawable.coldbrew
                 ,R.drawable.latte,R.drawable.frappuccino,R.drawable.bananajuice,R.drawable.strawberryjuice
                 ,R.drawable.watermelonjuice,R.drawable.water,R.drawable.sparklingwater,R.drawable.cocktail
-                ,R.drawable.whisky,R.drawable.soju,R.drawable.beer, R.drawable.vodka,R.drawable.wine};
+                ,R.drawable.whisky,R.drawable.soju,R.drawable.beer, R.drawable.vodka,R.drawable.wine
+                ,R.drawable.ricewine,R.drawable.sake,R.drawable.tequila,R.drawable.rum
+                ,R.drawable.champagne,R.drawable.gin,R.drawable.energydrink};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
