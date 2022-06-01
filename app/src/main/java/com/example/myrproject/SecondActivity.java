@@ -1,11 +1,14 @@
 package com.example.myrproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -16,9 +19,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import java.util.List;
 
 public class SecondActivity extends AppCompatActivity {
     Fruit fruit;
@@ -163,10 +169,8 @@ public class SecondActivity extends AppCompatActivity {
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x2f000000);
             }
         });
-
-
-
    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -180,16 +184,19 @@ public class SecondActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                //searchContact(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 //adapter.getFilter().filter(newText);
+                //searchContact(newText);
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
     }
+
 
 }

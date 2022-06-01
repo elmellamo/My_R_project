@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -19,16 +20,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     Tab_MyR tab_myR;
     Tab_Recipe tab_recipe;
     Tab_which tab_which;
+    private RecyclerView recyclerview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        androidx.appcompat.widget.Toolbar toolbar =
-                findViewById(R.id.toolbar);
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("냉장보고");
 
@@ -114,15 +119,27 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                searchContact(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 //adapter.getFilter().filter(newText);
+                searchContact(newText);
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private void searchContact(String keyword) {
+        recyclerview = findViewById(R.id.recyclerview);
+        registerForContextMenu(recyclerview);
+        DBHelper databaseHelper = new DBHelper(getApplicationContext());
+        ArrayList<ExpandableListAdapter.Item> contacts = databaseHelper.search(keyword);
+        if (contacts != null) {
+            recyclerview.setAdapter(new ExpandableListAdapter(contacts, getApplicationContext()));
+        }
     }
 }

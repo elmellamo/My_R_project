@@ -27,11 +27,9 @@ public class Tab_MyR extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     private RecyclerView recyclerview;
@@ -46,7 +44,7 @@ public class Tab_MyR extends Fragment {
                              Bundle savedInstanceState) {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__my_r,container,false);
-        recyclerview = (RecyclerView) rootview.findViewById(R.id.recyclerview);
+        recyclerview = rootview.findViewById(R.id.recyclerview);
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mLayoutManager);
         mDBHelper = new DBHelper(getActivity());
@@ -73,7 +71,4 @@ public class Tab_MyR extends Fragment {
             recyclerview.setAdapter(mAdapter);
         }
     }
-
-
-
 }

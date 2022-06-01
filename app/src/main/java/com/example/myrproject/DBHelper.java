@@ -159,11 +159,12 @@ public class DBHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("select * from Refrigerator where name like ?", new String[] { "%" + keyword + "%" });
             if (cursor.moveToFirst()) {
-                //contacts = new ArrayList<ExpandableListAdapter.Item>();
+                contacts = new ArrayList<ExpandableListAdapter.Item>();
                 do {
                     ExpandableListAdapter.Item contact = new ExpandableListAdapter.Item();
                     contact.setId(cursor.getInt(0));
-                    contact.setTtype(cursor.getInt(1));
+                    contact.setTtype(1);
+                    contact.setIitemtype(cursor.getString(1));
                     contact.setTtext(cursor.getString(2));
                     contact.setCcnt(cursor.getString(3));
                     contact.setUunit(cursor.getString(4));

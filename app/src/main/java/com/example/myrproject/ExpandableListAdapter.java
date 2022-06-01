@@ -189,7 +189,6 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                         notifyItemChanged(curPos, rItem);//클릭한 아이템에 갱신된 아이템을 갱신
                                         dialog.dismiss();//dialog 종료
                                         Toast.makeText(mContext, "목록 수정이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
-
                                     }
                                 });
                                 dialog.show();//필수
