@@ -1,7 +1,9 @@
 package com.example.myrproject;
 
+import android.app.AlertDialog;
 import android.content.Context;
-        import android.view.LayoutInflater;
+import android.content.DialogInterface;
+import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.Button;
@@ -18,8 +20,14 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public static final int CHILD = 1;
 
     private ArrayList<Item> data;
+    private Context mContext;
+    private DBHelper mDBhelper;
 
-    public ExpandableListAdapter(ArrayList<Item> data) { this.data = data; }
+    public ExpandableListAdapter(ArrayList<Item> data, Context mContext) {
+        this.data = data;
+        this.mContext = mContext;
+        this.mDBhelper = new DBHelper(mContext);
+    }
 
 
 
@@ -104,7 +112,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         return data.size();
     }
 
-    private static class ListHeaderViewHolder extends RecyclerView.ViewHolder {
+    private class ListHeaderViewHolder extends RecyclerView.ViewHolder {
         public TextView header_title;
         public ImageView btn_expand_toggle;
         public Item refferalItem;
@@ -115,7 +123,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             btn_expand_toggle = (ImageView) itemView.findViewById(R.id.btn_expand_toggle);
         }
     }
-    private static class ListChildViewHolder extends RecyclerView.ViewHolder {
+    private class ListChildViewHolder extends RecyclerView.ViewHolder {
         public TextView child_title;
         public TextView child_cnt;
         public TextView child_unit;
@@ -129,7 +137,19 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //dialog....음......
+                    int curPos = getAdapterPosition();
+                    Item rItem = data.get(curPos);
+                    String[] strChoiceItems = {"수정하기", "삭제하기"};
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                    builder.setTitle("원하는 작업을 선택해주세요");
+                    builder.setItems(strChoiceItems, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    builder.show();
                 }
             });
         }
@@ -138,6 +158,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public static class Item {
         public int type;
         public String text;
+        public String itemtype;
         public String itemcnt;
         public String itemunit;
         public List<Item> invisibleChildren;
@@ -145,14 +166,18 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         public Item() {
         }
 
-        public Item(int type, String text,String itemcnt, String itemunit) {
+        public Item(int type,String itemtype, String text,String itemcnt, String itemunit) {
             this.type = type;
+            this.itemtype = itemtype;
             this.text = text;
             this.itemcnt = itemcnt;
             this.itemunit = itemunit;
         }
         public int getTtype() { return type; }
         public void setTtype(int type) { this.type = type; }
+
+        public String getIitemtype(){return itemtype;}
+        public void setIitemtype(String itemtype){this.itemtype = itemtype;}
 
         public String getTtext(){return text;}
         public void setTtext(String text){this.text = text;}

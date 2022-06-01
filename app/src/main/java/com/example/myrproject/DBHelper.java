@@ -100,49 +100,49 @@ public class DBHelper extends SQLiteOpenHelper {
                 Log.v("type","typedfsdfsd:");
 
                 if(type.equalsIgnoreCase("과일")) {
-                    fruit.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    fruit.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("채소")){
-                    veg.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    veg.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("정육/계란")){
-                    meat.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    meat.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("수산물")){
-                    fish.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    fish.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("유제품")){
-                    dairy.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    dairy.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("음료")){
-                    drink.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    drink.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("장/소스/드레싱")){
-                    sauce.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    sauce.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("곡류")){
-                    rice.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    rice.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
                 else if(type.equalsIgnoreCase("김치/반찬")){
-                    kimchi.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, name,cnt,unit));
+                    kimchi.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit));
                 }
             }
         }
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "과일","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"과일","과일","수량","단위"));
         entire.addAll(fruit);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "채소","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"채소", "채소","수량","단위"));
         entire.addAll(veg);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "정육/계란","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"정육/계란", "정육/계란","수량","단위"));
         entire.addAll(meat);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "수산물","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"수산물", "수산물","수량","단위"));
         entire.addAll(fish);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "유제품","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"유제품", "유제품","수량","단위"));
         entire.addAll(dairy);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "장/소스/드레싱","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스/드레싱", "장/소스/드레싱","수량","단위"));
         entire.addAll(sauce);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "곡류","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"곡류", "곡류","수량","단위"));
         entire.addAll(rice);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER, "김치/반찬","수량","단위"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"김치/반찬", "김치/반찬","수량","단위"));
         entire.addAll(kimchi);
         cursor.close();
         return entire;//담아놓은 것을 언제 어디든 호출 가능

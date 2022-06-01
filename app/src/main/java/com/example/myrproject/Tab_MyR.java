@@ -67,7 +67,7 @@ public class Tab_MyR extends Fragment {
         // 저장되어있던 DB를 가져온다
         mRItems = mDBHelper.getItem();
         if(mAdapter == null){
-            mAdapter = new ExpandableListAdapter(mRItems);//context는 자기자신
+            mAdapter = new ExpandableListAdapter(mRItems,getActivity());//context는 자기자신
             //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
             recyclerview.setHasFixedSize(true);//recycler성능 강화라고 한다
             recyclerview.setAdapter(mAdapter);
