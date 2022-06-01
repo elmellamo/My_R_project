@@ -276,7 +276,7 @@
         <FrameLayout
             android:paddingTop="10dp"
             android:paddingLeft="16dp"
-            android:id="@+id/listcontainer"
+            android:id="@+id/listcontainer2"
             android:layout_width="match_parent"
             android:layout_height="541dp"
             android:layout_below="@id/category"

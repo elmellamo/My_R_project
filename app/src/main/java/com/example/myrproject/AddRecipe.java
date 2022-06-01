@@ -1,12 +1,17 @@
 package com.example.myrproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class AddRecipe extends AppCompatActivity {
+
+    FloatingActionButton foodfab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,17 @@ public class AddRecipe extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("레시피 추가");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        foodfab = findViewById(R.id.foodfab);
+        foodfab.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddRecipe.this, ThirdActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
