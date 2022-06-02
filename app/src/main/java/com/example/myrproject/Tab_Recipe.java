@@ -76,6 +76,7 @@ public class Tab_Recipe extends Fragment {
             @Override
             public void onClick(View view) {
                 num = mRecipeDB.getNum();
+                MySecondAdapter.foodname = null;
                 Intent intent = new Intent(getActivity(), AddRecipe.class);
                 startActivity(intent);
             }

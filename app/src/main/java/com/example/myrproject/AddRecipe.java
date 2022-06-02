@@ -1,6 +1,7 @@
 package com.example.myrproject;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -53,6 +56,21 @@ public class AddRecipe extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                mRecipeDB.DeleteCookName("요리");
+                mRItems.clear();
+                mAdapter.notifyDataSetChanged();
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void loadRecipeDBType(String _type) {
@@ -105,4 +123,6 @@ public class AddRecipe extends AppCompatActivity {
             finish();
         }
     }
+
+
 }
