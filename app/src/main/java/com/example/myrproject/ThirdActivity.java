@@ -1,5 +1,6 @@
 package com.example.myrproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -172,6 +173,23 @@ public class ThirdActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                Intent it = new Intent(this,AddRecipe.class);
+                it.putExtra("a",this.getIntent().getStringExtra("a"));
+                it.putExtra("b",this.getIntent().getStringExtra("b"));
+                startActivity(it);
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 
     @Override

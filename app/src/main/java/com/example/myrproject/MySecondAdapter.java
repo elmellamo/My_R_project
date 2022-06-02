@@ -76,6 +76,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                         public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
                             if(position == 0) {
                                 Intent intent = new Intent(mContext, AddRecipe.class);
+                                intent.putExtra("a",foodname);
                                 mContext.startActivity(intent);
                             }else if(position == 1){
                                 //삭제하기

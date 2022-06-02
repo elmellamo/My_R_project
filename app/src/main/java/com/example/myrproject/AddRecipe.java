@@ -29,7 +29,9 @@ public class AddRecipe extends AppCompatActivity {
     RecipeDB mRecipeDB;
     CustomAdapter mAdapter;
     EditText tv_cookname;
+    EditText edit_explanation;
     String a;
+    String b;
     public static int cooktype;
 
     @Override
@@ -49,8 +51,14 @@ public class AddRecipe extends AppCompatActivity {
         //view 누르면 나오는 이름으로 해야한다
         //view onclick리스너에서 text읽어와서 그 이름 넣어야 한 아래 loadRecipeDBName에
         tv_cookname = findViewById(R.id.tv_cookname);
+        edit_explanation = findViewById(R.id.edit_explanation);
+        a = this.getIntent().getStringExtra("a");
+        b = this.getIntent().getStringExtra("b");
         if(a!=null){
             tv_cookname.setText(a);
+        }
+        if(b!=null){
+            edit_explanation.setText(b);
         }
         loadRecipeDBName(MySecondAdapter.foodname);
 
@@ -58,11 +66,17 @@ public class AddRecipe extends AppCompatActivity {
         foodfab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(AddRecipe.this, ThirdActivity.class);
                 if(tv_cookname.getText()!=null){
                     a = tv_cookname.getText().toString();
                 }
-                Intent intent = new Intent(AddRecipe.this, ThirdActivity.class);
+                if(edit_explanation.getText()!=null){
+                    b= edit_explanation.getText().toString();
+                }
+                intent.putExtra("a",a);
+                intent.putExtra("b",b);
                 startActivity(intent);
+                finish();
             }
         });
     }
