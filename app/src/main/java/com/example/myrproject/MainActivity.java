@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Tab_which tab_which;
     private RecyclerView recyclerview;
     public static int tabtype = 0;
+    RecipeDB mRecipeDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mRecipeDB = new RecipeDB(this);
 
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

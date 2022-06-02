@@ -1,12 +1,15 @@
 package com.example.myrproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,16 +26,6 @@ public class AddRecipe extends AppCompatActivity {
     RecipeDB mRecipeDB;
     CustomAdapter mAdapter;
     public static int cooktype;
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item ){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                Intent intent = new Intent(getApplicationContext(), AddRecipe.class);
-                startActivity(intent);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,19 +86,23 @@ public class AddRecipe extends AppCompatActivity {
         loadRecipeDBType(x);
     }
 
-
     public void register(View v){
         EditText et_name =(EditText)findViewById(R.id.tv_cookname);
         String st_name = et_name.getText().toString();
         EditText explain_recipe =(EditText) findViewById(R.id.edit_explanation);
         String explain = explain_recipe.getText().toString();
-        if(st_name.equals(null)){
-            st_name = "입력안함";
+
+        if(st_name.getBytes().length <= 0){//빈값이 넘어올때의 처리
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("제목");
+            builder.setMessage("이름 쳐주세요");
+            builder.setPositiveButton("예",null);
+            builder.create().show();
         }
-        if(explain.equals(null)){
-            explain = "입력안함";
+        else{
+            mRecipeDB.UpdateOk(st_name, explain, Integer.toString(cooktype));
+            Tab_Recipe.num = mRecipeDB.getNum();
+            finish();
         }
-        mRecipeDB.UpdateOk(st_name, explain, Integer.toString(cooktype));
-        finish();
     }
 }

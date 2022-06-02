@@ -39,16 +39,6 @@ public class ThirdActivity extends AppCompatActivity {
     Kimchi kimchi;
     public static String cooktype;
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item ){
-        switch(item.getItemId()){
-            case android.R.id.home:
-                Intent intent = new Intent(getApplicationContext(), AddRecipe.class);
-                startActivity(intent);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 
     @Override

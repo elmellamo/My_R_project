@@ -97,6 +97,24 @@ public class RecipeDB extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Cooking(food, info, type,name,cnt,unit,writedate) VALUES('"+_food+"','"+_info+"','"+_type+"','"+_name+"','"+_cnt+"','"+_unit+"','"+_writedate+"');");
     }
 
+    public void InsertCookItem(String _food, String _info, String _type, String _name, String _cnt, String _unit,String _writedate){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM Cooking WHERE type = '"+_type+"' AND name = '"+ _name +"'",null);
+        if(cursor.getCount()<=0){
+            InsertCook(_food,_info,_type,_name,_cnt,_unit,_writedate);
+        }
+        else{
+            if(cursor.moveToFirst()){
+                String itemcnt = cursor.getString(5);
+                String itemunit = cursor.getString(6);
+                String _beforedate = cursor.getString(7);
+                UpdateCook(Integer.toString(Integer.parseInt(itemcnt)+1),itemunit,_writedate,_beforedate);
+            }
+        }
+        cursor.close();
+    }
+
+
     public void UpdateCook(String _cnt, String _unit,String _writedate, String _beforeDate){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("UPDATE Cooking SET cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
@@ -104,7 +122,7 @@ public class RecipeDB extends SQLiteOpenHelper {
 
     public void UpdateOk(String _food, String _info,String _type){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE Cooking SET food = '"+_food+"',info = '"+_info+"' WHERE type = '"+_type+"''");
+        db.execSQL("UPDATE Cooking SET food = '"+_food+"',info = '"+_info+"' WHERE type = '"+_type+"'");
     }
 
     public void DeleteCook(String _writedate){
@@ -112,12 +130,25 @@ public class RecipeDB extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM Cooking WHERE writedate = '"+_writedate+"'");
     }
 
+    public void DeleteCookName(String _food){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM Cooking WHERE food = '"+_food+"'");
+    }
+
+
     public int getNum(){
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
         Cursor cursor = db.rawQuery("SELECT id FROM Cooking",null);
         cursor.moveToLast();
-        int a = cursor.getInt(0);
-        a+=3;
+        int a;
+        if(cursor.getCount()!=0){
+            a = cursor.getInt(0);
+            Log.v("a","df");
+            a+=3;
+        }
+        else{
+            a=-2;
+        }
         return a;
     }
 

@@ -33,9 +33,10 @@
             android:theme="@style/Theme.MyRProject"
             android:exported="false"/>
         <activity android:name=".ThirdActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".AddRecipe"
             android:theme="@style/Theme.MyRProject"
             android:exported="false"/>
+
 
     </application>
 

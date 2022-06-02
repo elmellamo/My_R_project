@@ -92,7 +92,7 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
                         Toast.makeText(mContext, itemname+"이 추가됐습니다", Toast.LENGTH_SHORT).show();
                     }
                     else if(MainActivity.tabtype == 1){
-                        mRecipeDB.InsertCook("요리","정보",Integer.toString(AddRecipe.cooktype),itemname,"1","개",currentTime);
+                        mRecipeDB.InsertCookItem("요리","정보",Integer.toString(AddRecipe.cooktype),itemname,"1","개",currentTime);
                         Toast.makeText(mContext, itemname+"이 요리에 추가됐습니다", Toast.LENGTH_SHORT).show();
                     }
                 }

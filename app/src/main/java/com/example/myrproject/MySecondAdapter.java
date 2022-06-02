@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,10 +75,13 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                         @Override
                         public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
                             if(position == 0) {
-                                // 수정하기
-                                //화면
+                                Intent intent = new Intent(mContext, AddRecipe.class);
+                                mContext.startActivity(intent);
                             }else if(position == 1){
-
+                                //삭제하기
+                                mRecipeDB.DeleteCookName(foodname);
+                                notifyItemRemoved(currentPos);
+                                Toast.makeText(mContext, "목록이 제거 되었습니다", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
