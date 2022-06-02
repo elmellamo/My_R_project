@@ -69,4 +69,11 @@ public class Tab_MyR extends Fragment {
         });
         return rootview;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MainActivity.tabtype = 0;
+        //loadRecentDB();
+    }
 }

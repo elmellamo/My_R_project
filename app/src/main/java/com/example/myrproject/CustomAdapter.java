@@ -122,6 +122,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                                 // delete table
                                 String beforeTime = rItem.getWriteDate();
                                 mRecipeDB.DeleteCook(beforeTime);
+
                                 // delete UI
                                 mRItems.remove(currentPos);
                                 notifyItemRemoved(currentPos);

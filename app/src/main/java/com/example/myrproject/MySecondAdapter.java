@@ -80,6 +80,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                             }else if(position == 1){
                                 //삭제하기
                                 mRecipeDB.DeleteCookName(foodname);
+                                mRItems.remove(currentPos);
                                 notifyItemRemoved(currentPos);
                                 Toast.makeText(mContext, "목록이 제거 되었습니다", Toast.LENGTH_SHORT).show();
                             }

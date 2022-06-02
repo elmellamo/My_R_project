@@ -122,7 +122,7 @@ public class RecipeDB extends SQLiteOpenHelper {
 
     public void UpdateOk(String _food, String _info,String _type){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE Cooking SET food = '"+_food+"',info = '"+_info+"' WHERE type = '"+_type+"''");
+        db.execSQL("UPDATE Cooking SET food = '"+_food+"',info = '"+_info+"' WHERE type = '"+_type+"'");
     }
 
     public void DeleteCook(String _writedate){
@@ -143,12 +143,12 @@ public class RecipeDB extends SQLiteOpenHelper {
         int a;
         if(cursor.getCount()!=0){
             a = cursor.getInt(0);
+            Log.v("a","df");
             a+=3;
         }
         else{
             a=-2;
         }
-        cursor.close();
         return a;
     }
 

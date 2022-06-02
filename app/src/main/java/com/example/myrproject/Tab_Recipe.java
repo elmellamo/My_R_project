@@ -82,4 +82,11 @@ public class Tab_Recipe extends Fragment {
         });
         return rootview;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadCookNameDB();
+        mAdapter.notifyDataSetChanged();
+    }
 }
