@@ -2,6 +2,7 @@ package com.example.myrproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,6 +23,16 @@ public class AddRecipe extends AppCompatActivity {
     RecipeDB mRecipeDB;
     CustomAdapter mAdapter;
     public static int cooktype;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item ){
+        switch(item.getItemId()){
+            case android.R.id.home:
+                Intent intent = new Intent(getApplicationContext(), AddRecipe.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

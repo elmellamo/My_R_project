@@ -50,7 +50,7 @@ public class Tab_Recipe extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public void loadRecentDB() {
+    public void loadCookNameDB() {
         // 저장되어있던 DB를 가져온다
         mRItems = mRecipeDB.getCookName();
         mAdapter = new MySecondAdapter(mRItems,getActivity());//context는 자기자신
@@ -64,6 +64,12 @@ public class Tab_Recipe extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab__recipe,container,false);
+
+        recyclerview = rootview.findViewById(R.id.recyclerview2);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        recyclerview.setLayoutManager(mLayoutManager);
+        mRecipeDB = new RecipeDB(getActivity());
+        loadCookNameDB();
 
         fab = (FloatingActionButton) rootview.findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
