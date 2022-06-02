@@ -116,8 +116,14 @@ public class RecipeDB extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
         Cursor cursor = db.rawQuery("SELECT id FROM Cooking",null);
         cursor.moveToLast();
-        int a = cursor.getInt(0);
-        a+=3;
+        int a;
+        if(cursor.getCount()!=0){
+            a = cursor.getInt(0);
+            a+=3;
+        }
+        else{
+            a=-2;
+        }
         return a;
     }
 
