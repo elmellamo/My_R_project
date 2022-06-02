@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     Tab_Recipe tab_recipe;
     Tab_which tab_which;
     private RecyclerView recyclerview;
+    public static int tabtype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +66,18 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
                 Fragment selected = null;
-                if(position == 0)
+                if(position == 0){
                     selected = tab_myR;
-                else if(position == 1)
+                    tabtype = 0;
+                }
+                else if(position == 1){
                     selected = tab_recipe;
-                else if(position == 2)
+                    tabtype = 1;
+                }
+                else if(position == 2) {
                     selected = tab_which;
+                    tabtype = 2;
+                }
                 getSupportFragmentManager().beginTransaction().replace(R.id.container, selected).commit();
             }
 

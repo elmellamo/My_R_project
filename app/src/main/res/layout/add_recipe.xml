@@ -14,21 +14,23 @@
     <!-- 이름 -->
     <LinearLayout
         android:id="@+id/recipe_name"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="60sp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="이름"
-            android:textSize="20sp"
             android:textColor="@color/black"
-            android:gravity="center"/>
+            android:textSize="20sp" />
+
         <EditText
-            android:id="@+id/name"
+            android:id="@+id/tv_cookname"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height = "wrap_content" />
     </LinearLayout>
 
     <RelativeLayout
@@ -41,11 +43,11 @@
         <TextView
             android:layout_width="100sp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="재료 목록"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"
             android:textSize="20sp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -87,8 +89,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/explanation"
-        tools:listitem="@layout/my_r_list_child"
-        android:layout_below="@+id/list" />
+        android:layout_below="@+id/list"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="-4dp"
+        tools:listitem="@layout/my_r_list_child" />
 
     <LinearLayout
         android:id="@+id/register"

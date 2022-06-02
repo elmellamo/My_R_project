@@ -37,7 +37,7 @@ public class ThirdActivity extends AppCompatActivity {
     Sauce sauce;
     Rice rice;
     Kimchi kimchi;
-    public static String itemtype;
+    public static String cooktype;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item ){
@@ -84,7 +84,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, fruit).commit();
-                itemtype = "과일";
+                cooktype = "과일";
                 fruitbtn.setBackgroundColor(0x2f000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -95,7 +95,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, vegetable).commit();
-                itemtype = "채소";
+                cooktype = "채소";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x2f000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -106,7 +106,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, meat).commit();
-                itemtype = "정육/계란";
+                cooktype = "정육/계란";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x2f000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -117,7 +117,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, fish).commit();
-                itemtype = "수산물";
+                cooktype = "수산물";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x2f000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -128,7 +128,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, dairy).commit();
-                itemtype = "유제품";
+                cooktype = "유제품";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x2f000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -139,7 +139,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, drink).commit();
-                itemtype = "음료";
+                cooktype = "음료";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x2f000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -151,7 +151,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, sauce).commit();
-                itemtype = "장/소스/드레싱";
+                cooktype = "장/소스/드레싱";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x2f000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -163,7 +163,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, rice).commit();
-                itemtype = "곡류";
+                cooktype = "곡류";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x2f000000);  kimchibtn.setBackgroundColor(0x00000000);
@@ -175,7 +175,7 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer2, kimchi).commit();
-                itemtype = "김치/반찬";
+                cooktype = "김치/반찬";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x2f000000);
@@ -196,19 +196,14 @@ public class ThirdActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                //searchContact(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                //adapter.getFilter().filter(newText);
-                //searchContact(newText);
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
     }
-
-
 }

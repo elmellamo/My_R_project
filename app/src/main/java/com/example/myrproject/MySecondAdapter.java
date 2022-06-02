@@ -19,14 +19,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder>{
-    private ArrayList<MyRItem> mRItems;
+public class MySecondAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder>{
+    private ArrayList<String> mRItems;
     private Context mContext;
     private RecipeDB mRecipeDB;
     //생성자 Alt + insert control+a enter
 
 
-    public CustomAdapter(ArrayList<MyRItem> rItems, Context mContext) {
+    public MySecondAdapter(ArrayList<String> rItems, Context mContext) {
         this.mRItems = rItems;
         this.mContext = mContext;
         mRecipeDB = new RecipeDB(mContext);
@@ -41,9 +41,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.child_title.setText(mRItems.get(position).getType());
         holder.child_cnt.setText(mRItems.get(position).getName());
-        holder.child_unit.setText(mRItems.get(position).getCnt());
     }
 
     @Override
@@ -140,3 +138,5 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         notifyItemInserted(0);//notify들어간건 모두 새로고침이라 보면 된다
     }
 }
+
+

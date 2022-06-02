@@ -73,6 +73,7 @@ public class MyRItem {
     public String getWriteDate() {
         return writedate;
     }
+
     public void setWriteDate(String writedate) {
         this.writedate = writedate;
     }
