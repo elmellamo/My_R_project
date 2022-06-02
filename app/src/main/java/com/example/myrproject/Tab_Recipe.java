@@ -1,5 +1,6 @@
 package com.example.myrproject;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -33,10 +36,6 @@ public class Tab_Recipe extends Fragment {
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
     private FloatingActionButton fab;
-    public static int num = 0;
-    ArrayList<String> mRItems;
-    RecipeDB mRecipeDB;
-    MySecondAdapter mAdapter;
 
 
     public Tab_Recipe() {
@@ -48,14 +47,6 @@ public class Tab_Recipe extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public void loadRecentDB() {
-        // 저장되어있던 DB를 가져온다
-        mRItems = mRecipeDB.getCookName();
-        mAdapter = new MySecondAdapter(mRItems,getActivity());//context는 자기자신
-        //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
-        recyclerview.setHasFixedSize(true);//recycler성능 강화라고 한다
-        recyclerview.setAdapter(mAdapter);
-    }
 
 
     @Override
@@ -67,7 +58,6 @@ public class Tab_Recipe extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num++;
                 Intent intent = new Intent(getActivity(), AddRecipe.class);
                 startActivity(intent);
             }
