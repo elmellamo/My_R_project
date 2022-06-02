@@ -32,6 +32,7 @@ public class AddRecipe extends AppCompatActivity {
     EditText edit_explanation;
     String a;
     String b;
+    String info;
     public static int cooktype;
 
     @Override
@@ -56,6 +57,11 @@ public class AddRecipe extends AppCompatActivity {
         b = this.getIntent().getStringExtra("b");
         if(a!=null){
             tv_cookname.setText(a);
+        }
+        if(MySecondAdapter.n==2){
+            info = mRecipeDB.getCookInfo(a);
+            edit_explanation.setText(info);
+            MySecondAdapter.n = 1;
         }
         if(b!=null){
             edit_explanation.setText(b);

@@ -25,6 +25,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
     private Context mContext;
     private RecipeDB mRecipeDB;
     public static String foodname;
+    public static int n = 1;
     //생성자 Alt + insert control+a enter
 
 
@@ -77,6 +78,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                             if(position == 0) {
                                 Intent intent = new Intent(mContext, AddRecipe.class);
                                 intent.putExtra("a",foodname);
+                                n=2;
                                 mContext.startActivity(intent);
                             }else if(position == 1){
                                 //삭제하기

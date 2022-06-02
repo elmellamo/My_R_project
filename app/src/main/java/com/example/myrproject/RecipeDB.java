@@ -89,6 +89,20 @@ public class RecipeDB extends SQLiteOpenHelper {
         return rItems;//담아놓은 것을 언제 어디든 호출 가능
     }
 
+    public String getCookInfo(String _food) {
+        ArrayList<String> rItems = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
+        Cursor cursor = db.rawQuery("SELECT info FROM Cooking WHERE food = '"+_food+"'",null);
+        String x = "없어";
+
+        if (cursor.getCount() != 0) {
+            cursor.moveToNext();
+            x = cursor.getString(0);
+        }
+        cursor.close();
+        return x;//담아놓은 것을 언제 어디든 호출 가능
+    }
+
 
 
 
