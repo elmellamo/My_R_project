@@ -23,6 +23,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
     private ArrayList<String> mRItems;
     private Context mContext;
     private RecipeDB mRecipeDB;
+    public static String foodname;
     //생성자 Alt + insert control+a enter
 
 
@@ -63,6 +64,8 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                 public void onClick(View view) {
                     int currentPos = getAdapterPosition();// 현재 리스트 클릭한 아이템위치
                     String rItem = mRItems.get(currentPos);//아이템 정보 가져온다
+                    TextView recipe_title = view.findViewById(R.id.recipe_title);
+                    foodname = recipe_title.getText().toString();
 
                     String[] strChoiceItems = {"수정하기","삭제하기"};
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
@@ -72,6 +75,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                         public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
                             if(position == 0) {
                                 // 수정하기
+                                //화면
                             }else if(position == 1){
 
                             }

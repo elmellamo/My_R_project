@@ -35,7 +35,7 @@ public class Tab_Recipe extends Fragment {
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
     private FloatingActionButton fab;
-    public static int num = 0;
+    public static int num;
     ArrayList<String> mRItems;
     RecipeDB mRecipeDB;
     MySecondAdapter mAdapter;
@@ -75,7 +75,7 @@ public class Tab_Recipe extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                num++;
+                num = mRecipeDB.getNum();
                 Intent intent = new Intent(getActivity(), AddRecipe.class);
                 startActivity(intent);
             }

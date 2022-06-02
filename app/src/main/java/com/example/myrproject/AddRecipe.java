@@ -50,7 +50,7 @@ public class AddRecipe extends AppCompatActivity {
         mRecipeDB = new RecipeDB(this);
         //view 누르면 나오는 이름으로 해야한다
         //view onclick리스너에서 text읽어와서 그 이름 넣어야 한 아래 loadRecipeDBName에
-        loadRecipeDBName("요리");
+        loadRecipeDBName(MySecondAdapter.foodname);
 
         foodfab = findViewById(R.id.foodfab);
         foodfab.setOnClickListener(new View.OnClickListener(){
@@ -62,34 +62,50 @@ public class AddRecipe extends AppCompatActivity {
         });
     }
 
-
-
     public void loadRecipeDBType(String _type) {
         // 저장되어있던 DB를 가져온다
         if(_type.equals("없어요")){
             cooktype = Tab_Recipe.num;
         }
-        else {
-            mRItems = mRecipeDB.getCookItemType(Integer.toString(cooktype));
-            mAdapter = new CustomAdapter(mRItems, this);//context는 자기자신
-            recyclerview.setHasFixedSize(true);
-            recyclerview.setAdapter(mAdapter);
-        }
+        mRItems = mRecipeDB.getCookItemType(Integer.toString(cooktype));
+        mAdapter = new CustomAdapter(mRItems, this);//context는 자기자신
+        recyclerview.setHasFixedSize(true);
+        recyclerview.setAdapter(mAdapter);
     }
 
     public void loadRecipeDBName(String food) {
         // 저장되어있던 DB를 가져온다
-        cooktype = Integer.parseInt(mRecipeDB.getCookItem(food));
-        loadRecipeDBType(Integer.toString(cooktype));
+        int a;
+        String x;
+        if(mRecipeDB.getCookItem(food).equals("없어요")){
+            a = -1;
+        }
+        else{
+            cooktype = Integer.parseInt(mRecipeDB.getCookItem(food));
+            a=cooktype;
+        }
+        if(a==-1){
+            x="없어요";
+        }
+        else{
+            x=Integer.toString(a);
+        }
+        loadRecipeDBType(x);
     }
 
 
     public void register(View v){
-        //EditText et_name =(EditText)findViewById(R.id.tv_cookname);
-        //String st_name = et_name.getText().toString();
-        //EditText explain_recipe =(EditText) findViewById(R.id.edit_explanation);
-        //String explain = explain_recipe.getText().toString();
-        //여기 데이터베이스에 넣는거 코드 추가
-        //finish();
+        EditText et_name =(EditText)findViewById(R.id.tv_cookname);
+        String st_name = et_name.getText().toString();
+        EditText explain_recipe =(EditText) findViewById(R.id.edit_explanation);
+        String explain = explain_recipe.getText().toString();
+        if(st_name.equals(null)){
+            st_name = "입력안함";
+        }
+        if(explain.equals(null)){
+            explain = "입력안함";
+        }
+        mRecipeDB.UpdateOk(st_name, explain, Integer.toString(cooktype));
+        finish();
     }
 }

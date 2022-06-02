@@ -81,7 +81,7 @@ public class RecipeDB extends SQLiteOpenHelper {
 
         if (cursor.getCount() != 0) {
             while (cursor.moveToNext()) {
-                String food = cursor.getString(1);
+                String food = cursor.getString(0);
                 rItems.add(food);
             }
         }
@@ -102,13 +102,23 @@ public class RecipeDB extends SQLiteOpenHelper {
         db.execSQL("UPDATE Cooking SET cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
     }
 
-    public void UpdateOk(String _info, String _cnt, String _unit,String _writedate, String _beforeDate){
+    public void UpdateOk(String _food, String _info,String _type){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE Cooking SET info = '"+_info+"', cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
+        db.execSQL("UPDATE Cooking SET food = '"+_food+"',info = '"+_info+"' WHERE type = '"+_type+"''");
     }
 
     public void DeleteCook(String _writedate){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM Cooking WHERE writedate = '"+_writedate+"'");
     }
+
+    public int getNum(){
+        SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
+        Cursor cursor = db.rawQuery("SELECT id FROM Cooking",null);
+        cursor.moveToLast();
+        int a = cursor.getInt(0);
+        a+=3;
+        return a;
+    }
+
 }

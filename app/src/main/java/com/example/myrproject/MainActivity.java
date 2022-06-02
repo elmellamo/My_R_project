@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     Tab_Recipe tab_recipe;
     Tab_which tab_which;
     private RecyclerView recyclerview;
-    public static int tabtype;
+    public static int tabtype = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
