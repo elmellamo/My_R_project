@@ -28,6 +28,8 @@ public class AddRecipe extends AppCompatActivity {
     ArrayList<MyRItem> mRItems;
     RecipeDB mRecipeDB;
     CustomAdapter mAdapter;
+    EditText tv_cookname;
+    String a;
     public static int cooktype;
 
     @Override
@@ -46,12 +48,19 @@ public class AddRecipe extends AppCompatActivity {
         mRecipeDB = new RecipeDB(this);
         //view 누르면 나오는 이름으로 해야한다
         //view onclick리스너에서 text읽어와서 그 이름 넣어야 한 아래 loadRecipeDBName에
+        tv_cookname = findViewById(R.id.tv_cookname);
+        if(a!=null){
+            tv_cookname.setText(a);
+        }
         loadRecipeDBName(MySecondAdapter.foodname);
 
         foodfab = findViewById(R.id.foodfab);
         foodfab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                if(tv_cookname.getText()!=null){
+                    a = tv_cookname.getText().toString();
+                }
                 Intent intent = new Intent(AddRecipe.this, ThirdActivity.class);
                 startActivity(intent);
             }
