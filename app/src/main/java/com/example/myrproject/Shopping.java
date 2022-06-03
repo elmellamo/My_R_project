@@ -26,12 +26,14 @@ import java.util.ArrayList;
 public class Shopping extends AppCompatActivity {
     private ArrayList<MyRItem> mBItems;
     private ArrayList<MyRItem> mRItems;
+    private ArrayList<String> mCItems;
     RecyclerView recyclerview1;
     RecyclerView recyclerview2;
     LinearLayoutManager mLayoutManager;
+    LinearLayoutManager mLayoutManager2;
     RecipeDB mRecipeDB;
     DBHelper mDBHelper;
-    //MySecondAdapter mAdapter1;
+    MySecondAdapter mAdapter1;
     CustomAdapter mAdapter2;
 
     @Override
@@ -47,12 +49,14 @@ public class Shopping extends AppCompatActivity {
         recyclerview1 = findViewById(R.id.which_cooking);
         recyclerview2 = findViewById(R.id.lets_shopping);
         mLayoutManager = new LinearLayoutManager(this);
-        //recyclerview1.setLayoutManager(mLayoutManager);//setLayoutManager은 하나만
-        recyclerview2.setLayoutManager(mLayoutManager);
+        mLayoutManager2 = new LinearLayoutManager(this);
+        recyclerview1.setLayoutManager(mLayoutManager);
+        recyclerview2.setLayoutManager(mLayoutManager2);
         mDBHelper = new DBHelper(this);
         mRecipeDB = new RecipeDB(this);
         loadRefrigerator();
         loadBuyItem();
+        loadCookNameDB();
     }
 
     @Override
@@ -95,6 +99,14 @@ public class Shopping extends AppCompatActivity {
     public void loadRefrigerator() {
         //냉장고 물품 없으면 null로 받는다
         mRItems = mDBHelper.getNameCnt();
+    }
+
+    public void loadCookNameDB() {
+        // 저장되어있던 DB를 가져온다
+        mCItems = this.getIntent().getStringArrayListExtra("배열");
+        mAdapter1 = new MySecondAdapter(mCItems,this);//context는 자기자신
+        recyclerview1.setHasFixedSize(true);//recycler성능 강화라고 한다
+        recyclerview1.setAdapter(mAdapter1);
     }
 }
 

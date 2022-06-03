@@ -3,6 +3,7 @@ package com.example.myrproject;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSelectedInterface, lastAdapter.OnListItemSelectedInterface{
     RecipeDB mRecipeDB;
     ArrayList<String> mCItems;
+    private ArrayList<String> mCook;
     lastAdapter mAdapter;
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -50,11 +52,17 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
             public void onClick(View view) {
                 //등록 버튼 클릭시
                 mBuyItems = mAdapter.mSelected;
-                if(mBuyItems == null){
-                    Toast.makeText(getActivity(), "안돼용", Toast.LENGTH_SHORT).show();
+                mCook = mAdapter.mCook;
+                if(mBuyItems.isEmpty()){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("살거 없음");
+                    builder.setMessage("장볼 메뉴를 체크해주세요");
+                    builder.setPositiveButton("예",null);
+                    builder.create().show();
                 }
                 else{
                     Intent it = new Intent(getActivity(),Shopping.class);
+                    it.putExtra("배열",mCook);
                     startActivity(it);
                 }
             }

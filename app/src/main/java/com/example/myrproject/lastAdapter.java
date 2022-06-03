@@ -26,9 +26,10 @@ import java.util.Date;
 public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
     private ArrayList<String> mRItems;
     public ArrayList<MyRItem> mSelected = new ArrayList<>();
+    public ArrayList<String> mCook = new ArrayList<>(); //arraylist는 비어있으면 null아니다 isempty로 체크하기
     private Context mContext;
     private RecipeDB mRecipeDB;
-    RecyclerView recyclerView;//public static String foodname;
+    RecyclerView recyclerView;
     public String foodname;
     private ArrayList<MyRItem> fooditem;
     //생성자 Alt + insert control+a enter
@@ -116,6 +117,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                             }
                             Toast.makeText(mContext, "선택됐습니다", Toast.LENGTH_SHORT).show();
                         }
+                        mCook.add(foodname);
                     } else {
                         //아이템 선택 안된것
                         if(!(mRecipeDB.getCookItem(foodname).equals("없어요"))){
@@ -136,6 +138,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                             }
                             Toast.makeText(mContext, "선택 취소했습니다", Toast.LENGTH_SHORT).show();
                         }
+                        mCook.remove(foodname);
                     }
                 }
             });
