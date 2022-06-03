@@ -141,8 +141,8 @@ public class AddRecipe extends AppCompatActivity {
 
         if(st_name.getBytes().length <= 0){//빈값이 넘어올때의 처리
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("제목");
-            builder.setMessage("이름 쳐주세요");
+            builder.setTitle("레시피 미등록");
+            builder.setMessage("레시피 이름을 등록해주세요");
             builder.setPositiveButton("예",null);
             builder.create().show();
         }

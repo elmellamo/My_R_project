@@ -41,9 +41,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.child_title.setText(mRItems.get(position).getType());
-        holder.child_cnt.setText(mRItems.get(position).getName());
-        holder.child_unit.setText(mRItems.get(position).getCnt());
+        holder.child_title.setText(mRItems.get(position).getName());
+        holder.child_cnt.setText(mRItems.get(position).getCnt());
+        holder.child_unit.setText(mRItems.get(position).getUnit());
     }
 
     @Override
