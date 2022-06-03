@@ -130,9 +130,9 @@ public class DBHelper extends SQLiteOpenHelper {
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"유제품", "유제품","수량","단위","시간"));
         entire.addAll(dairy);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스/드레싱", "장/소스/드레싱","수량","단위","시간"));
-        entire.addAll(drink);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"음료", "음료","수량","단위","시간"));
         entire.addAll(sauce);
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"음료", "음료","수량","단위","시간"));
+        entire.addAll(drink);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"곡류", "곡류","수량","단위","시간"));
         entire.addAll(rice);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"김치/반찬", "김치/반찬","수량","단위","시간"));
