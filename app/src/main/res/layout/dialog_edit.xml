@@ -33,9 +33,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:autoSizeTextType="uniform"
                 android:gravity="center_vertical"
-                android:text="이름"
-                android:textSize="30sp" />
+                android:textStyle="bold"
+                android:text="이름" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,13 +51,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="수량 : "
-                android:textSize="24sp"
+                android:autoSizeTextType="uniform"
+                android:text="수량 "
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/et_cnt"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintHorizontal_weight="2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:background="#90CAF9"
                 android:text="확인"
-                android:textSize="20sp" />
+                android:autoSizeTextType="uniform" />
         </LinearLayout>
 
 
