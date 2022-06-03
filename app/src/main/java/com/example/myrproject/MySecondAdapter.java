@@ -69,6 +69,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                     TextView recipe_title = view.findViewById(R.id.recipe_title);
                     foodname = recipe_title.getText().toString();
 
+
                     String[] strChoiceItems = {"수정하기","삭제하기"};
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     builder.setTitle("원하는 작업을 선택해주세요");

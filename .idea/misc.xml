@@ -7,8 +7,13 @@
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.1" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/fragment_tab_which.xml" value="0.1" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/MyRproject/app/src/main/res/layout/tab_myr.xml" value="0.1" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.167" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/blue_underline.xml" value="0.259" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border.xml" value="0.264" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border_fragment.xml" value="0.167" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border_layout.xml" value="0.2" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.167" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/ic_search.xml" value="0.167" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/toolbar_bg.xml" value="0.2375" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/underline.xml" value="0.152" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/activity_main.xml" value="0.1125" />
@@ -17,12 +22,13 @@
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/activity_title.xml" value="0.20108695652173914" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/add_recipe.xml" value="0.2" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/cookname_list_child.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_edit.xml" value="0.20108695652173914" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_edit.xml" value="0.2413793103448276" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_recipe.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/ex.xml" value="0.20108695652173914" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_add_item.xml" value="0.11144883485309018" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_blank.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_category.xml" value="0.1" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_dairy.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_drink.xml" value="0.1111111111111111" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_fish.xml" value="0.13451086956521738" />
@@ -44,6 +50,7 @@
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_header.xml" value="0.2" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/recyclertest.xml" value="0.1" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/shopping.xml" value="0.22056159420289856" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/toolbar.xml" value="0.221875" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/menu/searchmenu.xml" value="0.14444444444444443" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2" />

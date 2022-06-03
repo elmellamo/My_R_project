@@ -4,9 +4,12 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -80,6 +83,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                                 Dialog dialog = new Dialog(mContext, android.R.style.Theme_Material_Light_Dialog);
                                 dialog.setContentView(R.layout.dialog_edit);//뷰가 연결되었으므로 이 레이아웃에서 find view by id사용 가능
                                 //그냥 find가 아니라 dialog.~해야 한다
+
+                                //커스텀 다이얼로그
+                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                dialog.setCanceledOnTouchOutside(false);
+
+                                //다이얼로그 크기 조절하기
+                                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                                params.width = WindowManager.LayoutParams.MATCH_PARENT;
+                                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                                dialog.getWindow().setAttributes((WindowManager.LayoutParams) params);
+
+
                                 TextView tv_name = dialog.findViewById(R.id.tv_name);
                                 EditText et_cnt = dialog.findViewById(R.id.et_cnt);
                                 EditText et_unit = dialog.findViewById(R.id.et_unit);
