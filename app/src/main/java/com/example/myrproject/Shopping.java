@@ -51,9 +51,6 @@ public class Shopping extends AppCompatActivity {
         recyclerview2.setLayoutManager(mLayoutManager);
         mDBHelper = new DBHelper(this);
         mRecipeDB = new RecipeDB(this);
-
-
-
         loadRefrigerator();
         loadBuyItem();
     }
@@ -76,8 +73,8 @@ public class Shopping extends AppCompatActivity {
             //냉장고 없으면 그냥 mBItems
         }else{
             for(MyRItem a : mRItems){
-                if(mBItems.contains(a.getName())){
-                    int position = mBItems.indexOf(a.getName());
+                if(mBItems.contains(a)){
+                    int position = mBItems.indexOf(a);
                     MyRItem item = mBItems.get(position);
                     if(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())>0){
                         item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
