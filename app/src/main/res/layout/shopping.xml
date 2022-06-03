@@ -43,16 +43,16 @@
         android:id="@+id/shoppinglist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
         android:layout_below="@+id/which_cooking"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:gravity="center_vertical"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:text="장보러 가야 하는 재료 🛒"
             android:textColor="@color/black"
             android:textSize="20sp" />

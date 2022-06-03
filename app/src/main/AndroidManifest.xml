@@ -24,6 +24,7 @@
         <activity android:name=".MainActivity"
             android:exported="true">
         </activity>
+
         <activity android:name=".SecondActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.MyRProject"

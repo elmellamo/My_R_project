@@ -29,26 +29,27 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipe_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/recipe_recyclerview"
             android:layout_above="@+id/lets_go"
             android:layout_below="@+id/txt_tab_which"
-            tools:listitem="@layout/recipe_list"/>
+            tools:listitem="@layout/recipe_list" />
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lets_go"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+            android:id="@+id/lets_go"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/lets_go_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="장보러 가기"
-                android:textStyle="bold"        />
+                android:textStyle="bold" />
         </LinearLayout>
 
     </RelativeLayout>

@@ -25,7 +25,7 @@ import java.util.Date;
 
 public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
     private ArrayList<String> mRItems;
-    private ArrayList<MyRItem> mSelected = new ArrayList<MyRItem>();
+    public ArrayList<MyRItem> mSelected = new ArrayList<>();
     private Context mContext;
     private RecipeDB mRecipeDB;
     RecyclerView recyclerView;//public static String foodname;
@@ -50,11 +50,6 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
         this.mListener = listener;
         this.mLongListener = longListener;
         this.recyclerView = recyclerView;
-    }
-
-    public void setData(ArrayList<String> data) {
-        mRItems = data;
-        notifyDataSetChanged();
     }
 
     @NonNull

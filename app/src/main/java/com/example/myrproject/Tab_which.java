@@ -18,14 +18,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSelectedInterface, lastAdapter.OnListItemSelectedInterface{
-    DBHelper mDBHelper;
     RecipeDB mRecipeDB;
-    ArrayList<MyRItem> mReItems;
     ArrayList<String> mCItems;
     lastAdapter mAdapter;
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button register;
+    public static ArrayList<MyRItem> mBuyItems;
 
     public Tab_which() {
     }
@@ -49,18 +48,19 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Shopping.class);
-                startActivity(intent);
+                //등록 버튼 클릭시
+                mBuyItems = mAdapter.mSelected;
+                if(mBuyItems == null){
+                    Toast.makeText(getActivity(), "안돼용", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent it = new Intent(getActivity(),Shopping.class);
+                    startActivity(it);
+                }
             }
         });
 
         return rootview;
-    }
-
-
-    public void loadRefrigerator() {
-        // 저장되어있던 DB를 가져온다
-        mReItems = mDBHelper.getNameCnt();
     }
 
     public void loadItem() {
@@ -87,5 +87,7 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
         loadItem();
         mAdapter.notifyDataSetChanged();
     }
+
+    //뒤로가기하면 세번째 탭 혹시 안되면 clear생각해보기 selected된걸로 남아있으면 오류되니깐/..
 
 }
