@@ -69,6 +69,11 @@ public class Shopping extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
     public void loadBuyItem() {
         //사야할 목록
         mBItems = Tab_which.mBuyItems;

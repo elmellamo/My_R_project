@@ -189,6 +189,14 @@ public class ThirdActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onBackPressed() {
+        Intent it = new Intent(this,AddRecipe.class);
+        it.putExtra("a",this.getIntent().getStringExtra("a"));
+        it.putExtra("b",this.getIntent().getStringExtra("b"));
+        startActivity(it);
+        finish();
+    }
 
 
 

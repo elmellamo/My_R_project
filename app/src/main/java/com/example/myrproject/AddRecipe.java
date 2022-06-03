@@ -102,6 +102,14 @@ public class AddRecipe extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        mRecipeDB.DeleteCookName("요리");
+        mRItems.clear();
+        mAdapter.notifyDataSetChanged();
+        finish();
+    }
+
     public void loadRecipeDBType(String _type) {
         // 저장되어있던 DB를 가져온다
         if(_type.equals("없어요")){
