@@ -25,11 +25,12 @@ import java.util.Date;
 
 public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
     private ArrayList<String> mRItems;
-    ArrayList<MyRItem> mSelected;
+    private ArrayList<MyRItem> mSelected = new ArrayList<MyRItem>();
     private Context mContext;
     private RecipeDB mRecipeDB;
     RecyclerView recyclerView;//public static String foodname;
     public String foodname;
+    private ArrayList<MyRItem> fooditem;
     //생성자 Alt + insert control+a enter
 
     public interface OnListItemLongSelectedInterface {
@@ -98,13 +99,16 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                     toggleItemSelected(currentPos);
                     foodname = recipe_title.getText().toString();
                     mListener.onItemSelected(view,currentPos);
-                    ArrayList<MyRItem> fooditem = mRecipeDB.getCookItemType(mRecipeDB.getCookItem(foodname));
+
+                    //mSelected에 터치한 메뉴 재료들 저장
+                    fooditem = new ArrayList<MyRItem>();
+                    fooditem = mRecipeDB.getCookItemType(mRecipeDB.getCookItem(foodname));
                     if (isItemSelected(currentPos)) {
                         //아이템 선택된것
-                        if(!mRecipeDB.getCookItem(foodname).equals("없어요")){
-                            //없어요 아니면 무조건 아님
+                        if(!(mRecipeDB.getCookItem(foodname).equals("없어요"))){
+                            //없어요가 나올수가 없음
                             for(MyRItem a: fooditem){
-                                if(mSelected.contains(a.getName())){
+                                if(mSelected!=null && mSelected.contains(a.getName())){
                                     int position = mSelected.indexOf(a.getName());
                                     MyRItem item = mSelected.get(position);
                                     item.setCnt(Integer.toString(Integer.parseInt(a.getCnt())+Integer.parseInt(item.getCnt())));
@@ -119,20 +123,20 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                         }
                     } else {
                         //아이템 선택 안된것
-                        Toast.makeText(mContext, "선택 취소했습니다", Toast.LENGTH_SHORT).show();
-
+                        if(!(mRecipeDB.getCookItem(foodname).equals("없어요"))){
+                            //없어요가 나올수가 없음
+                            for(MyRItem a: fooditem){
+                                if(mSelected!=null && mSelected.contains(a.getName())){
+                                    int position = mSelected.indexOf(a.getName());
+                                    MyRItem item = mSelected.get(position);
+                                    item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
+                                    mSelected.set(position,item);
+                                }
+                                //재료 이름이 없을 수 없다//선택될때 추가 되므로
+                            }
+                            Toast.makeText(mContext, "선택 취소했습니다", Toast.LENGTH_SHORT).show();
+                        }
                     }
-
-
-
-
-
-
-
-
-
-
-
                 }
             });
 
