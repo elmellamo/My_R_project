@@ -6,47 +6,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Tab_MyR">
 
-    <androidx.core.widget.NestedScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:descendantFocusability="blocksDescendants">
+            android:layout_above="@+id/gobtnlayout"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"></androidx.recyclerview.widget.RecyclerView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
-
-                >
-
-            </androidx.recyclerview.widget.RecyclerView>
-
+        <LinearLayout
+            android:id="@+id/gobtnlayout"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/gobtn"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/mainblue"
+                android:text="재료 추가하기"
+                android:textStyle="bold"></Button>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/mainblue"
-        android:src="@drawable/fab"
-        app:borderWidth="0dp"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@null"
-        tools:ignore="ContentDescription" />
+
+
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:backgroundTint="@color/mainblue"-->
+<!--        android:src="@drawable/fab"-->
+<!--        app:borderWidth="0dp"-->
+<!--        app:fabSize="mini"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:tint="@null"-->
+<!--        tools:ignore="ContentDescription" />-->
 
 </FrameLayout>

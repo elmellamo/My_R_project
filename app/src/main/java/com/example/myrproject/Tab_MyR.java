@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.content.Intent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -35,7 +36,7 @@ public class Tab_MyR extends Fragment {
     RecyclerView.LayoutManager mLayoutManager;
     ArrayList<ExpandableListAdapter.Item> mRItems;
     DBHelper mDBHelper;
-    FloatingActionButton fab;
+    Button fab;
     ExpandableListAdapter mAdapter;
 
     public void loadRecentDB() {
@@ -59,7 +60,7 @@ public class Tab_MyR extends Fragment {
         mDBHelper = new DBHelper(getActivity());
         loadRecentDB();
 
-        fab = (FloatingActionButton) rootview.findViewById(R.id.fab);
+        fab = (Button) rootview.findViewById(R.id.gobtn);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
