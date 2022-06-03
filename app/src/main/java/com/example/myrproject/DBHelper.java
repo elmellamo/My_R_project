@@ -72,6 +72,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<ExpandableListAdapter.Item> sauce = new ArrayList<>();
         ArrayList<ExpandableListAdapter.Item> rice = new ArrayList<>();
         ArrayList<ExpandableListAdapter.Item> kimchi = new ArrayList<>();
+        ArrayList<ExpandableListAdapter.Item> remainder = new ArrayList<>();
 
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
         Cursor cursor = db.rawQuery("SELECT * FROM Refrigerator ORDER BY writeDate DESC",null);
@@ -88,7 +89,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 String cnt = cursor.getString(3);
                 String unit = cursor.getString(4);
                 String writedate = cursor.getString(5);
-                Log.v("type","typedfsdfsd:");
 
                 if(type.equalsIgnoreCase("과일")) {
                     fruit.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
@@ -117,6 +117,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 else if(type.equalsIgnoreCase("김치/반찬")){
                     kimchi.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
+                else{
+                    remainder.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
+                }
             }
         }
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"과일","과일","수량","단위","시간"));
@@ -137,6 +140,8 @@ public class DBHelper extends SQLiteOpenHelper {
         entire.addAll(rice);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"김치/반찬", "김치/반찬","수량","단위","시간"));
         entire.addAll(kimchi);
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"기타", "기타","수량","단위","시간"));
+        entire.addAll(remainder);
         cursor.close();
         return entire;//담아놓은 것을 언제 어디든 호출 가능
     }
@@ -150,7 +155,6 @@ public class DBHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("select * from Refrigerator where name like ?", new String[] { "%" + keyword + "%" });
             if (cursor.moveToFirst()) {
-//                contacts = new ArrayList<ExpandableListAdapter.Item>();
                 do {
                     ExpandableListAdapter.Item contact = new ExpandableListAdapter.Item();
                     contact.setId(cursor.getInt(0));
@@ -209,40 +213,3 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 }
-
-
-
-
-/*public ArrayList<MyRItem> getRefrigerator(){//메소드로 만든다
-        ArrayList<MyRItem> rItems = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
-        Cursor cursor = db.rawQuery("SELECT * FROM Refrigerator ORDER BY writeDate DESC",null);
-        //*을 넣으면 모든 열들을 다 가지고 오는 조건없이 모든 데이터 가져온다
-        //SELECT (조회) ORDER BY(정렬 할때 사용) DESC 내림차순
-        if(cursor.getCount()!=0){//반드시 데이터가 있다는 사실
-
-            //조회된 데이터가 있을때 내부 수행
-            while(cursor.moveToNext()){
-                //다음으로 이동할 데이터가 있을때까지 //cursor은 하나씩 가리킨다
-                //다음 커서가 없으면 탈출
-                int id = cursor.getInt(cursor.getColumnIndex("id"));//id라는 항목을 실제 sq테이블 id index에 맞춰서 실제 id로 넘겨져온 값을 받아온다
-                String type = cursor.getString(cursor.getColumnIndex("type"));
-                String name = cursor.getString(cursor.getColumnIndex("name"));
-                String cnt = cursor.getString(cursor.getColumnIndex("cnt"));
-                String unit = cursor.getString(cursor.getColumnIndex("unit"));
-                String writedate = cursor.getString(cursor.getColumnIndex("writedate"));
-
-                MyRItem rItem = new MyRItem();
-                rItem.setId(id);
-                rItem.setType(type);
-                rItem.setName(name);
-                rItem.setCnt(cnt);
-                rItem.setUnit(unit);
-                rItem.setWritedate(writedate);
-                rItems.add(rItem);
-            }
-        }
-        cursor.close();
-        return rItems;//담아놓은 것을 언제 어디든 호출 가능
-    }
-    */
