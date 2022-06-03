@@ -74,6 +74,24 @@ public class RecipeDB extends SQLiteOpenHelper {
         return rItems;//담아놓은 것을 언제 어디든 호출 가능
     }
 
+
+    public ArrayList<String> search(String keyword) {
+        ArrayList<String> contacts = new ArrayList<>();
+        try {
+            SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+            Cursor cursor = sqLiteDatabase.rawQuery("SELECT DISTINCT food from Cooking where food like ?", new String[] { "%" + keyword + "%" });
+            if (cursor.moveToFirst()) {
+                do {
+                    String a = cursor.getString(0);
+                    contacts.add(a);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            contacts = null;
+        }
+        return contacts;
+    }
+
     public ArrayList<String> getCookName() {
         ArrayList<String> rItems = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위

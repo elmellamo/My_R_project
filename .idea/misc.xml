@@ -92,6 +92,7 @@
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/add_recipe.xml" value="0.1" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_dairy.xml" value="0.2" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_drink.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab__recipe.xml" value="0.23743589743589744" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/item_list.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/last_recipe.xml" value="0.24114583333333334" />
@@ -100,6 +101,7 @@
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.1" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/shopping.xml" value="0.136" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/menu/searchmenu.xml" value="0.1" />
       </map>
     </option>
   </component>

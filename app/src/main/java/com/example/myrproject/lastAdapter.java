@@ -27,7 +27,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
     private ArrayList<String> mRItems;
     public ArrayList<MyRItem> mSelected = new ArrayList<>();
     public ArrayList<String> mCook = new ArrayList<>(); //arraylist는 비어있으면 null아니다 isempty로 체크하기
-    private Context mContext;
+    public static Context mContext;
     private RecipeDB mRecipeDB;
     RecyclerView recyclerView;
     public String foodname;

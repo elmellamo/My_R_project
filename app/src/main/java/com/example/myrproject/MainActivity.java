@@ -1,5 +1,6 @@
 package com.example.myrproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -29,12 +30,14 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements lastAdapter.OnListItemLongSelectedInterface, lastAdapter.OnListItemSelectedInterface {
     TabLayout tabLayout;
     Tab_MyR tab_myR;
     Tab_Recipe tab_recipe;
     Tab_which tab_which;
     private RecyclerView recyclerview;
+    private RecyclerView recyclerview2;
+    private RecyclerView recyclerview3;
     public static int tabtype = 0;
     RecipeDB mRecipeDB;
 
@@ -122,24 +125,72 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.searchmenu, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
-
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+
+        if(tabtype == 1){
+            searchView.setQueryHint("메뉴를 검색합니다.");
+        }
+        else if(tabtype == 2){
+            searchView.setQueryHint("메뉴를 검색합니다.");
+        }
+        else{
+            searchView.setQueryHint("재료를 검색합니다.");
+        }
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                searchContact(query);
+                if(tabtype == 1){
+                    search2(query);
+                }
+                else if(tabtype == 2){
+                    search3(query);
+                }
+                else{
+                    searchContact(query);
+                }
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                //adapter.getFilter().filter(newText);
-                searchContact(newText);
+                if(tabtype == 1){
+                    search2(newText);
+                }
+                else if(tabtype == 2){
+                    search3(newText);
+                }
+                else{
+                    searchContact(newText);
+                }
+
                 return false;
             }
         });
         return super.onCreateOptionsMenu(menu);
+    }
+
+
+
+    private void search2(String keyword){
+        recyclerview2 = findViewById(R.id.recyclerview2);
+        registerForContextMenu(recyclerview2);
+        RecipeDB databaseHelper = new RecipeDB(getApplicationContext());
+        ArrayList<String> contacts = databaseHelper.search(keyword);
+        if (contacts != null) {
+            recyclerview2.setAdapter(new MySecondAdapter(contacts, MySecondAdapter.mContext));
+        }
+    }
+
+    private void search3(String keyword){
+        recyclerview3 = findViewById(R.id.recipe_recyclerview);
+        registerForContextMenu(recyclerview3);
+        RecipeDB databaseHelper = new RecipeDB(getApplicationContext());
+        ArrayList<String> contacts = databaseHelper.search(keyword);
+        if (contacts != null) {
+            recyclerview3.setAdapter(new lastAdapter(lastAdapter.mContext,recyclerview3,this,this,contacts));
+        }
     }
 
     private void searchContact(String keyword) {
@@ -150,5 +201,15 @@ public class MainActivity extends AppCompatActivity {
         if (contacts != null) {
             recyclerview.setAdapter(new ExpandableListAdapter(contacts, ExpandableListAdapter.mContext));
         }
+    }
+
+    @Override
+    public void onItemLongSelected(View v, int position) {
+
+    }
+
+    @Override
+    public void onItemSelected(View v, int position) {
+
     }
 }

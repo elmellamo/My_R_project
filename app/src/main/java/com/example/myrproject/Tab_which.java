@@ -80,13 +80,9 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
 
     @Override
     public void onItemSelected(View v, int position) {
-        lastAdapter.ViewHolder viewHolder = (lastAdapter.ViewHolder)recyclerview.findViewHolderForAdapterPosition(position);
-        //Toast.makeText(getActivity(), viewHolder.recipe_title.getText().toString(), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(this, position + " clicked", Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onItemLongSelected(View v, int position) {
-        Toast.makeText(getActivity(), position + " long clicked", Toast.LENGTH_SHORT).show();
     }
 
     @Override

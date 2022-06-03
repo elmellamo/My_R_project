@@ -22,7 +22,7 @@ import java.util.Date;
 
 public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHolder>{
     private ArrayList<String> mRItems;
-    private Context mContext;
+    public static Context mContext;
     private RecipeDB mRecipeDB;
     public static String foodname;
     public static int n = 1;
