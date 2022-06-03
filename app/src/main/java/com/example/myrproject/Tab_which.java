@@ -43,7 +43,7 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
         recyclerview = rootview.findViewById(R.id.recipe_recyclerview);
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mLayoutManager);
-        register = rootview.findViewById(R.id.registerbtn);
+        register = rootview.findViewById(R.id.lets_go_btn);
         mRecipeDB = new RecipeDB(getActivity());
         loadItem();
         register.setOnClickListener(new View.OnClickListener() {
