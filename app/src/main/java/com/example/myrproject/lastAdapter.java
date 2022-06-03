@@ -103,8 +103,8 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                         if(!(mRecipeDB.getCookItem(foodname).equals("없어요"))){
                             //없어요가 나올수가 없음
                             for(MyRItem a: fooditem){
-                                if(mSelected!=null && mSelected.contains(a.getName())){
-                                    int position = mSelected.indexOf(a.getName());
+                                if(mSelected!=null && mSelected.contains(a)){
+                                    int position = mSelected.indexOf(a);
                                     MyRItem item = mSelected.get(position);
                                     item.setCnt(Integer.toString(Integer.parseInt(a.getCnt())+Integer.parseInt(item.getCnt())));
                                     mSelected.set(position,item);
@@ -121,11 +121,16 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                         if(!(mRecipeDB.getCookItem(foodname).equals("없어요"))){
                             //없어요가 나올수가 없음
                             for(MyRItem a: fooditem){
-                                if(mSelected!=null && mSelected.contains(a.getName())){
-                                    int position = mSelected.indexOf(a.getName());
+                                if(mSelected!=null && mSelected.contains(a)){
+                                    int position = mSelected.indexOf(a);
                                     MyRItem item = mSelected.get(position);
-                                    item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
-                                    mSelected.set(position,item);
+                                    if(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())==0){
+                                        mSelected.remove(position);
+                                    }
+                                    else{
+                                        item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
+                                        mSelected.set(position,item);
+                                    }
                                 }
                                 //재료 이름이 없을 수 없다//선택될때 추가 되므로
                             }
@@ -168,6 +173,8 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
         }
         mSelectedItems.clear();
     }
+
+
 }
 
 

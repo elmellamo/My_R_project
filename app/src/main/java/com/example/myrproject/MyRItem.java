@@ -77,4 +77,13 @@ public class MyRItem {
     public void setWriteDate(String writedate) {
         this.writedate = writedate;
     }
+
+    @Override
+    public boolean equals(Object object){
+        MyRItem myritem = (MyRItem) object;
+        if(myritem.name.equals(this.name)){
+            return true;
+        }
+        return false;
+    }
 }
