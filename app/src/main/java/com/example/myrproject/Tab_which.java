@@ -49,7 +49,8 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //등록 버튼 클릭시
+                Intent intent = new Intent(getActivity(), Shopping.class);
+                startActivity(intent);
             }
         });
 

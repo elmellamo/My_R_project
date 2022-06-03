@@ -36,6 +36,10 @@
             android:parentActivityName=".AddRecipe"
             android:theme="@style/Theme.MyRProject"
             android:exported="false"/>
+        <activity android:name=".Shopping"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.MyRProject"
+            android:exported="false"/>
 
 
     </application>
