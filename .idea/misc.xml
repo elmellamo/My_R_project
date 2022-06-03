@@ -79,7 +79,14 @@
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/menu/menu_toolbar.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/menu/searchmenu.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/activity_second.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/activity_third.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/activity_title.xml" value="0.1" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/add_recipe.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_dairy.xml" value="0.2" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_drink.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.2361111111111111" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/last_recipe.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/my_r_list_header.xml" value="0.264" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.1" />
       </map>
     </option>

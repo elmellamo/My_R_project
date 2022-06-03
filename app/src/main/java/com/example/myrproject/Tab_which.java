@@ -10,21 +10,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-
-public class Tab_which extends Fragment {
-
+public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSelectedInterface, lastAdapter.OnListItemSelectedInterface{
+    DBHelper mDBHelper;
+    RecipeDB mRecipeDB;
+    ArrayList<MyRItem> mReItems;
+    ArrayList<String> mCItems;
+    lastAdapter mAdapter;
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
-    private FloatingActionButton fab;
-    public static int num;
-    ArrayList<String> mRItems;
-    RecipeDB mRecipeDB;
-    MySecondAdapter mAdapter;
+    private Button register;
 
     public Tab_which() {
     }
@@ -34,35 +35,56 @@ public class Tab_which extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public void loadCookNameDB() {
-        // 저장되어있던 DB를 가져온다
-        mRItems = mRecipeDB.getCookName();
-        mAdapter = new MySecondAdapter(mRItems,getActivity());//context는 자기자신
-        //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
-        recyclerview.setHasFixedSize(true);//recycler성능 강화라고 한다
-        recyclerview.setAdapter(mAdapter);
-    }
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab_which,container,false);
 
+        ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_tab_which, container, false);
         recyclerview = rootview.findViewById(R.id.recipe_recyclerview);
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mLayoutManager);
+        register = rootview.findViewById(R.id.registerbtn);
         mRecipeDB = new RecipeDB(getActivity());
-        loadCookNameDB();
+        loadItem();
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //등록 버튼 클릭시
+            }
+        });
 
         return rootview;
+    }
+
+
+    public void loadRefrigerator() {
+        // 저장되어있던 DB를 가져온다
+        mReItems = mDBHelper.getNameCnt();
+    }
+
+    public void loadItem() {
+        mCItems = mRecipeDB.getCookName();
+        mAdapter = new lastAdapter(getActivity(), recyclerview, this, this, mCItems);
+        recyclerview.setHasFixedSize(true);
+        recyclerview.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onItemSelected(View v, int position) {
+        lastAdapter.ViewHolder viewHolder = (lastAdapter.ViewHolder)recyclerview.findViewHolderForAdapterPosition(position);
+        //Toast.makeText(getActivity(), viewHolder.recipe_title.getText().toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, position + " clicked", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onItemLongSelected(View v, int position) {
+        Toast.makeText(getActivity(), position + " long clicked", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        loadCookNameDB();
+        loadItem();
         mAdapter.notifyDataSetChanged();
     }
+
 }
