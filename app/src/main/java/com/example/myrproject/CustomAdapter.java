@@ -135,9 +135,4 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             });
         }
     }
-    //액티비티에서 호출되는 함수이며, 현재 어댑터에 새로운 게시글 아이템을 전달받아 추가하는 목적이다.
-    public void addItem(MyRItem _item){
-        mRItems.add(0,_item);//역순으로 add된다 최신순으로 위에 들어간다
-        notifyItemInserted(0);//notify들어간건 모두 새로고침이라 보면 된다
-    }
 }

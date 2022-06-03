@@ -37,6 +37,29 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     // SELECT 문(할일 목록들을 조회)
 
+    //냉장고 물품들 다 조회(세번째 탭)
+    public ArrayList<MyRItem> getNameCnt() {
+        ArrayList<MyRItem> rItems = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
+        Cursor cursor = db.rawQuery("SELECT name,cnt,unit FROM Refrigerator ORDER BY id",null);
+
+        if (cursor.getCount() != 0) {
+            while (cursor.moveToNext()) {
+                String name = cursor.getString(0);
+                String cnt = cursor.getString(1);
+                String unit = cursor.getString(2);
+                MyRItem ritem = new MyRItem();
+                ritem.setName(name);
+                ritem.setCnt(cnt);
+                ritem.setUnit(unit);
+                rItems.add(ritem);
+            }
+        }
+        cursor.close();
+        return rItems;//담아놓은 것을 언제 어디든 호출 가능
+    }
+
+
     public ArrayList<ExpandableListAdapter.Item> getItem(){//메소드로 만든다
 
         ArrayList<ExpandableListAdapter.Item> entire = new ArrayList<>();
@@ -59,12 +82,12 @@ public class DBHelper extends SQLiteOpenHelper {
             while(cursor.moveToNext()){
                 //다음으로 이동할 데이터가 있을때까지 //cursor은 하나씩 가리킨다
                 //다음 커서가 없으면 탈출
-                int id = cursor.getInt(cursor.getColumnIndex("id"));//id라는 항목을 실제 sq테이블 id index에 맞춰서 실제 id로 넘겨져온 값을 받아온다
-                String type = cursor.getString(cursor.getColumnIndex("type"));
-                String name = cursor.getString(cursor.getColumnIndex("name"));
-                String cnt = cursor.getString(cursor.getColumnIndex("cnt"));
-                String unit = cursor.getString(cursor.getColumnIndex("unit"));
-                String writedate = cursor.getString(cursor.getColumnIndex("writedate"));
+                int id = cursor.getInt(0);//id라는 항목을 실제 sq테이블 id index에 맞춰서 실제 id로 넘겨져온 값을 받아온다
+                String type = cursor.getString(1);
+                String name = cursor.getString(2);
+                String cnt = cursor.getString(3);
+                String unit = cursor.getString(4);
+                String writedate = cursor.getString(5);
                 Log.v("type","typedfsdfsd:");
 
                 if(type.equalsIgnoreCase("과일")) {
