@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Detail_Recipe">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <!-- 이름 -->
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:id="@+id/recipe_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="60sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text="이름"
+            android:textColor="#045CB1"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/detail_cookname"
+            android:paddingLeft="40dp"
+            android:text="여기 레시피 이름"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recipe_name"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="재료 목록"
+            android:paddingLeft="20dp"
+            android:textColor="#045CB1"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/explanation"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:paddingLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="요리 설명"
+            android:textColor="#045CB1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:paddingLeft="20dp"
+            android:scrollbars="vertical"
+            android:id="@+id/detail_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:text="여기에는 요리 설명이 들어갑니다."
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/detail_recipe_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/explanation"
+        android:layout_below="@+id/list"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        tools:listitem="@layout/my_r_list_child" />
+
+
+</RelativeLayout>

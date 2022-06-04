@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
@@ -27,6 +29,8 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
     public static String foodname;
     public static int n = 1;
     //생성자 Alt + insert control+a enter
+
+    Detail_Recipe detail_recipe;
 
 
     public MySecondAdapter(ArrayList<String> rItems, Context mContext) {
@@ -60,6 +64,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
             super(itemView);
 
             recipe_title = itemView.findViewById(R.id.recipe_title);
+            detail_recipe = new Detail_Recipe();
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,7 +74,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                     TextView recipe_title = view.findViewById(R.id.recipe_title);
                     foodname = recipe_title.getText().toString();
 
-                    if(MainActivity.tabtype!=2){
+                    if(MainActivity.tabtype==0){
                     String[] strChoiceItems = {"수정하기","삭제하기"};
                     AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                     builder.setTitle("원하는 작업을 선택해주세요");
@@ -91,6 +96,35 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                         }
                     });
                     builder.show();}
+
+                    if(MainActivity.tabtype==1){
+                        String[] strChoiceItems1 = {"상세 레시피","수정하기","삭제하기"};
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
+                        builder1.setTitle("원하는 작업을 선택해주세요");
+                        builder1.setItems(strChoiceItems1, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
+                                if(position == 0) {
+                                    Intent intent1 = new Intent(mContext, Detail_Recipe.class);
+                                    intent1.putExtra("a",foodname);
+                                    n=2;
+                                    mContext.startActivity(intent1);
+
+                                }else if(position == 1){
+                                    Intent intent = new Intent(mContext, AddRecipe.class);
+                                    intent.putExtra("a",foodname);
+                                    n=2;
+                                    mContext.startActivity(intent);
+                                }else{
+                                    //삭제하기
+                                    mRecipeDB.DeleteCookName(foodname);
+                                    mRItems.remove(currentPos);
+                                    notifyItemRemoved(currentPos);
+                                    Toast.makeText(mContext, "목록이 제거 되었습니다", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        builder1.show();}
                 }
             });
         }
