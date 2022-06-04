@@ -38,7 +38,7 @@ public class Fruit extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 4);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"사과", "배","귤","감","키위","토마토","방울토마토","나무토마토","자두"

@@ -36,7 +36,7 @@ public class Drink extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.drink_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 4);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"커피","콜라","요구르트","오렌지주스","과일 주스","두유","식혜"

@@ -36,7 +36,7 @@ public class Dairy extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.meat_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 4);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"우유","요거트","치즈","버터","휘핑크림"};

@@ -280,7 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:gravity="center"
-            android:text="소스/드레싱"
+            android:text="장/소스"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/sauce"
             app:layout_constraintStart_toStartOf="@+id/sauce"
@@ -316,7 +316,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
             android:gravity="center"
-            android:text="기타 추가"
+            android:text="기타"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/user_append"
             app:layout_constraintStart_toStartOf="@+id/user_append"
@@ -331,8 +331,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/category"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        >
 
     </FrameLayout>
 

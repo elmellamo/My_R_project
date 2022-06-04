@@ -38,7 +38,7 @@ public class Fish extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.fruit_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 4);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"고등어", "연어","대구","참치","장어","가자미","새우","게","오징어","낙지","문어","고둥","조개","굴","김","미역","멸치","회"};

@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="mainblue">#0c4da2 </color>
     <color name="title_color">#000000</color>
+    <color name="pastel_blue">#bbdefb</color>
+
 
 </resources>

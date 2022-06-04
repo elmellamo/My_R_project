@@ -36,7 +36,7 @@ public class Meat extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.meat_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 4);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"소고기", "돼지고기","닭고기","오리고기","양고기","햄","소시지","베이컨","계란"};

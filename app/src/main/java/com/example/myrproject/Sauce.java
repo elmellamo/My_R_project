@@ -36,7 +36,7 @@ public class Sauce extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.sauce_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 4);
+        LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"고추장", "간장","된장","케찹","마요네즈","스테이크소스","굴소스","파스타소스","칠리소스","식초","메이플시럽","초콜릿시럽"};

@@ -108,7 +108,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 else if(type.equalsIgnoreCase("음료")){
                     drink.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
-                else if(type.equalsIgnoreCase("장/소스/드레싱")){
+                else if(type.equalsIgnoreCase("장/소스")){
                     sauce.add(new ExpandableListAdapter.Item(ExpandableListAdapter.CHILD, type, name, cnt, unit, writedate));
                 }
                 else if(type.equalsIgnoreCase("곡류")){
@@ -132,7 +132,7 @@ public class DBHelper extends SQLiteOpenHelper {
         entire.addAll(fish);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"유제품", "유제품","수량","단위","시간"));
         entire.addAll(dairy);
-        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스/드레싱", "장/소스/드레싱","수량","단위","시간"));
+        entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"장/소스", "장/소스","수량","단위","시간"));
         entire.addAll(sauce);
         entire.add(new ExpandableListAdapter.Item(ExpandableListAdapter.HEADER,"음료", "음료","수량","단위","시간"));
         entire.addAll(drink);

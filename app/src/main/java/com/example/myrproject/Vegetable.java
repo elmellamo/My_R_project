@@ -36,7 +36,7 @@ public class Vegetable extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.vegetable_todo);
         todo.setHasFixedSize(true);
 
-        FruitLayoutManager = new GridLayoutManager(getActivity(), 4);
+        FruitLayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(FruitLayoutManager);
 
         String[] textSet = {"상추", "깻잎","시금치","오이","호박","가지","옥수수","감자","고구마","당근","연근","양파","마늘","생강","파","버섯","양배추","브로콜리","허브","파프리카","고추","배추","무","콩나물"};
@@ -46,7 +46,6 @@ public class Vegetable extends Fragment {
         Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
         todo.setAdapter(mAdapter);
         return rootview;
-    }
+    }}
 
 
-}
