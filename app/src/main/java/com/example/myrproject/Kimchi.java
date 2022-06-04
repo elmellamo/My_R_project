@@ -36,7 +36,7 @@ public class Kimchi extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.kimchi_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 5);
+        LayoutManager = new GridLayoutManager(getActivity(), 4);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"김치", "두부"};

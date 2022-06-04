@@ -36,7 +36,7 @@ public class Rice extends Fragment {
         todo = (RecyclerView) rootview.findViewById(R.id.rice_todo);
         todo.setHasFixedSize(true);
 
-        LayoutManager = new GridLayoutManager(getActivity(), 5);
+        LayoutManager = new GridLayoutManager(getActivity(), 4);
         todo.setLayoutManager(LayoutManager);
 
         String[] textSet = {"백미","현미","보리"};

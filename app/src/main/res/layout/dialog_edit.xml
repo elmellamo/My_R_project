@@ -35,8 +35,8 @@
                 android:layout_marginBottom="10dp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center_vertical"
-                android:textStyle="bold"
-                android:text="이름" />
+                android:text="이름"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
