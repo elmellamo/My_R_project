@@ -58,7 +58,6 @@ public class Detail_Recipe extends AppCompatActivity {
 
         info = mRecipeDB.getCookInfo(a);
         detail_explanation.setText(info);
-        detail_explanation.setText(b);
 
         loadRecipeDBName(MySecondAdapter.foodname);
     }

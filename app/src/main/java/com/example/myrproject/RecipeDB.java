@@ -111,7 +111,7 @@ public class RecipeDB extends SQLiteOpenHelper {
         ArrayList<String> rItems = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();//조회 다른것과 다르다 읽는 행위
         Cursor cursor = db.rawQuery("SELECT info FROM Cooking WHERE food = '"+_food+"'",null);
-        String x = "없어";
+        String x = "레시피 설명을 적어주세요.";
 
         if (cursor.getCount() != 0) {
             cursor.moveToNext();

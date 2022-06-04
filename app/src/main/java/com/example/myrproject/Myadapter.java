@@ -89,11 +89,11 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.MyViewHolder>{
                     if(MainActivity.tabtype == 0){
                         mDBHelper.InsertItem(itemimg, itemname, "1", "개", currentTime);//입력필드에 적은 값 가져온다
                         //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
-                        Toast.makeText(mContext, itemname+"이(가) 추가됐습니다", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, itemname+"가(이) 추가됐습니다", Toast.LENGTH_SHORT).show();
                     }
                     else if(MainActivity.tabtype == 1){
                         mRecipeDB.InsertCookItem("요리","정보",Integer.toString(AddRecipe.cooktype),itemname,"1","개",currentTime);
-                        Toast.makeText(mContext, itemname+"이(가) 요리에 추가됐습니다", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, itemname+"가(이) 요리에 추가됐습니다", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

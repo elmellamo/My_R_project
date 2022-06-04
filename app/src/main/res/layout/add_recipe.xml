@@ -23,8 +23,9 @@
             android:layout_width="60sp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:paddingLeft="20dp"
             android:text="이름"
-            android:textColor="@color/black"
+            android:textColor="#045CB1"
             android:textSize="20sp" />
 
         <EditText
@@ -41,13 +42,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="100sp"
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="재료 목록"
-            android:textColor="@color/black"
+            android:text="재료 목록 🍽"
+            android:textColor="#045CB1"
             android:textSize="20sp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -66,33 +68,38 @@
     <LinearLayout
         android:id="@+id/explanation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/register">
+        android:layout_height="115dp"
+        android:layout_above="@id/register"
+        android:orientation="vertical">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
             android:text="요리 설명"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:paddingBottom="20dp"
+            android:textColor="#045CB1"
+            android:textSize="20sp" />
+
         <EditText
             android:id="@+id/edit_explanation"
-            android:maxLines="2"
-            android:scrollbars="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:paddingLeft="30dp"
+            android:scrollbars="vertical" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recipe_add_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="433dp"
         android:layout_above="@+id/explanation"
         android:layout_below="@+id/list"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="-4dp"
+        android:layout_marginBottom="30dp"
         tools:listitem="@layout/my_r_list_child" />
 
     <LinearLayout
