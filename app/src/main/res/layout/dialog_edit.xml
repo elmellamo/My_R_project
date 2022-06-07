@@ -46,7 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/btn_ok_layout"
-            android:layout_below="@+id/tv_name_layout">
+            android:layout_below="@+id/tv_name_layout"
+            android:paddingRight="15dp">
 
             <TextView
                 android:id="@+id/tv_cnt"
@@ -104,17 +105,18 @@
             android:gravity="right"
             android:orientation="vertical"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingRight="5dp">
+            android:paddingRight="5dp"
+            android:paddingBottom="10dp">
 
             <Button
                 android:id="@+id/btn_ok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:autoSizeTextType="uniform"
                 android:background="@drawable/dialog_buttonshape"
-                android:text="확인"
-                android:padding="5dp"/>
+                android:padding="10dp"
+                android:text="확인" />
         </LinearLayout>
 
 

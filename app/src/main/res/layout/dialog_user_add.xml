@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <LinearLayout
             android:id="@+id/tv_name_layout"
@@ -62,6 +63,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <EditText
                 android:id="@+id/whats_name"
                 android:layout_width="0dp"
@@ -71,11 +73,10 @@
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toTopOf="@+id/et_cnt"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintHorizontal_weight="4"
                 app:layout_constraintStart_toEndOf="@+id/tv_cnt"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <TextView
                 android:id="@+id/tv_cnt"
@@ -106,6 +107,15 @@
                 app:layout_constraintHorizontal_weight="4"
                 app:layout_constraintStart_toEndOf="@+id/tv_cnt"
                 app:layout_constraintTop_toBottomOf="@+id/whats_name"/>
+            <TextView
+                android:id="@+id/kg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="단위"
+                app:layout_constraintEnd_toStartOf="@+id/et_unit"
+                app:layout_constraintStart_toEndOf="@+id/et_cnt"
+                app:layout_constraintTop_toBottomOf="@+id/whats_name"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <EditText
                 android:id="@+id/et_unit"
@@ -138,10 +148,10 @@
                 android:id="@+id/btn_ok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
                 android:background="#90CAF9"
-                android:text="확인"
 
-                android:autoSizeTextType="uniform" />
+                android:text="확인" />
         </LinearLayout>
 
 
