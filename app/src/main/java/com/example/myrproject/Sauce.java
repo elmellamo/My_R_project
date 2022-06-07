@@ -39,9 +39,9 @@ public class Sauce extends Fragment {
         LayoutManager = new GridLayoutManager(getActivity(), 5);
         todo.setLayoutManager(LayoutManager);
 
-        String[] textSet = {"고추장", "간장","된장","케찹","식용유","마요네즈","스테이크소스","굴소스","파스타소스","칠리소스","식초","메이플시럽","초콜릿시럽"};
-        int[] imgSet = {R.drawable.chillipepper, R.drawable.soysauce, R.drawable.soybeanpaste, R.drawable.ketchup
-                ,R.drawable.oil, R.drawable.mayonnaise, R.drawable.steaksauce, R.drawable.oystersauce, R.drawable.pastasauce, R.drawable.chilisauce, R.drawable.balsamicvinegar, R.drawable.maplesyrup, R.drawable.syrup};
+        String[] textSet = {"고추장", "고추가루","간장","된장","케찹","식용유","연유","마요네즈","스테이크소스","굴소스","파스타소스","칠리소스","식초","메이플시럽","초콜릿시럽"};
+        int[] imgSet = {R.drawable.chillipepper, R.drawable.chilipowder2,R.drawable.soysauce, R.drawable.soybeanpaste, R.drawable.ketchup
+                ,R.drawable.oil,R.drawable.evaporatedmilk, R.drawable.mayonnaise, R.drawable.steaksauce, R.drawable.oystersauce, R.drawable.pastasauce, R.drawable.chilisauce, R.drawable.balsamicvinegar, R.drawable.maplesyrup, R.drawable.syrup};
 
         //어댑터 연결하기
         Myadapter mAdapter = new Myadapter(imgSet, textSet,getActivity().getApplicationContext());
