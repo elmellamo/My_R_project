@@ -22,28 +22,34 @@
         </activity>
 
         <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
         </activity>
 
         <activity android:name=".SecondActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.MyRProject"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity android:name=".AddRecipe"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.MyRProject"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity android:name=".ThirdActivity"
             android:parentActivityName=".AddRecipe"
             android:theme="@style/Theme.MyRProject"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity android:name=".Shopping"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.MyRProject"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity android:name=".Detail_Recipe"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.MyRProject"
+            android:screenOrientation="portrait"
             android:exported="false"/>
 
 
