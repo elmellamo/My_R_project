@@ -29,6 +29,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class SecondActivity extends AppCompatActivity {
@@ -42,6 +44,8 @@ public class SecondActivity extends AppCompatActivity {
     Rice rice;
     Kimchi kimchi;
     public static String itemtype;
+
+    private DBHelper mDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,12 +216,33 @@ public class SecondActivity extends AppCompatActivity {
                 EditText et_unit = dialog.findViewById(R.id.et_unit);
                 Button btn_ok = dialog.findViewById(R.id.btn_ok);
 
+
                 btn_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String name =
+                        String itemtype = SecondActivity.itemtype;
+                        String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());
+                        String name = whats_name.getText().toString();
+                        String cnt = et_cnt.getText().toString();
+                        String unit = et_unit.getText().toString();
+
+
+                        if(name.getBytes().length <= 0){//빈값이 넘어올때의 처리
+                            AlertDialog.Builder builder = new AlertDialog.Builder(SecondActivity.this);
+                            builder.setTitle("재료 미등록");
+                            builder.setMessage("재료 이름을 등록해주세요");
+                            builder.setPositiveButton("예",null);
+                            builder.create().show();
+                        }
+                        else{
+                            mDBHelper.InsertItem("기타", name, cnt, unit, currentTime);
+                            dialog.dismiss();
+                            Toast.makeText(SecondActivity.this, name+"가(이) 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 });
+                dialog.show();
 
 
 
