@@ -9,9 +9,11 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
@@ -19,13 +21,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ThirdActivity extends AppCompatActivity {
@@ -40,12 +46,14 @@ public class ThirdActivity extends AppCompatActivity {
     Kimchi kimchi;
     public static String cooktype;
 
+    private RecipeDB mRecipeDB = new RecipeDB(ThirdActivity.this);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
+        ImageButton user_append_btn = findViewById(R.id.user_append);
 
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -170,6 +178,77 @@ public class ThirdActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x2f000000);
+            }
+        });
+
+        user_append_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                SecondActivity.itemtype = "기타";
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x2f000000);
+
+                Dialog dialog = new Dialog(ThirdActivity.this, android.R.style.Theme_Material_Light_Dialog);
+                dialog.setContentView(R.layout.dialog_user_add);
+                //커스텀 다이얼로그
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.setCanceledOnTouchOutside(false);
+
+                //다이얼로그 크기 조절하기
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = WindowManager.LayoutParams.MATCH_PARENT;
+                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                dialog.getWindow().setAttributes((WindowManager.LayoutParams) params);
+
+
+                EditText whats_name = dialog.findViewById(R.id.whats_name);
+                EditText et_cnt = dialog.findViewById(R.id.et_cnt);
+                EditText et_unit = dialog.findViewById(R.id.et_unit);
+                Button btn_ok = dialog.findViewById(R.id.btn_ok);
+
+
+
+                btn_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());
+                        String name = whats_name.getText().toString();
+                        String cnt = et_cnt.getText().toString();
+                        String unit = et_unit.getText().toString();
+
+
+                        if(name.getBytes().length <= 0){//빈값이 넘어올때의 처리
+                            AlertDialog.Builder builder = new AlertDialog.Builder(ThirdActivity.this);
+                            builder.setTitle("재료 미등록");
+                            builder.setMessage("재료 이름을 등록해주세요");
+                            builder.setPositiveButton("예",null);
+                            builder.create().show();
+                        }
+                        else if(cnt.getBytes().length <= 0){//빈값이 넘어올때의 처리
+                            AlertDialog.Builder builder = new AlertDialog.Builder(ThirdActivity.this);
+                            builder.setTitle("수량 미등록");
+                            builder.setMessage("재료 수량을 등록해주세요");
+                            builder.setPositiveButton("예",null);
+                            builder.create().show();
+                        }
+                        else if(unit.getBytes().length <= 0){//빈값이 넘어올때의 처리
+                            AlertDialog.Builder builder = new AlertDialog.Builder(ThirdActivity.this);
+                            builder.setTitle("단위 미등록");
+                            builder.setMessage("재료 단위를 등록해주세요");
+                            builder.setPositiveButton("예",null);
+                            builder.create().show();
+                        }
+                        else{
+                            mRecipeDB.InsertCookItem("요리","정보",Integer.toString(AddRecipe.cooktype), name, cnt, unit, currentTime);
+                            dialog.dismiss();
+                            Toast.makeText(ThirdActivity.this, name+"가(이) 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+                dialog.show();
             }
         });
     }

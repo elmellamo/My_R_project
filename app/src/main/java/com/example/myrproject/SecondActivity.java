@@ -45,7 +45,7 @@ public class SecondActivity extends AppCompatActivity {
     Kimchi kimchi;
     public static String itemtype;
 
-    private DBHelper mDBHelper;
+    private DBHelper mDBHelper = new DBHelper(SecondActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -217,6 +217,7 @@ public class SecondActivity extends AppCompatActivity {
                 Button btn_ok = dialog.findViewById(R.id.btn_ok);
 
 
+
                 btn_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -233,6 +234,20 @@ public class SecondActivity extends AppCompatActivity {
                             builder.setPositiveButton("예",null);
                             builder.create().show();
                         }
+                        else if(cnt.getBytes().length <= 0){//빈값이 넘어올때의 처리
+                            AlertDialog.Builder builder = new AlertDialog.Builder(SecondActivity.this);
+                            builder.setTitle("수량 미등록");
+                            builder.setMessage("재료 수량을 등록해주세요");
+                            builder.setPositiveButton("예",null);
+                            builder.create().show();
+                        }
+                        else if(unit.getBytes().length <= 0){//빈값이 넘어올때의 처리
+                            AlertDialog.Builder builder = new AlertDialog.Builder(SecondActivity.this);
+                            builder.setTitle("단위 미등록");
+                            builder.setMessage("재료 단위를 등록해주세요");
+                            builder.setPositiveButton("예",null);
+                            builder.create().show();
+                        }
                         else{
                             mDBHelper.InsertItem(itemtype, name, cnt, unit, currentTime);
                             dialog.dismiss();
@@ -242,9 +257,6 @@ public class SecondActivity extends AppCompatActivity {
                     }
                 });
                 dialog.show();
-
-
-
             }
         });
    }
