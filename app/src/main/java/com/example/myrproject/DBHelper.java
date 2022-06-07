@@ -200,7 +200,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 String itemcnt = cursor.getString(3);
                 String itemunit = cursor.getString(4);
                 String _beforedate = cursor.getString(5);
-                UpdateTodo(Integer.toString(Integer.parseInt(itemcnt)+1),itemunit,_writedate,_beforedate);
+                UpdateTodo(Double.toString(Double.parseDouble(itemcnt)+1),itemunit,_writedate,_beforedate);
             }
         }
         cursor.close();
