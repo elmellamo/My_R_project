@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyRProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.MyRProject" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/mainblue</item> //배경
         <item name="colorPrimaryVariant">#2D4FADA2</item>

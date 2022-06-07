@@ -22,20 +22,24 @@
 
         <LinearLayout
             android:id="@+id/gobtnlayout"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:gravity="center"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/gobtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/mainblue"
-                android:text="재료 추가하기"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:textStyle="bold"></Button>
+                android:background="@drawable/buttonshape"
+                android:text="+ 재료 추가하기"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </RelativeLayout>

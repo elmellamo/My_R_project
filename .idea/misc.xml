@@ -20,19 +20,16 @@
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/activity_second.xml" value="0.4" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/activity_third.xml" value="0.2223731884057971" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/activity_title.xml" value="0.20108695652173914" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/add_recipe.xml" value="0.4" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/add_recipe.xml" value="0.2" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/cookname_list_child.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/detail_recipe.xml" value="0.20652173913043478" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_edit.xml" value="0.33884297520661155" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_edit.xml" value="0.2413793103448276" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_recipe.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/dialog_user_add.xml" value="0.4" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/ex.xml" value="0.20108695652173914" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_add_item.xml" value="0.11144883485309018" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_blank.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_category.xml" value="0.1" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_custom_dialog.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_dairy.xml" value="0.16041666666666668" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_detail__recipe.xml" value="0.264" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_drink.xml" value="0.1111111111111111" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_fish.xml" value="0.13451086956521738" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_fruit.xml" value="0.21467391304347827" />
@@ -43,12 +40,12 @@
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_rice.xml" value="0.1" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_sauce.xml" value="0.1157548125633232" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_sub_category.xml" value="0.18931159420289856" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.1" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.2" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab__recipe.xml" value="0.221875" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.1" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_vegetable.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fruit_item_list.xml" value="0.19882246376811594" />
-        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/item_list.xml" value="0.264" />
+        <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/item_list.xml" value="0.25" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_child.xml" value="0.221875" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_header.xml" value="0.2" />
         <entry key="..\:/Users/DamDam/AndroidStudioProjects/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.25364583333333335" />
@@ -76,7 +73,7 @@
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_fruit.xml" value="0.264" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_meat.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_sub_category.xml" value="0.20652173913043478" />
-        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.176" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab__my_r.xml" value="0.1" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab__recipe.xml" value="0.176" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fruit_item_list.xml" value="0.25364583333333335" />
@@ -95,6 +92,7 @@
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/add_recipe.xml" value="0.1" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_dairy.xml" value="0.2" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_drink.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab__recipe.xml" value="0.23743589743589744" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.2361111111111111" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/item_list.xml" value="0.1037037037037037" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/last_recipe.xml" value="0.24114583333333334" />
@@ -103,6 +101,7 @@
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.1" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/shopping.xml" value="0.136" />
         <entry key="..\:/Users/user/My_R_project/app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/user/My_R_project/app/src/main/res/menu/searchmenu.xml" value="0.1" />
       </map>
     </option>
   </component>
