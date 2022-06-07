@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="오늘 요리할 레시피 👨‍🍳 🧑‍🍳"
+            android:text="오늘 요리할 레시피 👨‍🍳 👩‍🍳"
             android:textColor="@color/black"
             android:textSize="20sp" />
     </LinearLayout>
