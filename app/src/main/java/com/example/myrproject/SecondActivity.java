@@ -220,7 +220,6 @@ public class SecondActivity extends AppCompatActivity {
                 btn_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        String itemtype = SecondActivity.itemtype;
                         String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());
                         String name = whats_name.getText().toString();
                         String cnt = et_cnt.getText().toString();
@@ -235,7 +234,7 @@ public class SecondActivity extends AppCompatActivity {
                             builder.create().show();
                         }
                         else{
-                            mDBHelper.InsertItem("기타", name, cnt, unit, currentTime);
+                            mDBHelper.InsertItem(itemtype, name, cnt, unit, currentTime);
                             dialog.dismiss();
                             Toast.makeText(SecondActivity.this, name+"가(이) 추가되었습니다.", Toast.LENGTH_SHORT).show();
                         }
