@@ -331,8 +331,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/category"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="15dp"
-
         >
 
     </FrameLayout>

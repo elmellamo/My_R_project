@@ -1,5 +1,6 @@
 package com.example.myrproject;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Fruit extends Fragment {
 
@@ -26,7 +28,6 @@ public class Fruit extends Fragment {
 
     private RecyclerView todo;
     private RecyclerView.LayoutManager LayoutManager;
-
 
 
     @Override
