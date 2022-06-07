@@ -35,36 +35,94 @@
                 android:layout_marginBottom="10dp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center_vertical"
-                android:textSize="25dp"
                 android:text="추가할 재료"
+                android:textSize="25dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/hori_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/btn_ok_layout"
-            android:gravity="center"
             android:layout_below="@+id/tv_name_layout">
 
+            <TextView
+                android:id="@+id/add_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="이름 "
+                app:layout_constraintBottom_toTopOf="@+id/tv_cnt"
+                app:layout_constraintEnd_toStartOf="@+id/whats_name"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/et_cnt"
-                android:layout_width="match_parent"
+                android:id="@+id/whats_name"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
                 android:ems="4"
                 android:inputType="textPersonName"
-                android:gravity="center_vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/et_cnt"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@+id/tv_cnt"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv_cnt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="수량 "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et_cnt"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_name" />
+
+            <EditText
+                android:id="@+id/et_cnt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:ems="4"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et_unit"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@+id/tv_cnt"
+                app:layout_constraintTop_toBottomOf="@+id/whats_name"/>
+
+            <EditText
+                android:id="@+id/et_unit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:ems="3"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@+id/et_cnt"
+                app:layout_constraintTop_toBottomOf="@+id/whats_name"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/btn_ok_layout"
@@ -82,6 +140,7 @@
                 android:layout_height="wrap_content"
                 android:background="#90CAF9"
                 android:text="확인"
+
                 android:autoSizeTextType="uniform" />
         </LinearLayout>
 

@@ -3,13 +3,16 @@ package com.example.myrproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
@@ -17,8 +20,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -67,6 +72,8 @@ public class SecondActivity extends AppCompatActivity {
         ImageButton saucebtn =  findViewById(R.id.sauce);
         ImageButton ricebtn =  findViewById(R.id.rice);
         ImageButton kimchibtn =  findViewById(R.id.kimchi);
+        ImageButton user_append_btn = findViewById(R.id.user_append);
+
         fruitbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -75,6 +82,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x2f000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -86,6 +94,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x2f000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -97,6 +106,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x2f000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -108,6 +118,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x2f000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -119,6 +130,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x2f000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -130,6 +142,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x2f000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -142,6 +155,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x2f000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -154,6 +168,7 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x2f000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x00000000);
             }
         });
 
@@ -166,6 +181,46 @@ public class SecondActivity extends AppCompatActivity {
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x2f000000);
+                user_append_btn.setBackgroundColor(0x00000000);
+            }
+        });
+
+        user_append_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                itemtype = "기타";
+                fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
+                fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
+                saucebtn.setBackgroundColor(0x00000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
+                user_append_btn.setBackgroundColor(0x2f000000);
+
+                Dialog dialog = new Dialog(SecondActivity.this, android.R.style.Theme_Material_Light_Dialog);
+                dialog.setContentView(R.layout.dialog_user_add);
+                //커스텀 다이얼로그
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.setCanceledOnTouchOutside(false);
+
+                //다이얼로그 크기 조절하기
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = WindowManager.LayoutParams.MATCH_PARENT;
+                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                dialog.getWindow().setAttributes((WindowManager.LayoutParams) params);
+
+
+                EditText whats_name = dialog.findViewById(R.id.whats_name);
+                EditText et_cnt = dialog.findViewById(R.id.et_cnt);
+                EditText et_unit = dialog.findViewById(R.id.et_unit);
+                Button btn_ok = dialog.findViewById(R.id.btn_ok);
+
+                btn_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String name =
+                    }
+                });
+
+
+
             }
         });
    }
