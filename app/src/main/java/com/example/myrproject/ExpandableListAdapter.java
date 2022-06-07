@@ -190,19 +190,24 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                         String unit = et_unit.getText().toString();
                                         String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
                                         String beforeTime = rItem.getWritedate();//이전에 저장된 시간
+                                        if(!isStringDouble(cnt)){
+                                            //경고문
+                                            Toast.makeText(mContext, "숫자로 입력해주세요!!", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else{
+                                            mDBHelper.UpdateTodo(cnt,unit, currentTime,beforeTime);//입력필드에 적은 값 가져온다
+                                            //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
 
-                                        mDBHelper.UpdateTodo(cnt,unit, currentTime,beforeTime);//입력필드에 적은 값 가져온다
-                                        //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
-
-                                        //update UI
-                                        rItem.setIitemtype(type);
-                                        rItem.setTtext(name);
-                                        rItem.setCcnt(cnt);
-                                        rItem.setUunit(unit);
-                                        rItem.setWritedate(currentTime);
-                                        notifyItemChanged(curPos, rItem);//클릭한 아이템에 갱신된 아이템을 갱신
-                                        dialog.dismiss();//dialog 종료
-                                        Toast.makeText(mContext, "목록 수정이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
+                                            //update UI
+                                            rItem.setIitemtype(type);
+                                            rItem.setTtext(name);
+                                            rItem.setCcnt(cnt);
+                                            rItem.setUunit(unit);
+                                            rItem.setWritedate(currentTime);
+                                            notifyItemChanged(curPos, rItem);//클릭한 아이템에 갱신된 아이템을 갱신
+                                            dialog.dismiss();//dialog 종료
+                                            Toast.makeText(mContext, "목록 수정이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 });
                                 dialog.show();//필수
@@ -221,6 +226,15 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     builder.show();
                 }
             });
+        }
+    }
+
+    public boolean isStringDouble(String s) {
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
 
