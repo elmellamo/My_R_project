@@ -14,7 +14,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/border"
+        android:background="@drawable/dialog_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,11 +98,11 @@
                 android:id="@+id/et_cnt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="5dp"
                 android:ems="4"
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/et_unit"
+                app:layout_constraintEnd_toStartOf="@+id/kg"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_weight="4"
                 app:layout_constraintStart_toEndOf="@+id/tv_cnt"
@@ -128,7 +128,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_weight="3"
-                app:layout_constraintStart_toEndOf="@+id/et_cnt"
+                app:layout_constraintStart_toEndOf="@+id/kg"
                 app:layout_constraintTop_toBottomOf="@+id/whats_name"/>
 
 
@@ -149,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoSizeTextType="uniform"
-                android:background="#90CAF9"
+                android:background="@drawable/dialog_buttonshape"
 
                 android:text="확인" />
         </LinearLayout>
