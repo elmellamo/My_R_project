@@ -175,7 +175,6 @@ public class RecipeDB extends SQLiteOpenHelper {
         int a;
         if(cursor.getCount()!=0){
             a = cursor.getInt(0);
-            Log.v("a","df");
             a+=3;
         }
         else{

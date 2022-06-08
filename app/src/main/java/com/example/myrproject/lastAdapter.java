@@ -107,7 +107,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                 if(mSelected!=null && mSelected.contains(a)){
                                     int position = mSelected.indexOf(a);
                                     MyRItem item = mSelected.get(position);
-                                    item.setCnt(Integer.toString(Integer.parseInt(a.getCnt())+Integer.parseInt(item.getCnt())));
+                                    item.setCnt(Double.toString(Double.parseDouble(a.getCnt())+Double.parseDouble(item.getCnt())));
                                     mSelected.set(position,item);
                                 }
                                 else{
@@ -130,7 +130,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                         mSelected.remove(position);
                                     }
                                     else{
-                                        item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
+                                        item.setCnt(Double.toString(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())));
                                         mSelected.set(position,item);
                                     }
                                 }

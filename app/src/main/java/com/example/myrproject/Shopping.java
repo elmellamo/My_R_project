@@ -85,14 +85,13 @@ public class Shopping extends AppCompatActivity {
                 if(mBItems.contains(a)){
                     int position = mBItems.indexOf(a);
                     MyRItem item = mBItems.get(position);
-                    if(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())>0){
-                        item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
+                    if(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())>0){
+                        item.setCnt(Double.toString(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())));
                         mBItems.set(position,item);
                     }
                     else{
                         mBItems.remove(position);
                     }
-
                 }//없다면 아무짓도 안함
             }
         }
