@@ -64,13 +64,13 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.recipe_title.setText(mRItems.get(position));
         holder.itemView.setSelected(isItemSelected(position));
-        if (isItemSelected(position)) {
+        /*if (isItemSelected(position)) {
             //아이템 선택된것
             holder.itemView.setBackgroundColor(mContext.getResources().getColor(R.color.pastel_blue));
         } else {
             //아이템 선택 안된것
             holder.itemView.setBackgroundColor(Color.WHITE);
-        }
+        }*/
     }
 
     @Override
