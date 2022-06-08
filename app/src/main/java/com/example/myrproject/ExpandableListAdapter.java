@@ -184,6 +184,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                     public void onClick(View view) {
                                         //수정시나리오
                                         //update table
+                                        int id = rItem.getId();
                                         String type = rItem.getIitemtype();
                                         String name = rItem.getTtext();
                                         String cnt = et_cnt.getText().toString();
@@ -197,7 +198,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                             Toast.makeText(mContext, "올바른 수량을 입력해주세요.", Toast.LENGTH_SHORT).show();
                                         }
                                         else{
-                                            mDBHelper.UpdateTodo(cnt,unit, currentTime,beforeTime);//입력필드에 적은 값 가져온다
+                                            mDBHelper.UpdateTodo(id,cnt,unit, currentTime,beforeTime);//입력필드에 적은 값 가져온다
                                             //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
                                             //update UI
                                             rItem.setIitemtype(type);

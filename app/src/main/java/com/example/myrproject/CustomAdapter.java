@@ -112,6 +112,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                                     public void onClick(View view) {
                                         //수정시나리오
                                         //update table
+                                        int id = rItem.getId();
                                         String name = rItem.getName();
                                         String cnt = et_cnt.getText().toString();
                                         String unit = et_unit.getText().toString();
@@ -122,7 +123,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                                             Toast.makeText(mContext, "숫자로 입력해주세요", Toast.LENGTH_SHORT).show();
                                         }
                                         else{
-                                            mRecipeDB.UpdateCook(cnt,unit,currentTime,beforeTime);//입력필드에 적은 값 가져온다
+                                            mRecipeDB.UpdateCook(id, cnt,unit,currentTime,beforeTime);//입력필드에 적은 값 가져온다
                                             //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
 
                                             //update UI

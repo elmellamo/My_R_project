@@ -140,19 +140,20 @@ public class RecipeDB extends SQLiteOpenHelper {
         }
         else{
             if(cursor.moveToFirst()){
+                int id = cursor.getInt(0);
                 String itemcnt = cursor.getString(5);
                 String itemunit = cursor.getString(6);
                 String _beforedate = cursor.getString(7);
-                UpdateCook(Double.toString(Double.parseDouble(itemcnt)+1),itemunit,_writedate,_beforedate);
+                UpdateCook(id, Double.toString(Double.parseDouble(itemcnt)+1),itemunit,_writedate,_beforedate);
             }
         }
         cursor.close();
     }
 
 
-    public void UpdateCook(String _cnt, String _unit,String _writedate, String _beforeDate){
+    public void UpdateCook(int _id, String _cnt, String _unit,String _writedate, String _beforeDate){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE Cooking SET cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"'");
+        db.execSQL("UPDATE Cooking SET cnt = '"+_cnt+"',unit = '"+_unit+"',writedate='"+_writedate+"'WHERE writedate='"+_beforeDate+"' AND id = '"+_id+"'");
     }
 
     public void UpdateOk(String _food, String _info,String _type){
