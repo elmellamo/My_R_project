@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -21,33 +21,34 @@
                 android:id="@+id/recyclerview2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/recipe_list"
+                android:layout_above="@id/fab2"
                 android:layout_marginTop="10dp"
-                android:nestedScrollingEnabled="false"
-                android:overScrollMode="never"
+                tools:listitem="@layout/recipe_list"
 
                 >
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <Button
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/buttonshape"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="+ 레시피 추가하기"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-        </LinearLayout>
+
+        </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/mainblue"
-        android:src="@drawable/fab"
-        app:borderWidth="0dp"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@null"
-        tools:ignore="ContentDescription" />
+
 
 </FrameLayout>

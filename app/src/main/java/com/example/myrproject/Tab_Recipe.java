@@ -34,7 +34,7 @@ public class Tab_Recipe extends Fragment {
 
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
-    private FloatingActionButton fab;
+    private Button fab;
     public static int num;
     ArrayList<String> mRItems;
     RecipeDB mRecipeDB;
@@ -71,7 +71,7 @@ public class Tab_Recipe extends Fragment {
         mRecipeDB = new RecipeDB(getActivity());
         loadCookNameDB();
 
-        fab = (FloatingActionButton) rootview.findViewById(R.id.fab2);
+        fab = (Button) rootview.findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

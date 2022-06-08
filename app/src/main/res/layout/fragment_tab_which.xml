@@ -48,6 +48,7 @@
                 android:id="@+id/lets_go_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/buttonshape"
                 android:text="장보러 가기"
