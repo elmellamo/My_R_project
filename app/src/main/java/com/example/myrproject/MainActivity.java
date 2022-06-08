@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
     private RecyclerView recyclerview2;
     private RecyclerView recyclerview3;
     public static int tabtype = 0;
+    private int q = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,30 +141,34 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                if(tabtype == 1){
-                    search2(query);
-                }
-                else if(tabtype == 2){
-                    search3(query);
-                }
-                else{
-                    searchContact(query);
+                if(q==0){
+                    if(tabtype == 1){
+                        search2(query);
+                    }
+                    else if(tabtype == 2){
+                        search3(query);
+                    }
+                    else{
+                        searchContact(query);
+                    }
                 }
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if(tabtype == 1){
-                    search2(newText);
-                }
-                else if(tabtype == 2){
-                    search3(newText);
-                }
-                else{
-                    searchContact(newText);
-                }
+                if(q==0){
+                    if(tabtype == 1){
+                        search2(newText);
+                    }
+                    else if(tabtype == 2){
+                        search3(newText);
+                    }
+                    else{
+                        searchContact(newText);
+                    }
 
+                }
                 return false;
             }
         });
@@ -171,20 +176,22 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
         searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                q = 0;
                 return true;
             }
-//https://stackoverflow.com/questions/45635482/how-to-handle-back-arrow-event-in-a-searchview
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-
-                recyclerview = findViewById(R.id.recyclerview);
-                registerForContextMenu(recyclerview);
-                DBHelper databaseHelper = new DBHelper(getApplicationContext());
-                ArrayList<ExpandableListAdapter.Item> contacts = databaseHelper.getItem();
-                if (contacts != null) {
-                    Toast.makeText(MainActivity.this, "dfds", Toast.LENGTH_SHORT).show();
-
-                    recyclerview.setAdapter(new ExpandableListAdapter(contacts, ExpandableListAdapter.mContext));
+                q = 1;
+                if(tabtype == 0){
+                    recyclerview = findViewById(R.id.recyclerview);
+                    registerForContextMenu(recyclerview);
+                    DBHelper databaseHelper = new DBHelper(getApplicationContext());
+                    ArrayList<ExpandableListAdapter.Item> mritems = databaseHelper.getItem();
+                    if (mritems != null) {
+                        recyclerview.setAdapter(new ExpandableListAdapter(mritems,getApplicationContext()));
+                        Toast.makeText(MainActivity.this, "dfds", Toast.LENGTH_SHORT).show();
+                        recyclerview.setHasFixedSize(true);
+                    }
                 }
                 return true;
             }
