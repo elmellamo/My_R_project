@@ -160,6 +160,4 @@ public class AddRecipe extends AppCompatActivity {
             finish();
         }
     }
-
-
 }

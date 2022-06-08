@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -164,6 +165,28 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
                 }
 
                 return false;
+            }
+        });
+
+        searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+
+                recyclerview = findViewById(R.id.recyclerview);
+                registerForContextMenu(recyclerview);
+                DBHelper databaseHelper = new DBHelper(getApplicationContext());
+                ArrayList<ExpandableListAdapter.Item> contacts = databaseHelper.getItem();
+                if (contacts != null) {
+                    Toast.makeText(MainActivity.this, "dfds", Toast.LENGTH_SHORT).show();
+
+                    recyclerview.setAdapter(new ExpandableListAdapter(contacts, ExpandableListAdapter.mContext));
+                }
+                return true;
             }
         });
         return super.onCreateOptionsMenu(menu);

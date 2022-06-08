@@ -103,5 +103,4 @@ public class Detail_Recipe extends AppCompatActivity {
         }
         loadRecipeDBType(x);
     }
-
 }
