@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -107,7 +108,10 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                 if(mSelected!=null && mSelected.contains(a)){
                                     int position = mSelected.indexOf(a);
                                     MyRItem item = mSelected.get(position);
-                                    item.setCnt(Double.toString(Double.parseDouble(a.getCnt())+Double.parseDouble(item.getCnt())));
+                                    BigDecimal value1 = new BigDecimal(item.getCnt());
+                                    BigDecimal value2 = new BigDecimal(a.getCnt());
+                                    BigDecimal x = value1.add(value2);
+                                    item.setCnt(x.toString());
                                     mSelected.set(position,item);
                                 }
                                 else{
@@ -126,11 +130,14 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                 if(mSelected!=null && mSelected.contains(a)){
                                     int position = mSelected.indexOf(a);
                                     MyRItem item = mSelected.get(position);
-                                    if(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())==0){
+                                    BigDecimal value1 = new BigDecimal(item.getCnt());
+                                    BigDecimal value2 = new BigDecimal(a.getCnt());
+                                    BigDecimal x = value1.subtract(value2);
+                                    if(Double.parseDouble(x.toString())==0){////
                                         mSelected.remove(position);
                                     }
                                     else{
-                                        item.setCnt(Double.toString(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())));
+                                        item.setCnt(x.toString());
                                         mSelected.set(position,item);
                                     }
                                 }

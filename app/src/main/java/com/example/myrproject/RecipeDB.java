@@ -125,8 +125,6 @@ public class RecipeDB extends SQLiteOpenHelper {
     }
 
 
-
-
     public void InsertCook(String _food, String _info, String _type, String _name, String _cnt, String _unit,String _writedate){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("INSERT INTO Cooking(food, info, type,name,cnt,unit,writedate) VALUES('"+_food+"','"+_info+"','"+_type+"','"+_name+"','"+_cnt+"','"+_unit+"','"+_writedate+"');");
