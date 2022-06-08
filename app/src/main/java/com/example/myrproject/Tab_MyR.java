@@ -75,6 +75,7 @@ public class Tab_MyR extends Fragment {
     public void onResume() {
         super.onResume();
         MainActivity.tabtype = 0;
-        //loadRecentDB();
+        loadRecentDB();
+        mAdapter.notifyDataSetChanged();
     }
 }
