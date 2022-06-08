@@ -130,13 +130,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                         mSelected.remove(position);
                                     }
                                     else{
-                                        double bc = Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt());
-                                        if(bc==(int)(bc)){
-                                            item.setCnt(Integer.toString(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())));
-                                        }
-                                        else{
-                                            item.setCnt(Double.toString(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())));
-                                        }
+                                        item.setCnt(Double.toString(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())));
                                         mSelected.set(position,item);
                                     }
                                 }

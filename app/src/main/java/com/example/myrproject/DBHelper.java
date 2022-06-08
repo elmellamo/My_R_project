@@ -184,7 +184,11 @@ public class DBHelper extends SQLiteOpenHelper {
                     contact.setTtype(1);
                     contact.setIitemtype(cursor.getString(1));
                     contact.setTtext(cursor.getString(2));
-                    contact.setCcnt(cursor.getString(3));
+                    String cnt = cursor.getString(3);
+                    if((int)Double.parseDouble(cnt)-Double.parseDouble(cnt)==0){
+                        cnt = Integer.toString((int)Double.parseDouble(cnt));
+                    }
+                    contact.setCcnt(cnt);
                     contact.setUunit(cursor.getString(4));
                     contact.setWritedate(cursor.getString(5));
                     contacts.add(contact);

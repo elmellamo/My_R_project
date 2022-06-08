@@ -45,7 +45,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.child_title.setText(mRItems.get(position).getName());
-        holder.child_cnt.setText(mRItems.get(position).getCnt());
+        String cnt = mRItems.get(position).getCnt();
+        if((int)Double.parseDouble(cnt)-Double.parseDouble(cnt)==0){
+            cnt = Integer.toString((int)Double.parseDouble(cnt));
+        }
+        holder.child_cnt.setText(cnt);
         holder.child_unit.setText(mRItems.get(position).getUnit());
     }
 
