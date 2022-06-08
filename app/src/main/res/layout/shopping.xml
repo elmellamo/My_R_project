@@ -33,10 +33,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/which_cooking"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/recipe_name"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="-4dp"
+        android:background="@drawable/underline"
         tools:listitem="@layout/recipe_list" />
 
     <LinearLayout
