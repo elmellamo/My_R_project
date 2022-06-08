@@ -125,6 +125,18 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                             }
                         });
                         builder1.show();}
+                    if(MainActivity.tabtype==2){
+                        {//position을 의미
+
+                                    Intent intent2 = new Intent(mContext, Detail_Recipe.class);
+                                    intent2.putExtra("a",foodname);
+                                    n=2;
+                            Toast.makeText(mContext, "해당 레시피 상세 페이지로 이동합니다.", Toast.LENGTH_SHORT).show();
+                                    mContext.startActivity(intent2);
+
+
+                            }
+                        }
                 }
             });
         }
