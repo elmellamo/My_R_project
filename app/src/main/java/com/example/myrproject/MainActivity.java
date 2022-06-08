@@ -127,29 +127,21 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
-
-        if(tabtype == 1){
-            searchView.setQueryHint("메뉴를 검색합니다.");
-        }
-        else if(tabtype == 2){
-            searchView.setQueryHint("메뉴를 검색합니다.");
-        }
-        else{
-            searchView.setQueryHint("재료를 검색합니다.");
-        }
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if(q==0){
                     if(tabtype == 1){
                         search2(query);
+                        searchView.setQueryHint("메뉴를 검색합니다.");
                     }
                     else if(tabtype == 2){
                         search3(query);
+                        searchView.setQueryHint("메뉴를 검색합니다.");
                     }
                     else{
                         searchContact(query);
+                        searchView.setQueryHint("재료를 검색합니다.");
                     }
                 }
                 return false;
@@ -160,12 +152,15 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
                 if(q==0){
                     if(tabtype == 1){
                         search2(newText);
+                        searchView.setQueryHint("메뉴를 검색합니다.");
                     }
                     else if(tabtype == 2){
                         search3(newText);
+                        searchView.setQueryHint("메뉴를 검색합니다.");
                     }
                     else{
                         searchContact(newText);
+                        searchView.setQueryHint("재료를 검색합니다.");
                     }
 
                 }
@@ -177,6 +172,15 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
                 q = 0;
+                if(tabtype == 1){
+                    searchView.setQueryHint("메뉴를 검색합니다.");
+                }
+                else if(tabtype == 2){
+                    searchView.setQueryHint("메뉴를 검색합니다.");
+                }
+                else{
+                    searchView.setQueryHint("재료를 검색합니다.");
+                }
                 return true;
             }
             @Override

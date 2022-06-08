@@ -199,7 +199,6 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                         else{
                                             mDBHelper.UpdateTodo(cnt,unit, currentTime,beforeTime);//입력필드에 적은 값 가져온다
                                             //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
-
                                             //update UI
                                             rItem.setIitemtype(type);
                                             rItem.setTtext(name);
