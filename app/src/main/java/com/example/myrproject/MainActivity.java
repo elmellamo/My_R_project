@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
                 return true;
             }
-
+//https://stackoverflow.com/questions/45635482/how-to-handle-back-arrow-event-in-a-searchview
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
 
