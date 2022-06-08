@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +31,7 @@ public class Shopping extends AppCompatActivity {
     RecyclerView recyclerview1;
     RecyclerView recyclerview2;
     LinearLayoutManager mLayoutManager;
-    LinearLayoutManager mLayoutManager2;
+    GridLayoutManager mLayoutManager2;
     RecipeDB mRecipeDB;
     DBHelper mDBHelper;
     MySecondAdapter mAdapter1;
@@ -49,7 +50,7 @@ public class Shopping extends AppCompatActivity {
         recyclerview1 = findViewById(R.id.which_cooking);
         recyclerview2 = findViewById(R.id.lets_shopping);
         mLayoutManager = new LinearLayoutManager(this);
-        mLayoutManager2 = new LinearLayoutManager(this);
+        mLayoutManager2 = new GridLayoutManager(this, 2);
         recyclerview1.setLayoutManager(mLayoutManager);
         recyclerview2.setLayoutManager(mLayoutManager2);
         mDBHelper = new DBHelper(this);
