@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -32,7 +33,7 @@ public class Tab_Recipe extends Fragment {
 
     DBHelper dbHelper;
     SQLiteDatabase sqlitedb;
-    private TextView emptytxt;
+    private LinearLayout emptytxt;
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button fab;

@@ -28,15 +28,22 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/emptytxt"
+                android:visibility="gone"
+                android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:id="@+id/emptytxt"
                 android:text="레시피가 비었어요.\n레시피를 추가해주세요."
-                android:visibility="gone"
+
                 android:textSize="30dp"/>
+
+            </LinearLayout>
 <!--                android:visibility="gone"-->
 
 

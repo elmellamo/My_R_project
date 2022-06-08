@@ -10,7 +10,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://dl.bintray.com/ssynhtn-org/android-wave-view' }
     }
 }
 
