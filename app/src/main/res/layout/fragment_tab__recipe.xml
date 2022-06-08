@@ -33,6 +33,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/emptytxt"
                 android:visibility="gone"
+                android:background="@drawable/norecipe"
                 android:orientation="vertical">
 
             <TextView
