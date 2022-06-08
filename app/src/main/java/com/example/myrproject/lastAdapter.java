@@ -126,7 +126,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                 if(mSelected!=null && mSelected.contains(a)){
                                     int position = mSelected.indexOf(a);
                                     MyRItem item = mSelected.get(position);
-                                    if(Integer.parseInt(item.getCnt())-Integer.parseInt(a.getCnt())==0){
+                                    if(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())==0){
                                         mSelected.remove(position);
                                     }
                                     else{
