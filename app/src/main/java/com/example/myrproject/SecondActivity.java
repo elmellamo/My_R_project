@@ -155,7 +155,7 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 getSupportFragmentManager().beginTransaction().replace(R.id.listcontainer, sauce).commit();
-                itemtype = "장/소스/드레싱";
+                itemtype = "장/소스";
                 fruitbtn.setBackgroundColor(0x00000000);  vegbtn.setBackgroundColor(0x00000000);  meatbtn.setBackgroundColor(0x00000000);
                 fishbtn.setBackgroundColor(0x00000000);  dairybtn.setBackgroundColor(0x00000000);  drinkbtn.setBackgroundColor(0x00000000);
                 saucebtn.setBackgroundColor(0x2f000000);  ricebtn.setBackgroundColor(0x00000000);  kimchibtn.setBackgroundColor(0x00000000);
