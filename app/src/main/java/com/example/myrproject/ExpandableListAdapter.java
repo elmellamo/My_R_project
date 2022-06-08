@@ -192,9 +192,9 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                         String beforeTime = rItem.getWritedate();//이전에 저장된 시간
                                         if(!isStringDouble(cnt)){
                                             //경고문
-                                            Toast.makeText(mContext, "숫자로 입력해주세요!!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(mContext, "숫자로 입력해주세요.", Toast.LENGTH_SHORT).show();
                                         }else if(Double.parseDouble(cnt)<=0){
-                                            Toast.makeText(mContext, "0보다 크게 해주세용!!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(mContext, "올바른 수량을 입력해주세요.", Toast.LENGTH_SHORT).show();
                                         }
                                         else{
                                             mDBHelper.UpdateTodo(cnt,unit, currentTime,beforeTime);//입력필드에 적은 값 가져온다
