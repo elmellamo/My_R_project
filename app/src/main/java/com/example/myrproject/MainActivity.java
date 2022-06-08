@@ -192,8 +192,7 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
                     DBHelper databaseHelper = new DBHelper(getApplicationContext());
                     ArrayList<ExpandableListAdapter.Item> mritems = databaseHelper.getItem();
                     if (mritems != null) {
-                        recyclerview.setAdapter(new ExpandableListAdapter(mritems,getApplicationContext()));
-                        Toast.makeText(MainActivity.this, "dfds", Toast.LENGTH_SHORT).show();
+                        recyclerview.setAdapter(new ExpandableListAdapter(mritems,ExpandableListAdapter.mContext));
                         recyclerview.setHasFixedSize(true);
                     }
                 }
