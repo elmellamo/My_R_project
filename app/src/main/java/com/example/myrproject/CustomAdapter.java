@@ -69,95 +69,97 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             child_title = itemView.findViewById(R.id.child_title);
             child_cnt = itemView.findViewById(R.id.child_cnt);
             child_unit = itemView.findViewById(R.id.child_unit);
-
-            if(MainActivity.tabtype!=2){
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int currentPos = getAdapterPosition();// 현재 리스트 클릭한 아이템위치
                     MyRItem rItem = mRItems.get(currentPos);//아이템 정보 가져온다
 
-                    String[] strChoiceItems = {"수정하기","삭제하기"};
-                    AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                    builder.setTitle("원하는 작업을 선택해주세요");
-                    builder.setItems(strChoiceItems, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
-                            if(position == 0) {
-                                // 수정하기
-                                Dialog dialog = new Dialog(mContext, android.R.style.Theme_Material_Light_Dialog);
-                                dialog.setContentView(R.layout.dialog_edit);//뷰가 연결되었으므로 이 레이아웃에서 find view by id사용 가능
-                                //그냥 find가 아니라 dialog.~해야 한다
+                    if(MainActivity.tabtype!=2){
+                        String[] strChoiceItems = {"수정하기","삭제하기"};
+                        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                        builder.setTitle("원하는 작업을 선택해주세요");
+                        builder.setItems(strChoiceItems, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
+                                if(position == 0) {
+                                    // 수정하기
+                                    Dialog dialog = new Dialog(mContext, android.R.style.Theme_Material_Light_Dialog);
+                                    dialog.setContentView(R.layout.dialog_edit);//뷰가 연결되었으므로 이 레이아웃에서 find view by id사용 가능
+                                    //그냥 find가 아니라 dialog.~해야 한다
 
-                                //커스텀 다이얼로그
-                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                dialog.setCanceledOnTouchOutside(false);
+                                    //커스텀 다이얼로그
+                                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                                    dialog.setCanceledOnTouchOutside(false);
 
-                                //다이얼로그 크기 조절하기
-                                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
-                                params.width = WindowManager.LayoutParams.MATCH_PARENT;
-                                params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-                                dialog.getWindow().setAttributes((WindowManager.LayoutParams) params);
-
-
-                                TextView tv_name = dialog.findViewById(R.id.tv_name);
-                                EditText et_cnt = dialog.findViewById(R.id.et_cnt);
-                                EditText et_unit = dialog.findViewById(R.id.et_unit);
-                                Button btn_ok = dialog.findViewById(R.id.btn_ok);
-
-                                tv_name.setText(rItem.getName());
-                                et_cnt.setText(rItem.getCnt());
-                                et_unit.setText(rItem.getUnit());
+                                    //다이얼로그 크기 조절하기
+                                    WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                                    params.width = WindowManager.LayoutParams.MATCH_PARENT;
+                                    params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                                    dialog.getWindow().setAttributes((WindowManager.LayoutParams) params);
 
 
+                                    TextView tv_name = dialog.findViewById(R.id.tv_name);
+                                    EditText et_cnt = dialog.findViewById(R.id.et_cnt);
+                                    EditText et_unit = dialog.findViewById(R.id.et_unit);
+                                    Button btn_ok = dialog.findViewById(R.id.btn_ok);
 
-                                btn_ok.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        //수정시나리오
-                                        //update table
-                                        int id = rItem.getId();
-                                        String name = rItem.getName();
-                                        String cnt = et_cnt.getText().toString();
-                                        String unit = et_unit.getText().toString();
-                                        String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
-                                        String beforeTime = rItem.getWriteDate();//이전에 저장된 시간
+                                    tv_name.setText(rItem.getName());
+                                    et_cnt.setText(rItem.getCnt());
+                                    et_unit.setText(rItem.getUnit());
 
-                                        if(!isStringDouble(cnt)){
-                                            Toast.makeText(mContext, "숫자로 입력해주세요", Toast.LENGTH_SHORT).show();
+
+
+                                    btn_ok.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            //수정시나리오
+                                            //update table
+                                            int id = rItem.getId();
+                                            String name = rItem.getName();
+                                            String cnt = et_cnt.getText().toString();
+                                            String unit = et_unit.getText().toString();
+                                            String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
+                                            String beforeTime = rItem.getWriteDate();//이전에 저장된 시간
+
+                                            if(!isStringDouble(cnt)){
+                                                Toast.makeText(mContext, "숫자로 입력해주세요", Toast.LENGTH_SHORT).show();
+                                            }
+                                            else{
+                                                mRecipeDB.UpdateCook(id, cnt,unit,currentTime,beforeTime);//입력필드에 적은 값 가져온다
+                                                //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
+
+                                                //update UI
+                                                rItem.setName(name);
+                                                rItem.setCnt(cnt);
+                                                rItem.setUnit(unit);
+                                                rItem.setWriteDate(currentTime);
+                                                notifyItemChanged(currentPos, rItem);//클릭한 아이템에 갱신된 아이템을 갱신
+                                                dialog.dismiss();//dialog 종료
+                                                Toast.makeText(mContext, "목록 수정이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
+                                            }
                                         }
-                                        else{
-                                            mRecipeDB.UpdateCook(id, cnt,unit,currentTime,beforeTime);//입력필드에 적은 값 가져온다
-                                            //UpdateTodo ctrl누르면서 클릭하면 그 함수로 이동할 수 있다
+                                    });
+                                    dialog.show();//필수
 
-                                            //update UI
-                                            rItem.setName(name);
-                                            rItem.setCnt(cnt);
-                                            rItem.setUnit(unit);
-                                            rItem.setWriteDate(currentTime);
-                                            notifyItemChanged(currentPos, rItem);//클릭한 아이템에 갱신된 아이템을 갱신
-                                            dialog.dismiss();//dialog 종료
-                                            Toast.makeText(mContext, "목록 수정이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                                dialog.show();//필수
+                                }else if(position == 1){
+                                    // delete table
+                                    String beforeTime = rItem.getWriteDate();
+                                    mRecipeDB.DeleteCook(beforeTime);
 
-                            }else if(position == 1){
-                                // delete table
-                                String beforeTime = rItem.getWriteDate();
-                                mRecipeDB.DeleteCook(beforeTime);
-
-                                // delete UI
-                                mRItems.remove(currentPos);
-                                notifyItemRemoved(currentPos);
-                                Toast.makeText(mContext, "목록이 제거 되었습니다", Toast.LENGTH_SHORT).show();
+                                    // delete UI
+                                    mRItems.remove(currentPos);
+                                    notifyItemRemoved(currentPos);
+                                    Toast.makeText(mContext, "목록이 제거 되었습니다", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
-                    builder.show();
+                        });
+                        builder.show();
+                    }
                 }
-            });}
+            });
+
+
         }
         public boolean isStringDouble(String s) {
             try {
