@@ -66,6 +66,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             child_cnt = itemView.findViewById(R.id.child_cnt);
             child_unit = itemView.findViewById(R.id.child_unit);
 
+            if(MainActivity.tabtype!=2){
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -151,7 +152,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     });
                     builder.show();
                 }
-            });
+            });}
         }
         public boolean isStringDouble(String s) {
             try {

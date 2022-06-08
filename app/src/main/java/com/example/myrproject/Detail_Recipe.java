@@ -52,6 +52,7 @@ public class Detail_Recipe extends AppCompatActivity {
         //view onclick리스너에서 text읽어와서 그 이름 넣어야 한 아래 loadRecipeDBName에
         detail_cookname = findViewById(R.id.detail_cookname);
         detail_explanation = findViewById(R.id.detail_explanation);
+
         a = this.getIntent().getStringExtra("a");
         b = this.getIntent().getStringExtra("b");
         detail_cookname.setText(a);
