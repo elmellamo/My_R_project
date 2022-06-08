@@ -8,14 +8,14 @@
         android:id="@+id/header_title"
         android:layout_width="212dp"
         android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:gravity="center_vertical"
         android:text="음식 종류"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:textColor="#045CB1" />
+        android:textColor="#045CB1"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/btn_expand_toggle"

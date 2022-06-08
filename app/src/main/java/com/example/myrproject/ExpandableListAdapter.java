@@ -215,6 +215,16 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                             }else if(position == 1){
                                 // delete table
                                 String beforeTime = rItem.getWritedate();
+                                String type = rItem.getIitemtype();
+                                for(Item x: data){
+                                    if(x.getCcnt().equals("수량")&&x.getIitemtype().equals(type)){
+                                        int pos = data.indexOf(x);
+                                        String Text = x.getTtext().replaceAll("[^0-9]", "");
+                                        x.setTtext(type+"("+Integer.toString(Integer.parseInt(Text)-1)+")");
+                                        data.set(pos,x);
+                                        notifyItemChanged(pos);
+                                    }
+                                }
                                 mDBHelper.deleteTodo(beforeTime);
                                 // delete UI
                                 data.remove(curPos);
