@@ -32,7 +32,6 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
 
     Detail_Recipe detail_recipe;
 
-
     public MySecondAdapter(ArrayList<String> rItems, Context mContext) {
         this.mRItems = rItems;
         this.mContext = mContext;
@@ -56,9 +55,9 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
         return mRItems.size();
     }//recycler view
 
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView recipe_title;
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

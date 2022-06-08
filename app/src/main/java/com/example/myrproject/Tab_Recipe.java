@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -31,7 +32,7 @@ public class Tab_Recipe extends Fragment {
 
     DBHelper dbHelper;
     SQLiteDatabase sqlitedb;
-
+    private TextView emptytxt;
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button fab;
@@ -55,6 +56,31 @@ public class Tab_Recipe extends Fragment {
         mRItems = mRecipeDB.getCookName();
         mAdapter = new MySecondAdapter(mRItems,getActivity());//context는 자기자신
         //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
+        mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+
+            @Override
+            public void onChanged() {
+                super.onChanged();
+                checkEmpty();
+            }
+
+            @Override
+            public void onItemRangeInserted(int positionStart, int itemCount) {
+                super.onItemRangeInserted(positionStart, itemCount);
+                checkEmpty();
+            }
+
+            @Override
+            public void onItemRangeRemoved(int positionStart, int itemCount) {
+                super.onItemRangeRemoved(positionStart, itemCount);
+                checkEmpty();
+            }
+
+            void checkEmpty() {
+                emptytxt.setVisibility(mAdapter.getItemCount() == 0 ? View.VISIBLE : View.GONE);
+            }
+        });
+
         recyclerview.setHasFixedSize(true);//recycler성능 강화라고 한다
         recyclerview.setAdapter(mAdapter);
     }
@@ -69,9 +95,9 @@ public class Tab_Recipe extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mLayoutManager);
         mRecipeDB = new RecipeDB(getActivity());
+        emptytxt = rootview.findViewById(R.id.emptytxt);
         loadCookNameDB();
-
-        fab = (Button) rootview.findViewById(R.id.fab2);
+        fab = rootview.findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
