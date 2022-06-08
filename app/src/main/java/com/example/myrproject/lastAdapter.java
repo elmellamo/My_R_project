@@ -132,6 +132,7 @@ public class lastAdapter extends RecyclerView.Adapter<lastAdapter.ViewHolder>{
                                     else{
                                         item.setCnt(Double.toString(Double.parseDouble(item.getCnt())-Double.parseDouble(a.getCnt())));
                                         mSelected.set(position,item);
+                                        Toast.makeText(mContext, "a", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                                 //재료 이름이 없을 수 없다//선택될때 추가 되므로
