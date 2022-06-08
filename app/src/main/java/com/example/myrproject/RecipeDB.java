@@ -55,6 +55,9 @@ public class RecipeDB extends SQLiteOpenHelper {
                 String type = cursor.getString(3);
                 String name = cursor.getString(4);
                 String cnt = cursor.getString(5);
+                if((int)Double.parseDouble(cnt)-Double.parseDouble(cnt)==0){
+                    cnt = Integer.toString((int)Double.parseDouble(cnt));
+                }
                 String unit = cursor.getString(6);
                 String writedate = cursor.getString(7);
 
@@ -140,7 +143,7 @@ public class RecipeDB extends SQLiteOpenHelper {
                 String itemcnt = cursor.getString(5);
                 String itemunit = cursor.getString(6);
                 String _beforedate = cursor.getString(7);
-                UpdateCook(Integer.toString(Integer.parseInt(itemcnt)+1),itemunit,_writedate,_beforedate);
+                UpdateCook(Double.toString(Double.parseDouble(itemcnt)+1),itemunit,_writedate,_beforedate);
             }
         }
         cursor.close();

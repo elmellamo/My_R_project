@@ -87,6 +87,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 String type = cursor.getString(1);
                 String name = cursor.getString(2);
                 String cnt = cursor.getString(3);
+                if((int)Double.parseDouble(cnt)-Double.parseDouble(cnt)==0){
+                    cnt = Integer.toString((int)Double.parseDouble(cnt));
+                }
                 String unit = cursor.getString(4);
                 String writedate = cursor.getString(5);
 
