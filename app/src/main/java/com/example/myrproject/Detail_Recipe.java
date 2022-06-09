@@ -61,7 +61,11 @@ public class Detail_Recipe extends AppCompatActivity {
         detail_explanation.setText(info);
 
         loadRecipeDBName(MySecondAdapter.foodname);
+
+
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -106,6 +110,6 @@ public class Detail_Recipe extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        MainActivity.tabtype = 2;
+        finish();
     }
 }

@@ -12,27 +12,45 @@
 
 
     <!-- 이름 -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recipe_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:orientation="horizontal">
+        android:layout_below="@+id/toolbar">
 
         <TextView
-            android:layout_width="60sp"
+            android:id="@+id/whatsrecipe"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingLeft="20dp"
+            android:paddingRight="50dp"
             android:text="이름"
             android:textColor="#045CB1"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_cookname"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/tv_cookname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="textPersonName"
+            android:paddingRight="20dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="6"
+            app:layout_constraintStart_toEndOf="@+id/whatsrecipe"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:id="@+id/list"
@@ -97,6 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="433dp"
         android:layout_above="@+id/explanation"
+
         android:layout_below="@+id/list"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="30dp"
