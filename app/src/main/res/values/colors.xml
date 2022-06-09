@@ -10,6 +10,7 @@
     <color name="mainblue">#0c4da2 </color>
     <color name="title_color">#000000</color>
     <color name="pastel_blue">#E3F2FD</color>
+    <color name="gray">#30000000</color>
 
 
 </resources>

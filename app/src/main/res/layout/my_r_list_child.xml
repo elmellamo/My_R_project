@@ -39,4 +39,14 @@
         android:text="단위"
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/buyend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="구매 완료"
+        android:textSize="40sp"
+        android:textColor="#4D000000"
+        android:visibility="invisible" />
+
 </RelativeLayout>

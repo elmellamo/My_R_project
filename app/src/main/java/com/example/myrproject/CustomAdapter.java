@@ -5,7 +5,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,12 +30,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private RecipeDB mRecipeDB;
     //생성자 Alt + insert control+a enter
 
+    public interface OnListItemSelectedInterface {
+        void onItemSelected(View v, int position);
+    }
+    private OnListItemSelectedInterface mListener;
+    private SparseBooleanArray mSelectedItems = new SparseBooleanArray(0);
 
     public CustomAdapter(ArrayList<MyRItem> rItems, Context mContext) {
         this.mRItems = rItems;
         this.mContext = mContext;
         mRecipeDB = new RecipeDB(mContext);
+        //this.mListener = listener;
     }
+
+
 
     @NonNull
     @Override
@@ -51,6 +61,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         }
         holder.child_cnt.setText(cnt);
         holder.child_unit.setText(mRItems.get(position).getUnit());
+        holder.itemView.setSelected(isItemSelected(position));
     }
 
     @Override
@@ -62,6 +73,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         private TextView child_title;
         private TextView child_cnt;
         private TextView child_unit;
+        private TextView buyend;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,11 +81,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             child_title = itemView.findViewById(R.id.child_title);
             child_cnt = itemView.findViewById(R.id.child_cnt);
             child_unit = itemView.findViewById(R.id.child_unit);
+            buyend = itemView.findViewById(R.id.buyend);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int currentPos = getAdapterPosition();// 현재 리스트 클릭한 아이템위치
                     MyRItem rItem = mRItems.get(currentPos);//아이템 정보 가져온다
+                    //toggleItemSelected(currentPos);
+                    //mListener.onItemSelected(view,currentPos);
 
                     if(MainActivity.tabtype!=2){
                         String[] strChoiceItems = {"수정하기","삭제하기"};
@@ -156,6 +171,22 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                         });
                         builder.show();
                     }
+                    else{
+                        if(itemView.isSelected()==true) {
+                            itemView.setSelected(false);
+                            child_title.setPaintFlags(0);
+                            child_cnt.setPaintFlags(0);
+                            child_unit.setPaintFlags(0);
+                            buyend.setVisibility(View.INVISIBLE);
+                        }
+                        else {
+                            itemView.setSelected(true);
+                            child_title.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                            child_cnt.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                            child_unit.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                            buyend.setVisibility(View.VISIBLE);
+                        }
+                    }
                 }
             });
 
@@ -169,5 +200,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 return false;
             }
         }
+    }
+
+    private void toggleItemSelected(int position) {
+        if (mSelectedItems.get(position, false) == true) {
+            mSelectedItems.delete(position);
+            notifyItemChanged(position);
+        } else {
+            mSelectedItems.put(position, true);
+            notifyItemChanged(position);
+        }
+    }
+
+    private boolean isItemSelected(int position) {
+        return mSelectedItems.get(position, false);
     }
 }

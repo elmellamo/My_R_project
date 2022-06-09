@@ -59,14 +59,18 @@
         <entry key="..\:/Users/dobby/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_child.xml" value="0.125" />
         <entry key="..\:/Users/dobby/AndroidStudioProjects/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.20277777777777778" />
         <entry key="..\:/Users/dobby/AndroidStudioProjects/My_R_project/app/src/main/res/layout/shopping.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable-v24/chlid_bg.xml" value="0.1" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border.xml" value="0.2" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border_fragment.xml" value="0.1735" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border_icon.xml" value="0.1" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/border_layout.xml" value="0.2" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/buttonshape.xml" value="0.1" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/child_selected.xml" value="0.1275" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/progress_bg.xml" value="0.2" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/recipe_bgselected.xml" value="0.1" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/recipe_select.xml" value="0.1275" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/drawable/toolbar_bg.xml" value="0.2" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/font/font_res.xml" value="0.24444444444444444" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/activity_main.xml" value="0.16988416988416988" />
@@ -87,8 +91,9 @@
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fragment_tab_which.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/fruit_item_list.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/item_list.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_child.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_child.xml" value="0.176" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/my_r_list_header.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/recipe_list.xml" value="0.1" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/recyclertest.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/toolbar.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/dukyt/AndroidStudioProjects/My_R_project/app/src/main/res/layout/toolbar_second.xml" value="0.25364583333333335" />
