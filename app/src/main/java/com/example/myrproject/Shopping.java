@@ -70,10 +70,6 @@ public class Shopping extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onBackPressed() {
-        finish();
-    }
 
     public void loadBuyItem() {
         //사야할 목록
@@ -112,6 +108,25 @@ public class Shopping extends AppCompatActivity {
         mAdapter1 = new MySecondAdapter(mCItems,this);//context는 자기자신
         recyclerview1.setHasFixedSize(true);//recycler성능 강화라고 한다
         recyclerview1.setAdapter(mAdapter1);
+    }
+
+    @Override
+    public void onBackPressed() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(Shopping.this);
+        builder.setMessage("즐거운 쇼핑 되셨나요?\n쇼핑을 마쳤으면 예를 눌러주세요.");
+        builder.setPositiveButton("아니오", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.setNegativeButton("네", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        builder.show();
     }
 }
 

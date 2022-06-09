@@ -61,7 +61,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         }
         holder.child_cnt.setText(cnt);
         holder.child_unit.setText(mRItems.get(position).getUnit());
-        holder.itemView.setSelected(isItemSelected(position));
+        if(mSelectedItems.get(position, false)){
+            holder.itemView.setSelected(true);
+            holder.buyend.setVisibility(View.VISIBLE);
+        }
+        else {
+            holder.itemView.setSelected(false);
+            holder.buyend.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -87,7 +94,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 public void onClick(View view) {
                     int currentPos = getAdapterPosition();// 현재 리스트 클릭한 아이템위치
                     MyRItem rItem = mRItems.get(currentPos);//아이템 정보 가져온다
-                    //toggleItemSelected(currentPos);
+                    toggleItemSelected(currentPos);
                     //mListener.onItemSelected(view,currentPos);
 
                     if(MainActivity.tabtype!=2){
@@ -171,21 +178,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                         });
                         builder.show();
                     }
-                    else{
-                        if(itemView.isSelected()==true) {
-                            itemView.setSelected(false);
-                            child_title.setPaintFlags(0);
-                            child_cnt.setPaintFlags(0);
-                            child_unit.setPaintFlags(0);
+                    else if(MainActivity.tabtype==2){
+                        if(mSelectedItems.get(currentPos, false)) {
+                            mSelectedItems.put(currentPos,true);
+                            buyend.setVisibility(View.VISIBLE);
+                        } else {
+                            mSelectedItems.put(currentPos, false);
                             buyend.setVisibility(View.INVISIBLE);
                         }
-                        else {
-                            itemView.setSelected(true);
-                            child_title.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                            child_cnt.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                            child_unit.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                            buyend.setVisibility(View.VISIBLE);
-                        }
+//                        if(itemView.isSelected()==true) {
+//                            itemView.setSelected(false);
+//                            child_title.setPaintFlags(0);
+//                            child_cnt.setPaintFlags(0);
+//                            child_unit.setPaintFlags(0);
+//
+//                        }
+//                        else {
+//                            itemView.setSelected(true);
+//                            child_title.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+//                            child_cnt.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+//                            child_unit.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+//                            buyend.setVisibility(View.VISIBLE);
+//                        }
                     }
                 }
             });
