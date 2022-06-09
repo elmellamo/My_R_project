@@ -9,8 +9,7 @@ public class MyRItem {
     private String cnt;
     private String unit;
     private String writedate;
-    //Alt + Insert(gettersetter)(Constructor-> selectNone)(빈 생성자)
-    //Alt + Insert -> gettersetter -> control+a 다잡고 enter
+
 
     public MyRItem() {
     }
@@ -21,7 +20,8 @@ public class MyRItem {
     public void setFood(String food) {
         this.food = food;
     }
-
+    //Alt + Insert(gettersetter)(Constructor-> selectNone)(빈 생성자)
+    //Alt + Insert -> gettersetter -> control+a 다잡고 enter
 
     public String getInfo() {
         return info;
