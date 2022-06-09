@@ -71,7 +71,12 @@ public class Detail_Recipe extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case android.R.id.home:
-                MainActivity.tabtype = 2;
+                if(MySecondAdapter.z==0) {
+                    MainActivity.tabtype = 2;
+                }
+                else{
+                    MySecondAdapter.z=0;
+                }
                 finish();
                 return true;
         }
@@ -110,6 +115,12 @@ public class Detail_Recipe extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
+        if(MySecondAdapter.z==0) {
+            MainActivity.tabtype = 2;
+        }
+        else{
+            MySecondAdapter.z=0;
+        }
         finish();
     }
 }

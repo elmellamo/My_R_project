@@ -96,7 +96,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     MyRItem rItem = mRItems.get(currentPos);//아이템 정보 가져온다
                     //mListener.onItemSelected(view,currentPos);
 
-                    if(MainActivity.tabtype==1){
+                    if(MainActivity.tabtype==1 && MySecondAdapter.z == 0){
                         String[] strChoiceItems = {"수정하기","삭제하기"};
                         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                         builder.setTitle("원하는 작업을 선택해주세요");
