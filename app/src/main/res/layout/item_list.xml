@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center"
-        android:padding="10dp"
+        android:padding="12dp"
         android:text="TextView"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
