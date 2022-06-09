@@ -96,7 +96,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                     MyRItem rItem = mRItems.get(currentPos);//아이템 정보 가져온다
                     //mListener.onItemSelected(view,currentPos);
 
-                    if(MainActivity.tabtype!=2){
+                    if(MainActivity.tabtype==1){
                         String[] strChoiceItems = {"수정하기","삭제하기"};
                         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                         builder.setTitle("원하는 작업을 선택해주세요");
@@ -188,20 +188,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                             mSelectedItems.put(currentPos, false);
                             buyend.setVisibility(View.INVISIBLE);
                         }
-//                        if(itemView.isSelected()==true) {
-//                            itemView.setSelected(false);
-//                            child_title.setPaintFlags(0);
-//                            child_cnt.setPaintFlags(0);
-//                            child_unit.setPaintFlags(0);
-//
-//                        }
-//                        else {
-//                            itemView.setSelected(true);
-//                            child_title.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-//                            child_cnt.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-//                            child_unit.setPaintFlags(child_title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-//                            buyend.setVisibility(View.VISIBLE);
-//                        }
                     }
                 }
             });

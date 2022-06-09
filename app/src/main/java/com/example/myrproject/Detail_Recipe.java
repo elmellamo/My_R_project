@@ -67,6 +67,7 @@ public class Detail_Recipe extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case android.R.id.home:
+                MainActivity.tabtype = 2;
                 finish();
                 return true;
         }
@@ -102,5 +103,9 @@ public class Detail_Recipe extends AppCompatActivity {
             x=Integer.toString(a);
         }
         loadRecipeDBType(x);
+    }
+    @Override
+    public void onBackPressed() {
+        MainActivity.tabtype = 2;
     }
 }
