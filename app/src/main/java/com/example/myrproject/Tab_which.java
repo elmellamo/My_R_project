@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,7 +24,9 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
     RecipeDB mRecipeDB;
     ArrayList<String> mCItems;
     private ArrayList<String> mCook;
+    private LinearLayout emptyrecipe;
     lastAdapter mAdapter;
+    private TextView maketxt;
     private RecyclerView recyclerview;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button register;
@@ -45,6 +49,8 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerview.setLayoutManager(mLayoutManager);
         register = rootview.findViewById(R.id.lets_go_btn);
+        emptyrecipe = rootview.findViewById(R.id.emptyrecipe);
+        maketxt = rootview.findViewById(R.id.maketxt);
         mRecipeDB = new RecipeDB(getActivity());
         loadItem();
         register.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +80,32 @@ public class Tab_which extends Fragment implements lastAdapter.OnListItemLongSel
     public void loadItem() {
         mCItems = mRecipeDB.getCookName();
         mAdapter = new lastAdapter(getActivity(), recyclerview, this, this, mCItems);
+        mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+
+            @Override
+            public void onChanged() {
+                super.onChanged();
+                checkEmpty();
+            }
+
+            @Override
+            public void onItemRangeInserted(int positionStart, int itemCount) {
+                super.onItemRangeInserted(positionStart, itemCount);
+                checkEmpty();
+            }
+
+            @Override
+            public void onItemRangeRemoved(int positionStart, int itemCount) {
+                super.onItemRangeRemoved(positionStart, itemCount);
+                checkEmpty();
+            }
+
+            void checkEmpty() {
+                emptyrecipe.setVisibility(mAdapter.getItemCount() == 0 ? View.VISIBLE : View.GONE);
+                maketxt.setVisibility(mAdapter.getItemCount()==0?View.GONE : View.VISIBLE);
+            }
+        });
+
         recyclerview.setHasFixedSize(true);
         recyclerview.setAdapter(mAdapter);
     }
