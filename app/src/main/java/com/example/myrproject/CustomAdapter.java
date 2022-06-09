@@ -94,7 +94,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 public void onClick(View view) {
                     int currentPos = getAdapterPosition();// 현재 리스트 클릭한 아이템위치
                     MyRItem rItem = mRItems.get(currentPos);//아이템 정보 가져온다
-                    toggleItemSelected(currentPos);
                     //mListener.onItemSelected(view,currentPos);
 
                     if(MainActivity.tabtype!=2){
@@ -165,6 +164,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                                     dialog.show();//필수
 
                                 }else if(position == 1){
+
                                     // delete table
                                     String beforeTime = rItem.getWriteDate();
                                     mRecipeDB.DeleteCook(beforeTime);
@@ -179,6 +179,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                         builder.show();
                     }
                     else if(MainActivity.tabtype==2){
+
+                        toggleItemSelected(currentPos);
                         if(mSelectedItems.get(currentPos, false)) {
                             mSelectedItems.put(currentPos,true);
                             buyend.setVisibility(View.VISIBLE);
