@@ -126,8 +126,9 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
-
+///요 리스너가 타이핑 칠 때 리스너
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            ///다 검색하고 났으 ㄹ때
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if(q==0){
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
                 return false;
             }
 
+            ///칠 때마다 텍스트를 하나하나 입력받을 때 (검색 도중)
             @Override
             public boolean onQueryTextChange(String newText) {
                 if(q==0){
@@ -167,7 +169,7 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
                 return false;
             }
         });
-
+//돋보기 눌럿을 때 실행되는 함수
         searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
@@ -183,9 +185,13 @@ public class MainActivity extends AppCompatActivity implements lastAdapter.OnLis
                 }
                 return true;
             }
+///검색을 실행하던 도중 뒤로가기 하면 콜랍스 함수가 실행되지만 익스팬더블이 뜨려고 했지만 검색에 검색 중이던 함수가 다시 작동이 되서 어댑터에 리사이클류 그게 뜨지 않고 오류가 발생
+/// 콜랩스 함수가 시작되면 무조건 입력중이던 함수는 적용안되게 수정함
+
+            //검색이 종료되었을 때
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-                q = 1;
+                q = 1; // 검색하다가 종료했을 때는
                 if(tabtype == 0){
                     recyclerview = findViewById(R.id.recyclerview);
                     registerForContextMenu(recyclerview);

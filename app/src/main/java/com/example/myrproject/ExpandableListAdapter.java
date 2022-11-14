@@ -189,6 +189,7 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                                         String name = rItem.getTtext();
                                         String cnt = et_cnt.getText().toString();
                                         String unit = et_unit.getText().toString();
+
                                         String currentTime = new SimpleDateFormat("yyyy_MM_dd HH:mm:ss").format(new Date());//현재 시간 연월일시분초 받아오기
                                         String beforeTime = rItem.getWritedate();//이전에 저장된 시간
                                         if(!isStringDouble(cnt)){

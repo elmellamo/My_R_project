@@ -42,13 +42,13 @@ public class Tab_MyR extends Fragment {
     public void loadRecentDB() {
         // 저장되어있던 DB를 가져온다
         mRItems = mDBHelper.getItem();
-        mAdapter = new ExpandableListAdapter(mRItems,getActivity());//context는 자기자신
-        //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
+        mAdapter = new ExpandableListAdapter(mRItems,getActivity());
         recyclerview.setHasFixedSize(true);//recycler성능 강화라고 한다
         recyclerview.setAdapter(mAdapter);
-
     }
 
+    //context는 자기자신
+    //첫번째 리스트는 ArrayList가 되어야 한다 생성자에서 그렇게 만들었으므로 //ctrl + CustomAdapter누르면 그 생성자로 볼수있다
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,

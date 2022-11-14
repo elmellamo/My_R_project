@@ -28,6 +28,7 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
     private RecipeDB mRecipeDB;
     public static String foodname;
     public static int n = 1;
+    public static int z = 0;
     //생성자 Alt + insert control+a enter
 
     Detail_Recipe detail_recipe;
@@ -104,6 +105,8 @@ public class MySecondAdapter extends RecyclerView.Adapter<MySecondAdapter.ViewHo
                             @Override
                             public void onClick(DialogInterface dialogInterface, int position) {//position을 의미
                                 if(position == 0) {
+                                    //상세레시피
+                                    z = 1;
                                     Intent intent1 = new Intent(mContext, Detail_Recipe.class);
                                     intent1.putExtra("a",foodname);
                                     n=2;
